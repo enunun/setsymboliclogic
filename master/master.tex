@@ -1,0 +1,208 @@
+\documentclass[a5j,11pt,uplatex,dvipdfmx,ja=standard]{bxjsbook}
+%
+%%%%========ここからプリアンブル=============%%%%%%%%%%%%
+%
+%%%%%%パッケージの取り込み%%%%%%%%%%%%
+%
+\usepackage[T1]{fontenc} % フォントのあれこれらしい とりあえず入れとけ
+% \usepackage[deluxe]{otf} % 多書体設定
+% \usepackage[sourcehan]{pxchfon} % otfパッケージより後に読み込む
+\usepackage{lmodern}
+\usepackage{bxpapersize} % 読み込みだけでOK 紙サイズをなんとかしてくれる
+\usepackage{comment} % 複数行のコメント
+\usepackage{amsmath,amssymb} % 数式用
+\usepackage[dvipdfmx]{graphicx} % 画像の挿入
+\usepackage{amsthm} % 定理環境
+\usepackage{wrapfig} % 図を回り込ませるやつ
+\usepackage{enumerate}
+\usepackage{braket} % カッコの拡張 \Set など
+\usepackage{okumacro} % ルビを振りたい
+\usepackage{bussproofs} % 証明図用
+ \renewcommand{\defaultHypSeparation}{\hskip .1in} % 導出図の仮定同士の感覚
+\usepackage{longtable} % 長い表
+\usepackage{mathrsfs} % 花文字
+\usepackage{framed} % 枠囲み 
+\usepackage{setspace} % 行間の調整
+% \usepackage{makeidx} % 索引
+ \usepackage{index} % 複数の索引
+\usepackage[subrefformat=parens]{subcaption} % 複数の図
+ \captionsetup{compatibility=false} % おまじない
+\allowdisplaybreaks % 数式中での改ページを許可
+ %
+ %
+ %%%%%%%%%===============索引================================%%%%%%%%%%%%
+ % \makeindex % 索引の作成
+  \newindex{nidx}{aidx}{aind}{人名索引} % 人名索引
+  \newindex{widx}{bidx}{bind}{用語索引} % フツーの索引
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%=============演算子の定義=======================%%%%%%%%%%%%%%%%%%%
+ \newcommand{\id}{\mathop{\mathrm{id}}\nolimits} % \id で恒等写像
+ \newcommand{\Map}{\mathop{\mathrm{Map}}\limits} % \Map で写像全体の集合
+%
+%
+%
+%%%%%%==========定理環境のカスタマイズ===============%%%%%%%%%
+%
+\newtheoremstyle{mystyle} % 定理環境のスタイルを作成
+  {} % space above
+  {} % space below
+  {\normalfont} % body font 
+  {} % indent amount
+  {\bfseries} % theorem head font
+  {} % punctuation after theorem head
+  {10pt} % space after theorem head
+  {\thmname{#1}\thmnumber{#2}\thmnote{\textbf{\hspace{1pt}（#3）}}} % theorem head spec
+\theoremstyle{mystyle} % 作成したスタイルを使用
+%%%==========これで定理環境のあとのドットが消えるらしい================%%%%%%%%%%%
+%
+%  \theorembodyfont{\normalfont} % 定理環境中のフォントをフツーのものに
+%% 
+    \newtheorem*{dfn}{定義} % \begin{dfn} で定義を書く
+    \newtheorem{thm}{定理}[chapter] % \begin{thm} で定理を書く
+    \newtheorem{ex}{例}[chapter] % \begin{ex} で例を出す
+    \newtheorem{que}{問}[chapter] % \begin{que} で問を出す
+    \newtheorem*{axiom}{公理} % \begin{axiom} で公理
+    \newtheorem{lemma}{補題}[chapter] % \begin{lemma} で補題
+    \newtheorem*{coro}{系}  % \begin{coro} で系
+%%
+%%%%%%%%%=========定理環境のカスタマイズ終わり===========%%%%%%%%%%
+%
+%%%%%================proof環境のカスタマイズ========================%%%%%%%%%%%
+  \makeatletter
+    \renewenvironment{proof}[1][\proofname]{\par
+      \pushQED{\qed}%
+        \normalfont \topsep6\p@\@plus6\p@\relax
+          \trivlist
+            \item[\hskip\labelsep
+                      \itshape
+                      %    #1\@addpunct{.}]\ignorespaces% DELETED
+                          #1]\ignorespaces% ADDED
+                          }{%
+                              \popQED\endtrivlist\@endpefalse
+                              }
+                              \makeatother
+%                       ドットが消える
+    \renewcommand{\proofname}{\textbf{［証明］}}
+%
+%
+%%%%%%%%%===節番号の仕様変更========%%%%%%%%
+%
+    \renewcommand{\thesection}{{\S}{\,}\arabic{chapter}.\arabic{section}}
+%
+%%%%%%%%============ 節番号にセクション記号が使われる============%%%%%%%
+%
+ \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+ \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+%
+%
+%%%%%%%%%%%%%%%%%=============定理環境の番号の仕様変更================%%%%%%%%%%%%%
+ %
+ %%% 番号からセクション記号を消したい %%%%%%
+   % dfn は番号なしなので不要
+   \renewcommand{\thethm}{\arabic{chapter}.\arabic{thm}}
+   \renewcommand{\theex}{\arabic{chapter}.\arabic{ex}}
+   \renewcommand{\theque}{\arabic{chapter}.\arabic{que}}
+  % \renewcommand{\theaxiom}{\arabic{chapter}.\arabic{axiom}}
+   \renewcommand{\thelemma}{\arabic{chapter}.\arabic{lemma}}
+  %
+%%%%%%%%%%%%%%%%================定理環境の番号の仕様変更終わり=============%%%%%%%%%%%
+%
+%
+\newcommand{\refque}[1]{問\ref{#1}}
+%   
+%   
+%%%%%%============enumerate環境の番号=====================================%%%%%%%%%%%
+%
+ % \renewcommand{\labelenumi}{\textbf{問\arabic{chapter}.\arabic{section}.\arabic{enumi}.}} 
+   \renewcommand{\labelenumi}{(\arabic{enumi})}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%============数式番号の仕様変更===============%%%%%%%%%%%%%%%%%%
+\makeatletter
+ \renewcommand{\theequation}
+  {\arabic{chapter}.\arabic{section}.\arabic{equation}}
+   \@addtoreset{equation}{section} % 数式番号
+\makeatother
+%%%%%%%%%%%%%%%%=============================================%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   %
+   %
+%%%%%%%%%%%%%%%%%%==============数式の見栄えを良くする====================%%%%%%%%%%%%
+%
+%
+%
+   \renewcommand{\frac}[2]{{{\, #1 \,}\over{\, #2 \,}}} % \fracコマンドの棒を長くする
+%
+%
+%%%%%%%%%%%%%==================================================================%%%%%%%%%%%%%%%% 
+ %
+\begin{document} % 本文開始
+%
+%
+%%%%%%%=====タイトルページ==========%%%%%%%%
+%
+  \begin{titlepage} % タイトルページ
+   \title{記号論理から始める集合論入門  \\ 第2版}
+   \author{野口 匠}
+   \date{}
+ \maketitle
+ \thispagestyle{empty}
+ \end{titlepage}
+%
+%%%=======序文と目次===========%%%%%%%%%%
+%
+\frontmatter % 序文
+ \input{inputyou/jobun/jobun} % 序文
+ \input{inputyou/jobun/letter} % ギリシャ文字とか黒板太字の集合の表記とか
+ \tableofcontents % 目次
+%
+%%%%%========本文開始============%%%%%%%%%%%
+%
+ \setcounter{chapter}{-1}
+\mainmatter % 本文スタート
+ \input{inputyou/axiom/axiom} % 現代数学への展望
+ \input{inputyou/kigouronri/kigouronri} % 記号論理
+ \input{inputyou/set/set} % 集合
+ \input{inputyou/realnumber/realnumber} % 実数
+ \input{inputyou/cardinal/cardinal} % 濃度
+%
+%%%%%=========付録===========%%%%%%%%%
+%
+%
+%
+\appendix % 付録
+%%%%%%%%%%============付録用に===========%%%%%%%%%
+%
+\makeatletter
+ \renewcommand{\theequation}
+  {\Alph{chapter}.\arabic{section}.\arabic{equation}}
+   \@addtoreset{equation}{section} % 数式番号
+\makeatother
+ \renewcommand{\thesection}{\S \  \Alph{chapter}.\arabic{section}}
+ \renewcommand{\thefigure}{\Alph{chapter}.\arabic{section}.\arabic{figure}} % 図の番号
+ \renewcommand{\thetable}{\Alph{chapter}.\arabic{section}.\arabic{table}} % 表の番号
+%
+%
+%
+% \input{inputyou/number/number} % 数の体系
+%
+%
+%
+%%%%%%%===========あとがき==============%%%%%%%%
+\backmatter
+{\small
+\input{inputyou/ryakkai/ryakkai} % 演習問題の略解  
+     }
+  %
+%
+\input{inputyou/sankou/sankou} % 参考文献
+{\footnotesize
+\printindex[nidx] % 人名索引を出力
+\printindex[widx] % 用語索引を出力
+}
+\input{inputyou/okuduke/okuduke} % 奥付
+%
+%
+\end{document}  
+%%%%%%%%%%%%==========本文終わり===============%%%%%%%%%%%% 
+ 
+        

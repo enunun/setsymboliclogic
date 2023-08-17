@@ -1,0 +1,264 @@
+\indexentry {Euclidきかがく@Euclid幾何学}{6}
+\indexentry {Euclidきかがく@Euclid幾何学!ひEuclidきかがく@非---}{6}
+\indexentry {こうり@公理 \, axiom!もでる@---系のモデル \, model}{6}
+\indexentry {えるらんげんぷろぐらむ@エルランゲン・プログラム}{7}
+\indexentry {むていぎじゅつご@無定義術語 \, undefined term}{9}
+\indexentry {こうり@公理 \, axiom}{9}
+\indexentry {こうり@公理 \, axiom!こうりろん@---論 \, axiomatics}{9}
+\indexentry {こうり@公理 \, axiom!こうりしゅぎ@---主義 \, axiomatism}{9}
+\indexentry {しょうめい@証明 \, proof}{10}
+\indexentry {けいしきしゅぎ@形式主義 \, formalism}{10}
+\indexentry {むむじゅんせい@無矛盾性 \, consistency}{10}
+\indexentry {どくりつせい@独立性 \, independence}{10}
+\indexentry {ていり@定理 \, theorem}{11}
+\indexentry {けい@系 \, corollary}{11}
+\indexentry {ほだい@補題 \, lemma}{11}
+\indexentry {ていぎ@定義 \, definition}{11}
+\indexentry {ていぎ@定義 \, definition!さいきてきていぎ@再帰的---|see{帰納的定義}}{14}
+\indexentry {ていぎ@定義 \, definition!きのうてきていぎ@帰納的--- \quad recursive ---}{14}
+\indexentry {well-defined@well-defined}{17}
+\indexentry {ill-defined@ill-defined}{17}
+\indexentry {どうけい@同型 \, isomorphic}{20}
+\indexentry {はんちゅうせい@範疇性 \, categoricity}{20}
+\indexentry {くうかん@空間 \, space}{21}
+\indexentry {すうがくてきこうぞう@数学的構造 \, mathmatical structure}{21}
+\indexentry {こうぞう@構造 \, structure|see{数学的構造}}{21}
+\indexentry {しゅうごう@集合 \, set!だいしゅうごう@台--- \, underlying ---}{21}
+\indexentry {しゃぞう@写像 \, mapping!じゅんどうけいしゃぞう@準同型--- \, homomorphism}{23}
+\indexentry {うめこみ@埋め込み \, embedding}{24}
+\indexentry {こうぞう@構造 \, structure!しゅぎ@---主義 \, structuralism}{24}
+\indexentry {めいだい@命題 \, proposition}{28}
+\indexentry {じょうけん@条件 \, condition}{28}
+\indexentry {めいだいかんすう@命題関数 \, propositional function|see{条件}}{28}
+\indexentry {じゅつご@述語 \, prodicate|see{条件}}{29}
+\indexentry {たいしょう@対象 \, object}{29}
+\indexentry {こう@項 \, term}{29}
+\indexentry {めいだい@命題 \, proposition!のひてい@---の否定 \, negation of ---}{29}
+\indexentry {めいだい@命題 \, proposition!のれんげん@---の連言 \, conjunction of ---}{30}
+\indexentry {めいだい@命題 \, proposition!のせんげん@---の選言 \, disjunction of ---}{31}
+\indexentry {めいだい@命題 \, proposition!のがんい@---の含意 \, implication}{31}
+\indexentry {めいだい@命題 \, proposition!のどうち@---の同値 \, equivalence}{32}
+\indexentry {めいだい@命題 \, proposition! けつごうきごう@---結合記号 \, proposional connectiove}{32}
+\indexentry {ぜんしょうきごう@全称記号 \, universal quantifier}{34}
+\indexentry {めいだい@命題 \, proposition!ぜんしょう@全称--- \, universal ---}{34}
+\indexentry {そんざいきごう@存在記号 \, existential quantifier}{34}
+\indexentry {めいだい@命題 \, proposition!そんざい@存在--- \quad existential ---}{34}
+\indexentry {げんていきごう@限定記号 \, quantifier}{36}
+\indexentry {じゅつご@述語 \, prodicate!ろんり@---論理 \, --- logic}{36}
+\indexentry {めいだい@命題 \, proposition!ろんり@---論理 \, propositional logic}{36}
+\indexentry {はんれい@反例 \, counter-example}{37}
+\indexentry {そくばくへんすう@束縛変数 \, bound variable}{38}
+\indexentry {じゆうへんすう@自由変数 \, free variable}{38}
+\indexentry {たいしょうりょういき@対象領域 \, domain}{40}
+\indexentry {じょうけん@条件 \, condition!じゅうぶん@十分--- \, sufficient ---}{41}
+\indexentry {じょうけん@条件 \, condition!ひつよう@必要--- \, necessary ---}{41}
+\indexentry {じょうけん@条件 \, condition!ひつようじゅうぶん@必要十分--- \quad necessary and sufficient ---}{42}
+\indexentry {しーくえんと@シークエント \, sequent}{45}
+\indexentry {ししき@始式 \, initial sequent}{47}
+\indexentry {すいろんいきそく@推論規則 \, inference rule}{47}
+\indexentry {どうしゅつかのう@（シークエントが）導出可能 \, derivable}{50}
+\indexentry {しょうめいかのう@（命題が）証明可能 \, provable}{50}
+\indexentry {どうちである@同値である \, equivalent}{51}
+\indexentry {はいちゅうりつ@排中律 \, law of excluded middle}{54}
+\indexentry {はいりほう@背理法 \, reductio ad absurdum}{55}
+\indexentry {どうしゅつず@導出図 \, derivation diagram}{55}
+\indexentry {De Morganのほうそく@De Morganの法則}{58}
+\indexentry {De Morganのほうそく@De Morganの法則}{59}
+\indexentry {ぶんぱいりつ@分配律 \, distributive law}{61}
+\indexentry {ちかんていり@置換定理}{64}
+\indexentry {めいだい@命題 \, proposition!のぎゃく@---の逆 \, converse ---}{65}
+\indexentry {めいだい@命題 \, proposition!のうら@---の裏 \, inverse ---}{65}
+\indexentry {めいだい@命題 \, proposition!のたいぐう@---の対偶 \, contraposition}{65}
+\indexentry {Peirceのほうそく@Peirceの法則}{66}
+\indexentry {とうごう@等号 \, equal sign}{71}
+\indexentry {はんしゃりつ@反射律 \, reflexive law}{71}
+\indexentry {ちかんほうそく@置換法則}{71}
+\indexentry {だいにゅうげんり@代入原理}{71}
+\indexentry {たいしょうりつ@対象律 \, symmetric law}{73}
+\indexentry {すいいりつ@推移律 \, transitive law}{73}
+\indexentry {そぼくしゅうごうろん@素朴集合論 \, naive set theory}{77}
+\indexentry {こうり@公理 \, axiom!こうりてきしゅうごうろん@---的集合論 \, ---atic set theory}{77}
+\indexentry {しゅうごう@集合 \, set}{78}
+\indexentry {ようそ@要素 \, element|see{元}}{78}
+\indexentry {げん@元 \, element}{78}
+\indexentry {ぞくする@属する \, belong to}{78}
+\indexentry {しゅうごう@集合 \, set!ぶぶん@部分--- \, subset}{79}
+\indexentry {ふくむ@含む \, contain}{79}
+\indexentry {しゅうごう@集合 \, set!しんぶぶん@真部分--- \, proper subset}{79}
+\indexentry {ほうがんかんけい@包含関係 \, inclusion relation}{80}
+\indexentry {がいえんてききほう@外延的記法 \, extension notation}{80}
+\indexentry {ないほうてききほう@内包的記法 \, intension notation}{82}
+\indexentry {へいくかん@閉区間 \, closed interval}{84}
+\indexentry {かいくかん@開区間 \, open interval}{84}
+\indexentry {たんてん@（区間の）端点 \, endpoints}{84}
+\indexentry {はんかいくかん@半開区間 \, half-open interval}{84}
+\indexentry {ゆうげんくかん@有限区間 \, finite interval}{84}
+\indexentry {むげんくかん@無限区間 \, infinite interval}{85}
+\indexentry {しゅうごう@集合 \, set!くう@空--- \, empty set}{85}
+\indexentry {しゅうごう@集合 \, set!わしゅうごう@和--- \, union}{86}
+\indexentry {きょうつうぶぶん@共通部分 \, intersection}{87}
+\indexentry {たがいにそ@（集合が）互いに素 \, disjoint}{87}
+\indexentry {まじわらない@交わらない \, disjoint|see{互いに素}}{87}
+\indexentry {ちょくわ@（集合論的）直和 \, direct sum}{87}
+\indexentry {ひこうわ@非交和 \, disjoint union|see{直和}}{87}
+\indexentry {しゅうごう@集合 \, set!さしゅうごう@差--- \, difference ---}{90}
+\indexentry {しゅうごう@集合 \, set!ぜんたいしゅうごう@全体--- \, universal ---}{90}
+\indexentry {しゅうごう@集合 \, set!ほしゅうごう@補--- \, complementaly ---}{90}
+\indexentry {De Morganのほうそく@De Morganの法則}{90}
+\indexentry {Eulerず@Euler図 \, Euler digram}{92}
+\indexentry {Venn図@Venn図 \, Venn diagram}{93}
+\indexentry {じゅんじょつい@順序対 \, orderd pair}{95}
+\indexentry {つい@対 \, pair|see{順序対}}{95}
+\indexentry {しゅうごう@集合 \, set!ちょくせきしゅうごう@直積--- \, direct product}{97}
+\indexentry {しゃぞう@写像 \, mapping}{98}
+\indexentry {しゅうごう@集合 \, set!ししゅうごう@始集合 \, initial ---}{98}
+\indexentry {しゅうごう@集合 \, set!しゅうしゅうごう@終--- \, target ---}{99}
+\indexentry {ぞう@像 \, image}{99}
+\indexentry {ぞう@像 \, image}{101}
+\indexentry {ぞう@像 \, image!ぎゃくぞう@逆--- \, inverse ---}{101}
+\indexentry {せいげん@（写像の）制限 \, restriction}{104}
+\indexentry {たんしゃ@単射 \, injection}{104}
+\indexentry {ぜんしゃ@全射 \, surjection}{104}
+\indexentry {ぜんたんしゃ@全単射 \, bijection}{104}
+\indexentry {1たい1たいおう@1対1対応 \, one-to-one correspondence|see{全単射}}{104}
+\indexentry {しゃぞう@写像 \, mapping!ほうがん@包含--- \, inclusion ---}{106}
+\indexentry {しゃぞう@写像 \, mapping!恒等--- \, identity ---}{106}
+\indexentry {しゃぞう@写像 \, mapping!くうしゃぞう@空--- \, empty ---}{107}
+\indexentry {しゃぞう@写像 \, mapping!ごうせいしゃぞう@合成--- \, composite ---}{107}
+\indexentry {しゃぞう@写像 \, mapping!ぎゃくしゃぞう@逆--- \, inverse ---}{110}
+\indexentry {しゅうごう@集合 \, set!しゅうごうけい@集合系 \, system of sets}{111}
+\indexentry {しゅうごう@集合 \, set!わしゅうごう@和--- \, union}{112}
+\indexentry {きょうつうぶぶん@共通部分 \, intersection}{112}
+\indexentry {ちょくわ@（集合論的）直和 \, direct sum}{112}
+\indexentry {しゅうごう@集合 \, set!べきしゅうごう@べき--- \, power ---}{112}
+\indexentry {しゅうごう@集合 \, set!ぶぶんしゅうごうけい@部分---系 \, system of subsets}{113}
+\indexentry {たいしょうさ@対称差 \, symmetric difference}{113}
+\indexentry {しゅうごう@集合 \, set!しゅうごうぞく@---族 \, famiry of sets}{114}
+\indexentry {しゅうごう@集合 \, set!わしゅうごう@和--- \, union}{115}
+\indexentry {きょうつうぶぶん@共通部分 \, intersection}{115}
+\indexentry {しゅうごう@集合 \, set!しゅうごうれつ@---列 \, sequence of ---}{115}
+\indexentry {しゅうごう@集合 \, set!ぶぶんしゅうごうぞく@部分---族 \, family of subsets}{116}
+\indexentry {しゅうごう@集合 \, set!じょうきょくげんしゅうごう@上極限--- \, superior limit ---}{117}
+\indexentry {しゅうごう@集合 \, set!かきょくげんしゅうごう@ 下極限--- \, inferior limit ---}{117}
+\indexentry {しゅうごう@集合 \, set!極限--- \, limit ---}{119}
+\indexentry {ゆうりすう@有理数 \, rational number! ゆうりすうのせつだん@---の切断 \, cut of ---s}{122}
+\indexentry {じっすう@実数 \, real number}{124}
+\indexentry {うめこみ@埋め込み \, embedding}{124}
+\indexentry {ゆうりすう@有理数 \, raional number}{124}
+\indexentry {むりすう@無理数 \, irrational number}{124}
+\indexentry {ゆうりすう@有理数 \, rational number! ゆうりすうのちゅうみつせい@---の稠密性 \, density of the ---s}{126}
+\indexentry {じっすう@実数 \, real number!じっすうのわ@---の和 \, sum of ---s}{127}
+\indexentry {じっすう@実数 \, real number!せいのじっすう@正の--- \, positive ---}{129}
+\indexentry {じっすう@実数 \, real number!ふのじっすう@負の--- \, negative}{129}
+\indexentry {じっすう@実数 \, real number!じっすうのせき@---の積}{129}
+\indexentry {じっすう@実数 \, real number! じっすうのせつだん@---の切断 \, cut of ---s}{130}
+\indexentry {Dedekindのこうり@Dedekindの公理}{131}
+\indexentry {じっすう@実数 \, real number! じっすうのれんぞくせい@---の連続性 \, cuntinuty of ---}{131}
+\indexentry {じょうかい@上界 \, upper bound}{131}
+\indexentry {ゆうかい@有界 \, bounded!うえにゆうかい@上に--- \, --- above}{131}
+\indexentry {かかい@下界 \, lower bound}{132}
+\indexentry {ゆうかい@有界 \, bounded!したにゆうかい@下に--- \, --- below}{132}
+\indexentry {ゆうかい@有界 \, bounded}{132}
+\indexentry {さいだいち@最大値 \, maximum value}{132}
+\indexentry {さいしょうち@最小値 \, minimum value}{132}
+\indexentry {じょうげん@上限 \, supremum}{132}
+\indexentry {かげん@下限 \, infimum}{132}
+\indexentry {Weierstrassのこうり@Weierstrassの公理}{133}
+\indexentry {さんかくふとうしき@三角不等式 \, triangle inequality}{134}
+\indexentry {すうれつ@数列 \, sequence of numbers}{134}
+\indexentry {しゅうそく@収束 \, convergence}{135}
+\indexentry {はさみうちのげんり@はさみうちの原理 \, squeeze theorem}{138}
+\indexentry {ゆうかい@有界 \, bounded!うえにゆうかい@上に--- \, --- above}{140}
+\indexentry {ゆうかい@有界 \, bounded!したにゆうかい@下に--- \, --- below}{140}
+\indexentry {ゆうかい@有界 \, bounded}{140}
+\indexentry {たんちょう@単調 \, monotone!たんちょうぞうか@---増加 \, --- increasing}{140}
+\indexentry {たんちょう@単調 \, monotone!たんちょうげんしょう@---減少 \, --- decreasing}{140}
+\indexentry {たんちょう@単調 \, monotone}{140}
+\indexentry {Archimedesせい@Archimedes性}{141}
+\indexentry {Archimedesせい@Archimedes性}{141}
+\indexentry {くかんしゅくしょうほう@区間縮小法 \, nested interval property}{142}
+\indexentry {ぶぶんれつ@部分列 \, subsequence}{144}
+\indexentry {Bolzano--Weierstrassのていり@Bolzano--Weierstrassの定理}{144}
+\indexentry {Cauchyれつ@Cauchy列 \, Cauchy sequence}{145}
+\indexentry {きほんれつ@基本列 \, fundamental sequence|see{Cauchy列}}{145}
+\indexentry {かんびせい@完備性 \, completeness}{145}
+\indexentry {pしんてんかい@$p$進展開 \, $p$-adic expansion}{151}
+\indexentry {しゅうごう@集合 \, set!ゆうげんしゅうごう@有限--- \, finite ---}{154}
+\indexentry {のうど@濃度 \, cardinal number}{154}
+\indexentry {しゅうごう@集合 \, set!むげんしゅうごう@無限--- \, infinite ---}{154}
+\indexentry {Dedekindゆうげん@Dedekind有限 \, Dedekind-finite}{160}
+\indexentry {Dedekindむげん@Dedekind無限 \, Dedekind-infinite}{160}
+\indexentry {ほうじょげんり@包除原理 \, inclusion-exclusion principle}{162}
+\indexentry {のうど@濃度 \, cardinal number}{166}
+\indexentry {かさんしゅうごう@可算集合 \, countable set}{166}
+\indexentry {かさんむげんしゅうごう@可算無限集合 \, countably infinite set|see{可算集合}}{166}
+\indexentry {かさんのうど@可算濃度 \, countable cardinal number}{166}
+\indexentry {かさんむげんのうど@可算無限濃度 \, countably infinite cardinal number |see{可算濃度}}{166}
+\indexentry {かさんしゅうごう@可算集合 \, countable set!i たかだかかさんしゅうごう@高々--- \quad at most ---}{166}
+\indexentry {かさんむげんしゅうごう@可算無限集合 \, countably infinite set! たかだかかさんむげんしゅうごう@高々--- at most ---}{166}
+\indexentry {かさんしゅうごう@可算集合 \, countable set!ひかさんしゅうごう@非--- \, un---}{167}
+\indexentry {かさんむげんしゅうごう@可算無限集合 \, countably infinite set! ひかさんむげんしゅうごう@非--- \quad un---}{167}
+\indexentry {Cantorのついかんすう@Cantorの対関数 \, Cantor's pairing function}{168}
+\indexentry {れんぞくたいのうど@連続体濃度 \, cardinal number of countinuum}{173}
+\indexentry {たいかくせんろんぽう@対角線論法 \, diagonal argument}{174}
+\indexentry {Cantorのていり@Cantorの定理}{174}
+\indexentry {Russellのパラドックス@Russellのパラドックス}{174}
+\indexentry {Russellのパラドックス@Russellのパラドックス}{175}
+\indexentry {しじかんすう@指示関数 \, indicator function}{175}
+\indexentry {ていぎかんすう@定義関数 \, defining function|see{指示関数}}{175}
+\indexentry {とくせいかんすう@特性関数 \, characteristic function|see{指示関数}}{175}
+\indexentry {Bernsteinのていり@Bernsteinの定理}{179}
+\indexentry {だいすうてきすう@代数的数 \, algebraic number}{182}
+\indexentry {ちょうえつすう@超越数 \, transcendental number}{182}
+\indexentry {にこうかんけい@二項関係 \, binary relation}{183}
+\indexentry {はんしゃりつ@反射律 \, reflexive law}{183}
+\indexentry {たいしょうりつ@対称律 \, symmetric law}{183}
+\indexentry {すいいりつ@推移律 \, transitive law}{183}
+\indexentry {どうちかんけい@同値関係 \, equivalence relation}{184}
+\indexentry {どうちるい@同値類 \, equivalence class}{184}
+\indexentry {だいひょうげん@代表元 \, representative element}{184}
+\indexentry {しゅうごう@集合 \, set!しょうしゅうごう@商--- \, quotient ---}{185}
+\indexentry {しゃぞう@写像 \, mapping!しょうしゃぞう@商--- \, quotient ---}{186}
+\indexentry {ぜんしゃ@全射 \, surjection!しぜんな@自然な--- \, natural ---}{186}
+\indexentry {しぜんなしゃえい@自然な射影 \, natural projection}{186}
+\indexentry {ひょうじゅんしゃえい@標準射影 \, canonical projection}{186}
+\indexentry {はんしゃりつ@反射律 \, reflexive law}{190}
+\indexentry {たいしょうりつ@対称律 \, symmetric law!はんたいしょうりつ@ 反--- \, anti-symmetric law}{190}
+\indexentry {すいいりつ@推移律 \, transitive law}{190}
+\indexentry {じゅんじょ@順序 \, order!はんじゅんじょ@半--- \, partial ---}{191}
+\indexentry {はんじゅんじょ@半順序!はんじゅんじょしゅうごう@ ---集合 \, partially ordered set, poset}{191}
+\indexentry {じゅんじょ@順序 \, order!ぜんじゅんじょ@全--- \, total ---}{191}
+\indexentry {ぜんじゅんじょ@全順序 \, total order!ぜんじゅんじょしゅうごう@ ---集合 \, totally ordered set}{191}
+\indexentry {じゅんじょ@順序 \, order}{191}
+\indexentry {じゅんじょ@順序 \, order!じゅんじょしゅうごう@---集合 \, ---ed set}{191}
+\indexentry {じょうかい@上界 \, upper bound}{192}
+\indexentry {かかい@下界 \, lower bound}{192}
+\indexentry {さいだいげん@最大元 \, maximum element}{192}
+\indexentry {さいしょうげん@最小元 \, minimum element}{192}
+\indexentry {じょうげん@上限 \, supremum}{192}
+\indexentry {かげん@下限 \, infimum}{192}
+\indexentry {きょくだいげん@極大元 \, maximal element}{192}
+\indexentry {きょくしょうげん@極小元 \, minimal element}{192}
+\indexentry {じゅんじょをたもつ@順序を保つ \, order-preserving}{193}
+\indexentry {じゅんじょどうけい@順序同型 \, order isomorphic}{194}
+\indexentry {じゅんじょどうけい@順序同型 \, order isomorphic!じゅんじょどうけいしゃぞう@ ---写像 \, order isomorphism}{194}
+\indexentry {しゅうごう@集合 \, set!せいれつしゅうごう@整列--- \, well-ordered ---}{195}
+\indexentry {じゅんじょ@順序 \, order!せいれつじゅんじょ@整列--- \, well-order}{195}
+\indexentry {ちょうげんきのうほう@超限帰納法 \, transfinite induction}{196}
+\indexentry {すうがくてききのうほう@数学的帰納法 \, mathematical induction}{197}
+\indexentry {せっぺん@切片 \, initial segment}{198}
+\indexentry {ていぎ@定義 \, definition!きのうてきていぎ@帰納的--- \quad recursive ---}{198}
+\indexentry {しゅうごう@集合 \, set!ちょくせきしゅうごう@直積--- \, direct product}{204}
+\indexentry {ちょくせきいんし@直積因子 \, direct factor}{205}
+\indexentry {せんたくこうり@選択公理 \, axiom of choice}{205}
+\indexentry {せんたくかんすう@選択関数 \, choice function}{206}
+\indexentry {せいぶん@成分 \, component}{206}
+\indexentry {しゃえい@射影 \, projection}{206}
+\indexentry {せんたくこうり@選択公理 \, axiom of choice! かさんせんたくこうり@可算--- \, axiom of countable choice}{206}
+\indexentry {せんたくかんすう@選択関数 \, choice function}{207}
+\indexentry {Dedekindむげん@Dedekind無限 \, Dedekind-infinite}{209}
+\indexentry {きのうてき@帰納的 \, recursive}{209}
+\indexentry {Zornのほだい@Zornの補題}{209}
+\indexentry {せいれつかのうていり@整列可能定理}{213}
+\indexentry {ゆうげんせい@有限性 \, finite character}{216}
+\indexentry {Tukeyのほだい@Tukeyの補題}{217}

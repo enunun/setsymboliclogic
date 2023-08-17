@@ -1,0 +1,81 @@
+\Aesection{命題論理と述語論理}
+\def\jobname{master}
+\def\prelabel{master-}
+\setcounter{que}{1-1}\begin{que}
+\protect 
+\expandafter\begin\expandafter\Kaienumerate\Kaienumopt
+\ifthenelse{\equal{\Kaienumerate}{edaenumerate}}{\def\Aeitem{\edaitem}}{} \ifthenelse{\equal{\Kaienumerate}{betaenumerate}}{\def\Aeitem{\edaitem}}{} \ifthenelse{\equal{\Kaienumerate}{yokoenumerate}}{\def\Aeitem{\item}}{} 
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{0}\Aeitem
+\protect 偽
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{1}\Aeitem
+\protect 真
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{2}\Aeitem
+\protect 真
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{3}\Aeitem
+\protect 偽（反例は$x=3, \, y=2$など） 
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{4}\Aeitem
+\protect 偽
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{5}\Aeitem
+\protect 真
+\end\Kaienumerate\def\Kaienumerate{enumerate}\def\Kaienumopt{}
+\end{que}
+\Aesection{自由変数と束縛変数}
+\def\jobname{master}
+\def\prelabel{master-}
+\setcounter{que}{1-1}\begin{que}
+\protect 
+\expandafter\begin\expandafter\Kaienumerate\Kaienumopt
+\ifthenelse{\equal{\Kaienumerate}{edaenumerate}}{\def\Aeitem{\edaitem}}{} \ifthenelse{\equal{\Kaienumerate}{betaenumerate}}{\def\Aeitem{\edaitem}}{} \ifthenelse{\equal{\Kaienumerate}{yokoenumerate}}{\def\Aeitem{\item}}{} 
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{0}\Aeitem
+\protect 偽（反例は$x=1$など）
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{1}\Aeitem
+\protect 真（この命題は全称命題ではないことにも注意せよ）
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{2}\Aeitem
+\protect 真
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{3}\Aeitem
+\protect 偽
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{4}\Aeitem
+\protect 真（たとえば$x=0$など）
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{5}\Aeitem
+\protect 偽
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{6}\Aeitem
+\protect 偽（反例は$x=1$など）
+\def\jobname{master}
+\def\prelabel{master-}
+\Aesetcurrentenum{7}\Aeitem
+\protect 真
+\end\Kaienumerate\def\Kaienumerate{enumerate}\def\Kaienumopt{}
+\end{que}
+\Aesection{必要性と十分性}
+\Aesection{シークエントと推論規則}
+\Aesection{シークエント計算の具体例}
+\Aesection{集合とその記法}
+\Aesection{集合の演算}
+\Aesection{写像}
+\Aesection{集合系}

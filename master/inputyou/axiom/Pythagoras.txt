@@ -1,0 +1,39 @@
+  Thalesは，幾何学は合理的なものであると考え，そこに宗教的なものは見られなかった．
+ % \begin{comment}
+  \index[nidx]{Pythagoras@Pythagoras（ピタゴラス）}
+  古代ギリシャの数学者Pythagoras（582 B.C.頃--493 B.C.頃）は
+  自身の思想に賛同する者とともに
+  Pythagoras教団（Pythagoras学派ともいわれる）を立ち上げ，大きな勢力を得た．
+  「教団」とあるように，Pythagoras教団は宗教的性格が非常に強く，
+  教団の発見はすべてPythagorasの発見とされ，
+  さらに教団内部の情報を外部に漏らすことは固く禁じられていた．
+
+  Pythagorasの思想としてもっとも有名なのは，おそらく
+  「万物は数である」という思想であろう．
+  Pythagorasは，あらゆる事象には数が内在していると考え，
+  数の性質を探求することによって宇宙の真理を追究しようとした．
+  ただし，Pythagorasのいうところの「数」とは現代でいうところの「有理数」であった．
+
+  PythagorasとPythagoras教団は現代にも伝わるさまざまな事実を発見したが，
+  そのうちでもっとも有名なのはまず間違いなくPythagorasの定理であるといってよいだろう．
+  Pythagorasの定理は日本の中学校・高校の教科書では三平方の定理と書かれることも多い．
+  その主張は「$\mathrm{AB}$を斜辺とする直角三角形$\mathrm{ABC}$において，
+  $\overline{\mathrm{AC}}^2 + \overline{\mathrm{BC}}^2 = \overline{\mathrm{AB}}^2$が成り立つ」
+  というものである．
+
+  Pythagorasの定理の発見は，Pythagoras教団に無理数の発見をもたらすこととなった．
+  いま，$\mathrm{AB}$を斜辺とし，
+  $\overline{\mathrm{AC}}=\overline{\mathrm{BC}}=1$
+  であるような直角二等辺三角形$\mathrm{ABC}$を考えると，
+  斜辺の長さ$\overline{\mathrm{AC}}$はPythagorasの定理によって
+  $\overline{\mathrm{AC}}^2=2$を満たさなければならない．
+  Pythagoras教団の思想では「数」はすべて有理数であるはずだから，
+  このような$\overline{\mathrm{AC}}$も有理数であるべきである．
+  しかし，$x^2=2$を満たす有理数$x$が存在しないことは簡単に証明できる．
+  もちろん，$\overline{\mathrm{AC}}^2=2$を満たす$\mathrm{AC}$の長さは存在せず，
+  従ってこのような直角三角形は存在しない
+  という結論を下すのは明らかに非合理的であろう．
+  Pythagorasの定理を認める限りは，現代では「$\sqrt{2}$」と表される
+  「数」の存在を認めざるを得ないのである．
+ % \end{comment}
+

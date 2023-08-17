@@ -1,0 +1,1224 @@
+\chapter{演習問題解答例} \label{answer}
+\begin{description}
+  \item[\refque{chp:sequent.sec:ronri.que:singihantei}] \mbox{}
+  \begin{enumerate}
+   \item 偽
+   \item 真
+   \item 真
+   \item 偽（反例は$x=3,  y=2$など）
+   \item 偽
+   \item 真
+  \end{enumerate}
+\item[\refque{chp:sequent.sec:hensuu.que:sokubakusingi}] \mbox{} 
+  \begin{enumerate}
+   \item 偽（反例は$x=1$など）
+   \item 真
+   \item 偽
+   \item 真
+   \item 真 （$x=3$とでもすればよい）
+   \item 偽
+  \end{enumerate}
+\item[\refque{chp:sequent.sec:hituyoujubun.que:xhituyoujubun}] \mbox{} 
+  \begin{enumerate}
+   \item 正しい
+   \item 正しい
+   \item 正しい
+  \end{enumerate}
+\item[\refque{que:kigoukaranihongo}] \mbox{} \\
+  ここに挙げるのはあくまで一例である．
+  細かい言い回しを考えれば，解答として適切なものはいくつも考えられるであろう．
+  \begin{enumerate}
+    \item  $F(x)$となる$x$がただ1つ存在する．
+    \item 任意の$\varepsilon >0$に対して$\delta >0$が存在して，
+      $0< \lvert x- a \rvert < \delta$を満たす任意の$x \in I$に対して
+      $\lvert f(x) -A \rvert < \varepsilon$が成り立つ．
+    \item 任意の$y \in Y$に対して$x \in X$が存在して，$y=f(x)$となる．
+    \item $f(x_1 )=f(x_2) $を満たす任意の$x_1, x_2 \in X$に対して$x_1 = x_2$が成り立つ．
+    \item 任意の$a,b >0$に対して自然数$N$で$Na >b$となるものがとれる．
+  \end{enumerate}
+
+\item[\refque{que:nihongokarakigou}] \mbox{} \\
+  \begin{enumerate}
+    \item $\forall x ( x \in A \to x \in B).$
+      （「必ず」とあることを考えれば$x$には全称記号をつけるのが妥当であろう）
+    \item $\forall \varepsilon >0 \exists N \in \mathbb{N} \forall n,m \in \mathbb{N}
+      (n,m \geq N \to \lvert a_n - a_m \rvert < \varepsilon ).$
+    \item $\forall x,y \in \mathbb{R} (x^2+y^2=1 \to \exists \theta \in \mathbb{R} 
+      ( 0 \leq \theta <2 \pi \land (x= \cos \theta \land y= \sin \theta ))).$
+    \item $\exists c \in \mathbb{R}(\forall x \in S ( x \leq c ) \land 
+      \forall M \in \mathbb{R} (\forall x \in S (x \leq M) \to c \leq M)).$
+  \end{enumerate}
+\item[\refque{que:haityurituouyou}] \mbox{} \\  
+  $\sqrt{2}^{\sqrt{2}}$が有理数の場合には$a = b= \sqrt{2}$とすればよい．
+  $\sqrt{2}^{\sqrt{2}}$が有理数でない場合には，
+  $\sqrt{2}^{\sqrt{2}}$は無理数であるから
+  $a = \sqrt{2} ^{\sqrt{2}},  b= \sqrt{2}$とすればよい．
+
+\item[\refque{que:meidaiketugouritu}] \mbox{} \\
+  式\eqref{eq:bekiland}を示す．
+  まずはシークエント$A \land A \Longrightarrow A$
+  を導出する．
+  \begin{enumerate}[1. ]
+    \item $A \land A \Longrightarrow A \land A$ \quad ［始式］
+    \item $A \land A \Longrightarrow A$ \quad 
+      ［1.から$\land$除去による］
+  \end{enumerate}
+  次に，シークエント$A \Longrightarrow A \land A$を導出する．
+  \begin{enumerate}[1. ]
+    \item $A \Longrightarrow A$ \quad ［始式］
+    \item $A \Longrightarrow A$ \quad ［始式］
+    \item $A \Longrightarrow A \land A$ \quad 
+      ［$1.,2.$から$\land$導入による］
+  \end{enumerate}
+  式\eqref{eq:bekilor}を示そう．
+  まずはシークエント$A \lor A \Longrightarrow A$
+  を導出する．
+  \begin{enumerate}[1. ]
+    \item $A \lor A \Longrightarrow A$ 
+      \quad ［始式］
+    \item $A \Longrightarrow A$ \quad ［始式］
+    \item $A \Longrightarrow A$ \quad ［始式］
+    \item $A \lor A \Longrightarrow A$ \quad ［$1.,2.,3.$から
+      $\lor$除去による］
+  \end{enumerate}
+  次に，シークエント$A \Longrightarrow A \lor A$を導出する．
+  \begin{enumerate}[1. ]
+    \item $A \Longrightarrow A$ \quad ［始式］
+    \item $A \Longrightarrow A \lor A$ \quad ［1.から$\lor$導入による］
+  \end{enumerate}
+
+  あとはシークエント$A \lor ( B \lor C) \Longrightarrow 
+  (A \lor B ) \lor C$の導出を与え，残りは省略する．
+
+  \begin{enumerate}[1. ]
+    \item $A \lor ( B \lor C) \Longrightarrow A \lor (B \lor C)$
+           \quad ［始式］
+    \item $A \Longrightarrow A$ \quad ［始式］
+    \item $A \Longrightarrow A \lor B$ \quad ［2.から$\lor$導入による］
+    \item $A \Longrightarrow (A \lor B ) \lor C$ \quad ［3.から$\lor$導入による］
+    \item $B \lor C \Longrightarrow B \lor C$ \quad ［始式］
+    \item $B \Longrightarrow B$ \quad ［始式］
+    \item $B \Longrightarrow A \lor B$ \quad ［6.から$\lor$導入による］
+    \item $B \Longrightarrow ( A \lor B) \lor C$ \quad ［7.から$\lor$導入による］
+    \item $C \Longrightarrow C$ \quad ［始式］
+    \item $C \Longrightarrow (A \lor B ) \lor C$ \quad ［9.から$\lor$導入による］
+    \item $B \lor C \Longrightarrow (A \lor B ) \lor C$
+           \quad ［$5., 8., 10.$から$\lor$除去による］
+    \item $A \lor ( B \lor C) \Longrightarrow (A \lor B ) \lor C$
+           \quad ［$1., 4., 11.$から$\lor$除去による］
+  \end{enumerate}
+
+\item[\refque{que:Dnarabanot}] \mbox{} \\
+  式\eqref{eq:Dnotall}を示す．
+  \begin{align*}
+    \lnot \forall x \in D ( F(x) ) & \equiv \lnot \forall x ( x \in D \to F(x) ) \\
+                                   & \equiv \exists x ( x \in D \land \lnot F(x) ) \\
+                                   & \equiv \exists x \in D ( \lnot F(x) ) .
+  \end{align*}
+  次に式\eqref{eq:Dnotexists}を示す．
+  \begin{align*}
+    \lnot \exists x \in D(F(x)) & \equiv \lnot \exists x ( x \in D \land F(x) ) \\
+                                & \equiv \forall x \lnot ( x \in D \land F(x) ) \\
+                                & \equiv \forall x ( \lnot ( x \in D) \lor \lnot F(x) ) \\
+                                & \equiv \forall x ( x \in D \to \lnot F(x) ) \\
+                                & \equiv \forall x \in D ( \lnot F(x) ).
+  \end{align*}
+\item[\refque{que:tototo}] \mbox{} \\
+  シークエント$A \to ( B \to C) \Longrightarrow A \land B \to C$の導出をする．
+    \begin{enumerate}[1. ]
+      \item $A \to ( B \to C) \Longrightarrow A \to (B \to C)$ 
+             \quad ［始式］
+      \item $A \land B \Longrightarrow A \land B$ \quad ［始式］
+      \item $A \land B \Longrightarrow A$ \quad ［2.から$\land$除去による］
+      \item $A \land B ,  A \to ( B \to C) \Longrightarrow B \to C$
+             \quad ［$1., 3.$から$\to$除去による］
+      \item $A \land B \Longrightarrow B$ \quad ［2.から$\land$除去による］
+      \item $A \land B ,  A \to ( B \to C) \Longrightarrow C$
+             \quad ［$4., 5.$から$\to$除去による］
+      \item $A \to (B \to C ) \Longrightarrow A \land B \to C$
+             \quad ［6.から$\to$導入による］
+    \end{enumerate}
+    逆向きのシークエントも同様に導出できる．
+\item[\refque{que:Peirce}] \mbox{}
+  \begin{enumerate}[1. ]
+    \item $(A \to B)  \to A \Longrightarrow (A \to B) \to A$ \quad ［始式］ 
+    \item $\lnot A \Longrightarrow \lnot A$ \quad ［始式（背理法で示す）］
+    \item $A \Longrightarrow A$ \quad ［始式］
+    \item $\lnot A ,  A \Longrightarrow \curlywedge$ \quad ［$2., 3.$から$\lnot$除去による］
+    \item $\lnot A ,  A \Longrightarrow B$ \quad ［4.から矛盾による］
+    \item $\lnot A \Longrightarrow A \to B$ \quad ［5.から$\to$導入による］
+    \item $\lnot A,  (A \to B) \to A \Longrightarrow A$ \quad ［$1., 6.$から$\to$除去による］ 
+    \item $\lnot A,  (A \to B) \to A \Longrightarrow \curlywedge$
+           \quad ［$2., 7.$から$\lnot$除去による］
+    \item $(A \to B) \to A \Longrightarrow \lnot \lnot A$ \quad ［8.から$\lnot$導入による］
+    \item $(A \to B) \to A \Longrightarrow A$ \quad ［9.から2重否定の除去による］
+  \end{enumerate}
+\item[\refque{que:togentei}] \mbox{} \\
+  定理\ref{thm:genteito}と同様に示せる．
+\item[\refque{que:genteilandor}] \mbox{} \\
+  シークエント$\forall x (F(x) \lor A) \Longrightarrow \forall x F(x) \lor A$
+  の導出を与えておく．残りのものは容易である．
+  \begin{enumerate}[1. ]
+    \item $\forall x (F(x) \lor A) \Longrightarrow 
+      \forall x(F(x) \lor A) $ \quad ［始式］
+    \item $\lnot ( \forall x F(x) \lor A ) 
+      \Longrightarrow \lnot ( \forall x F(x) \lor A)$
+      \quad ［始式（背理法で示す）］
+    \item $\forall x (F(x) \lor A) \Longrightarrow 
+      F(a) \lor A $ \quad ［1.から$\forall$除去による
+      （$a$は新たな自由変数）］
+    \item $F(a) \Longrightarrow F(a)$ \quad ［始式］
+    \item $A \Longrightarrow A$ \quad ［始式］
+    \item $\lnot A \Longrightarrow \lnot A$ \quad ［始式］
+    \item $ A , \lnot A \Longrightarrow \curlywedge$
+      \quad ［$5.,6.$から$\lnot$除去による］
+    \item $A , \lnot A \Longrightarrow F(a)$
+      \quad ［7.から矛盾による］
+    \item $\lnot A , \forall x ( F(x) \lor A)
+      \Longrightarrow F(a)$ \quad 
+      ［$3.,4.,8.$から$\lor$除去による］
+    \item $\lnot A , \forall x (F(x) \lor A)
+      \Longrightarrow \forall x F(x)$
+      \quad ［9.から$\forall$導入による］
+    \item $\lnot A , \forall x (F(x) \lor A) 
+      \Longrightarrow \forall x F(x) \lor A$
+      \quad ［10.から$\lor$導入による］
+    \item $\lnot (\forall x F(x) \lor A) , \lnot A , 
+      \forall x (F(x) \lor A) \Longrightarrow \curlywedge$
+      \quad ［$2.,11.$から$\lnot$除去による］
+    \item $\lnot ( \forall x F(x) \lor A),
+      \forall x( F(x) \lor A) \Longrightarrow \lnot \lnot A$
+      \quad ［12.から$\lnot$導入による］
+    \item $\lnot ( \forall x F(x) \lor A) , 
+      \forall x (F(x) \lor A) \Longrightarrow A$
+      \quad ［13.から2重否定の除去による］
+    \item $\lnot ( \forall x F(x) \lor A ),
+      \forall x (F(x) \lor A) \Longrightarrow \forall x F(x) \lor A$
+      \quad ［14.から$\lor$導入による］
+    \item $\lnot ( \forall x F(x) \lor A ) ,
+      \forall x (F(x) \lor A) \Longrightarrow \curlywedge$
+      \quad ［$2.,15.$から$\lnot$除去による］
+    \item $\forall x (F(x) \lor A ) \Longrightarrow 
+      \lnot \lnot ( \forall x F(x) \lor A)$
+      \quad ［16.から$\lnot$導入による］
+    \item $\forall x (F(x) \lor A) \Longrightarrow 
+      \forall x F(x) \lor A$
+      \quad ［17.から2重否定の除去による］
+  \end{enumerate}
+\item[\refque{que:genteikoukan}] \mbox{} \\
+  シークエント$\exists x \exists y F(x,y) \Longrightarrow \exists y \exists x F(x,y)$
+  を導出しよう．
+  \begin{enumerate}[1. ]
+    \item $\exists x \exists y F(x,y) \Longrightarrow \exists x \exists y F(x,y)$
+           \quad ［始式］
+    \item $\exists y F(a, y) \Longrightarrow \exists y F(a,y)$
+           \quad ［始式（$a$は新たな自由変数）］
+    \item $F(a, b) \Longrightarrow F(a,b)$ \quad ［始式（$b$は新たな自由変数）］
+    \item $F(a,b) \Longrightarrow \exists x F(x,b)$ \quad ［3.から$\exists$導入による］
+    \item $F(a,b) \Longrightarrow \exists y \exists x F(x,y)$
+           \quad ［4.から$\exists$導入による］
+    \item $\exists y F(a,y) \Longrightarrow \exists y \exists x F(x,y)$
+           \quad ［$2., 5.$から$\exists$除去による］
+         \item $\exists x \exists y F(x,y) \Longrightarrow \exists y \exists x F(x,y)$
+           \quad ［$1., 6.$から$\exists$除去による］
+  \end{enumerate}
+  逆向きのシークエントもまったく同様にして導出できることは明らかであろう．
+\item[\refque{que:circdouti}] \mbox{} \\
+  cut規則を繰り返し用いればよい．
+\item[\refque{que:taisyousuii}] \mbox \\
+  式\eqref{eq:taisyouritu}を導出する．
+  \begin{enumerate}[1. ]
+    \item $a =b \Longrightarrow a =a \to b =a$ \quad ［置換法則］
+    \item $\qquad \Longrightarrow a =a$ \quad ［反射律］
+    \item $a = b \Longrightarrow b =a$ \quad ［$1., 2.$から$\to$除去による］
+  \end{enumerate}
+  次に，式\eqref{eq:suiiritu}を導出する．
+  \begin{enumerate}[1. ]
+    \item $a =b \land b=c \Longrightarrow a = b \land b =c$ \quad ［始式］
+    \item $b=a \Longrightarrow b=c \to a=c$ \quad ［置換法則］
+    \item $a = b \Longrightarrow b =a$ \quad ［対称律］
+    \item $a=b \land b=c \Longrightarrow a=b$ \quad ［1.から$\land$除去による］
+    \item $a=b \land b=c \Longrightarrow b=a$ \quad ［$3., 4.$からcutによる］
+    \item $a=b \land b=c \Longrightarrow b=c \to a=c$ \quad ［$2., 5.$からcutによる］
+    \item $a =b \land b=c \Longrightarrow b=c$ \quad ［1.から$\land$除去による］
+    \item $a=b \land b=c \Longrightarrow a=c$ \quad ［$6., 7.$から$\to$除去による］
+  \end{enumerate}
+\item[\refque{que:2tusonzaihitei}] \mbox{} \\
+  証明済みの関係式を用いれば容易であろう．
+\item[\refque{que:tadahitotuexists}] \mbox{} \\
+  式\eqref{eq:uniquetakadaka}の導出をする．他は省略する．
+  \begin{enumerate}[1. ]
+    \item $\exists x \forall y (F(y) \to y=x)
+           \Longrightarrow \exists x \forall y (F(y) \to y=x)$ \quad ［始式］
+    \item $F(a) \land F(b) \Longrightarrow F(a) \land F(b) $ 
+           \quad ［始式（$a,  b$は新たな自由変数）］
+    \item $\forall y (F(y) \to y=c) \Longrightarrow \forall y (F(y) \to y=c)$
+           \quad ［始式（$c$は新たな自由変数）］
+    \item $F(a) \land F(b) \Longrightarrow F(a)$ \quad ［2.から$\land$除去による］
+    \item $\forall y (F(y ) \to y=c ) \Longrightarrow F(a) \to a =c $
+           \quad ［3.から$\forall$除去による］
+    \item $\forall y (F(y) \to y=c) ,  F(a) \land F(b) \Longrightarrow a =c$
+           \quad ［$3., 4.$から$\to$除去による］
+    \item $F(a) \land F(b) \Longrightarrow F(b)$ \quad ［2.から$\land$除去による］
+    \item $\forall y (F(y) \to y=c) \Longrightarrow F(b) \to b=c$
+           \quad ［3.から$\forall$除去による］
+    \item $\forall y (F(y) \to y =c) ,  F(a) \land F(b) \Longrightarrow b =c$
+           \quad ［$7., 8.$から$\to$除去による］
+    \item $b=c \Longrightarrow c =b$ \quad ［対称律］
+    \item $\forall y (F(y) \to y =c) ,  F(a) \land F(b) 
+           \Longrightarrow c =b$ \quad ［$9., 10.$からcutによる］
+    \item $\forall y (F(y) \to y=c) \Longrightarrow a =c \land c=b$ 
+           \quad ［$6., 11.$から$\land$導入による］
+    \item $a=c \land c=b \Longrightarrow a=b$ \quad ［推移律］
+    \item $\forall y (F(y) \to y=c) ,  F(a) \land F(b) 
+           \Longrightarrow a =b$ \quad ［$12., 13.$からcutよる］
+    \item $\forall y (F(y) \to y =c) \Longrightarrow 
+           F(a) \land F(b) \to a =b$ \quad ［14.から$\to$導入による］
+    \item $\forall y (F(y) \to y=c) \Longrightarrow 
+           \forall y (F(a) \land F(y) \to a =y)$ \quad ［15.から$\forall$導入による］
+    \item $\forall y(F(y) \to y=c) \Longrightarrow 
+           \forall x \forall y (F(x) \land F(y) \to x=y)$ \quad ［16.から$\forall$導入による］
+    \item $\exists x \forall y (F(y) \to y=x) \Longrightarrow 
+           \forall x \forall y (F(x) \land F(y) \to x=y )$
+           \quad ［$1., 17.$から$\exists$除去による］
+  \end{enumerate}
+
+
+
+
+\item[\refque{que:varnothing}] \mbox{} \\
+  集合$A$を任意にとり，$\varnothing \subset A$を示す．
+  任意の$x$に対し，空集合の定義から
+  $x \notin \varnothing$すなわち$\lnot ( x \in \varnothing)$
+  が成り立つので$x \in \varnothing \to x \in A$が成り立つ．
+  従って，$\forall x( x \in \varnothing \to x \in A)$が成り立つので
+  $\varnothing \subset A$が成り立つ．
+
+  次に，$A \subset \varnothing$を満たす集合$A$を任意にとると，
+  $\forall x (x \in A \to x \in \varnothing)$が成り立つ．
+  空集合の定義から任意の$x$に対して$\lnot (x \in \varnothing)$が成り立つので，
+  $\forall x (x \in A \to x \in \varnothing)$が成り立つのは$A$が
+  どんな$x$に対しても$x \notin A$を満たすとき，
+  すなわち$A = \varnothing$である場合であり，またそのときに限る．
+\item[\refque{que:unionintersection}] \mbox{} \\
+  $
+    A \cup B = \set{1,  3,  5,  6,  7,  9,  12},   
+    A \cap B = \Set{3,  9} .
+  $
+\item[\refque{que:naihouequal}] \mbox{} \\
+  $A,  B$を外延的記法で表すと，
+  どちらも同じ集合$\set{ 3,  5,  7}$
+  を表していることがわかる．従って$A=B$．
+\item[\refque{que:univarseset}] \mbox{} \\
+  式\eqref{eq:ccA}を示す．任意の$x \in U$に対し，
+  \begin{align*}
+    x \in (A^c)^c & \equiv x \notin A^c \\
+                  & \equiv \lnot (x \in A ^c) \\
+                  & \equiv \lnot ( x \notin A ) \\
+                  & \equiv \lnot \lnot (x \in A) \\
+                  & \equiv x \in A . 
+  \end{align*}
+  よって，$\forall x \in U( x \in (A ^c)^c \rightleftarrows x \in A)$
+  が成り立つので$(A^c)^c=A$となる．
+
+  次に，式\eqref{eq:AAcU}を示す．
+  $x \in U$を任意にとると，排中律から$x \in A \lor \lnot ( x \in A)$が成り立つ．
+  よって，$x \in A \lor x \notin A$，すなわち$x \in A \lor x \in A^c$であり，
+  これより$x \in A \cup A^c$を得る．
+  従って，$\forall x( x \in U \to x \in A \cup A^c)$が成り立つので
+  $U \subset A \cup A^c $である．
+  また，$A \subset U,  A^c \subset U$より
+  $A \cup A^c \subset U$だから$A \cup A^c =U$となる．
+
+  式\eqref{eq:AAcvarnothing}を示す．
+  $A \cap A^c \neq \varnothing$と仮定すると，
+  $x \in A \cap A^c$となる$x$が存在する．
+  しかし，この$x$は$x \in A \land x \in A^c$すなわち$x \in A \land \lnot(x \in A)$
+  を満たさなくてはならず矛盾する．
+  よって$A \cap A^c = \varnothing$である．
+  
+  式\eqref{eq:Ucvarnothing}と式\eqref{eq:varnothingcU}の導出は
+  各自試みられたい．
+
+  最後に式\eqref{eq:settaiguu}を示す．
+  \begin{align*}
+    A \subset B & \equiv \forall x \in U ( x \in A \to x \in B) \\
+                & \equiv \forall x \in U ( \lnot (x \in B) \to \lnot (x \in A)) \\
+                & \equiv \forall x \in U ( x \notin B \to x \notin A) \\
+                & \equiv \forall x \in U ( x \in B^c \to x \in A^c) \\
+                & \equiv B^c \subset A^c.
+  \end{align*}
+\item[\refque{que:mapsubset}] \mbox{} \\
+  式\eqref{eq:AfinfA}と式\eqref{eq:ffinBB}は一般に成り立つ．
+  証明は容易であろう．
+  しかし，式\eqref{eq:finfAA}と式\eqref{eq:BffinB}は一般に成り立つとは限らない．
+  読者は反例の構成を試みよ．
+\item[\refque{que:ZNmapex}] \mbox{} \\
+  \begin{enumerate}[(1) ]
+    \item 写像$f: \mathbb{Z} \longrightarrow \mathbb{N}$を
+      \begin{align*}
+        f(n) = 1 \quad ( n \in \mathbb{Z})
+      \end{align*}
+      と定めれば，明らかに$f$は単射でも全射でもない．
+    \item 写像$f: \mathbb{Z} \longrightarrow \mathbb{N}$を
+      \begin{align*}
+        f(n) = \left\{
+        \begin{aligned} 
+          4n-1 \quad & ( \text{$n$が正の整数のとき} ) , \\
+          -4n+1 \quad & (\text{それ以外のとき} ) 
+        \end{aligned}
+        \right.
+      \end{align*}
+      と定めると，$f$は単射であるが全射でない．
+    \item 写像$f: \mathbb{Z} \longrightarrow \mathbb{N}$を
+      \begin{align*}
+        f(n) = \left\{
+          \begin{aligned}
+            n \quad & ( \text{$n$が正の整数のとき} ) , \\
+            1 \quad & ( \text{それ以外のとき} )
+          \end{aligned}
+        \right.
+      \end{align*}
+      と定めると，$f$は全射であるが単射でない．
+    \item 写像$f: \mathbb{Z} \longrightarrow \mathbb{N}$を
+      \begin{align*}
+        f(n) = \left\{
+          \begin{aligned}
+            2n - 1 \quad & ( \text{$n$が正の整数のとき} ) , \\
+            -2n  \quad \; \; &  ( \text{それ以外のとき} )
+          \end{aligned}
+        \right.
+      \end{align*}
+      と定めると，$f$は全単射である．
+      読者はこのことを確かめよ．
+  \end{enumerate}
+\item[\refque{que:injecsurjec}] \mbox{} \\
+  $X$が空でないことから，$x_0 \in X$がとれる．
+  $f$が単射であることから，任意の$y \in f(X)$に対し，
+  $y=f(x)$を満たす$x \in X$がただ1つ存在する．
+  よって，$y \in f(X)$に対して$y=f(x)$を満たす$x \in X$
+  を対応させる写像$h: f(X) \longrightarrow X$
+  を定義でき，しかも$h$は全単射である．
+  そこで，写像$g: Y \longrightarrow X$を
+  \begin{align*}
+    g(y) = \left\{
+      \begin{aligned}
+          h (y) \quad & ( \text{$y \in f(X)$のとき} ) , \\
+          x_0 \quad \ & ( \text{それ以外のとき} ) 
+      \end{aligned}
+      \right.
+  \end{align*}
+  と定めれば，$g$は$Y$から$X$への全射である．
+
+\item[\refque{que:injecsurjecsubset}] \mbox{} \\
+  問\ref{que:mapsubset}も参照せよ．
+  \begin{enumerate}[(1) ]
+    \item $f$が単射である場合には$A= f^{-1}(f(A))$が成り立つ．
+      $A \subset f^{-1}(f(A))$はつねに成り立つので
+      $f^{-1}(f(A)) \subset A$が成り立つことを示せばよい．
+    \item $f$が全射である場合には$B = f(f^{-1}(B))$が成り立つ．
+      $f(f^{-1}(B)) \subset B$はつねに成り立つので
+      $B \subset f(f^{-1}(B))$が成り立つことを示せばよい．
+   \end{enumerate}
+ 
+ \item[\refque{que:emptymapping}] \mbox{} \\
+  空写像$f: \varnothing \longrightarrow A$は
+  $\forall x_1 , x_2 \in \varnothing ( f(x_1 ) = f(x_2) \to x_1 = x_2)$
+  すなわち$\forall x_1 , x_2 ( x_1 , x_2 \in \varnothing \to ( f(x_1)=f(x_2) \to x_1 = x_2))$
+  を満たすから単射である．また，$f$はつねに単射であるから，
+  $f$が全単射になるのは$f$が全射でもあるときである．$f$が全射となるのは
+  $\forall y \in A \exists x \in \varnothing ( y = f(x))$
+  すなわち$\forall y \exists x (y \in A \to x \in \varnothing \land y=f(x))$
+  が成り立つときであり，これが成り立つのは$A$が空の場合であり，
+  またそのときのみである．
+
+
+\item[\refque{que:mapassociative}] \mbox{} \\
+  $h \circ ( g \circ f)$と$(h \circ g ) \circ f$はともに
+  $X$から$W$への写像である．
+  従って，任意の$x \in X$に対して
+  $(h \circ ( g \circ f))(x) = ((h \circ g) \circ f) (x)$
+  が成り立つことを示せばよい．
+  これは，両辺がどちらも$h(g(f(x)))$と等しいことから明らかであろう．
+\item[\refque{que:mapinjesurjecomp}] \mbox{} \\
+  (1)を示す．$f(x_1)=f(x_2)$となる$x_1 ,  x_2 \in X$を任意にとる．
+  このとき，$g(f(x_1))=g(f(x_2))$すなわち
+  $(g \circ f)(x_1) = (g \circ f)(x_2)$が成り立つ．
+  $g \circ f$が単射であることから$x_1 =x_2$となるので，
+  $f$は単射である．
+
+  (2)を示そう．$z \in Z$を任意にとると，$g \circ f$が全射であることから
+  $(g \circ f)(x)=z$となる$x \in X$が存在する．
+  このとき，$y = f(x) \in Y$とおくと，
+  $g(y) = g(f(x)) = (g \circ f)(x) =z$となる．
+  従って$g$は全射である．
+\item[\refque{que:compinvset}] \mbox{} \\
+  まずは式\eqref{que:compinvset}の両辺が集合であることを認識しなければならない．
+  あとは
+  $\forall x \in X(
+  x \in (g \circ f)^{-1}(C) \rightleftarrows x \in f^{-1}(g^{-1}(C)))$
+  が成り立つことを示すだけである．これは逆像と合成写像の定義から明らかである．
+\item[\refque{que:invcomp}] \mbox{} \\
+  式\eqref{eq:invcompX}を示す．
+  $f^{-1} \circ f$と$1_X$はともに$X$から自身への写像であるから，
+  任意の$x \in X$に対して$(f^{-1} \circ f)(x) = 1_X(x) $
+  が成り立つことを示せばよい．
+  $1_X(x)=x$だから，結局$(f^{-1} \circ f)(x) = x$を示せばよい．
+  逆写像の定義から，$(f^{-1} \circ f)(x) = f^{-1}(f(x)) = x$
+  となる．
+  式\eqref{eq:invcompY}も同様である．
+\item[\refque{que:mapbijeide}] \mbox{} \\
+  必要性は問\ref{que:invcomp}の結果より明らか．十分性に関しては，
+  問\ref{que:mapinjesurjecomp}の結果と恒等写像が全単射であることを用いれば，
+  $f$が全単射であることがわかり，$f$の逆写像$f^{-1}$が定義できることがいえる．
+  あとは$g=f^{-1}$を示すだけであるが，
+  問\ref{que:mapassociative}の結果を用いれば
+  \begin{align*}
+    g & = g \circ 1_Y \\
+      & = g \circ ( f \circ f^{-1} ) \\
+      & = ( g \circ f) \circ f^{-1} \\
+      & = 1_X \circ f^{-1} \\
+      & = f^{-1}.
+  \end{align*}
+\item[\refque{que:invcompgf}] \mbox{} \\
+  問\ref{que:invcomp}と問\ref{que:mapbijeide}の結果を用いれば容易．
+\item[\refque{que:taisyousa}] \mbox{} \\
+  式\eqref{eq:symdiftaisyou}と式\eqref{eq:symdiftanigen}は明らかであろう．
+  残りを示すことにする．まずは式\eqref{eq:symdifcupcap}を示す．
+  \begin{align*}
+    (A \cup B) - (A \cap B) & = (A \cup B) \cap (A \cap B)^c \\
+                            & = (A \cup B) \cap (A^c \cup B^c) \\
+                            & = (A \cap (A^c \cup B^c)) \cup (B \cap (A^c \cup B^c)) \\
+                            & = (A \cap A^c) \cup (A \cap B^c) \\
+                            & \hspace{1cm} \cup (B \cap A^c) \cup (B \cap B^c) \\
+                            & = \varnothing \cup (A \cap B^c) \cup (B \cap A^c) \cup \varnothing \\
+                            & = (A -B) \cup (B-A) \\
+                            & = A \bigtriangleup B.
+  \end{align*}
+  次に，式\eqref{eq:symdifketugou}を示す．集合$A,  B$に対して
+  \begin{align*}
+    (A \bigtriangleup B)^c 
+    & = ((A \cup B) - (A \cap B) )^c \\
+    & = ((A \cup B) \cap (A \cap B)^c)^c \\
+    & = (A \cup B)^c \cup (A \cap B) \\
+    & = (A^c \cap B^c) \cup (A \cap B)
+  \end{align*}
+  となることに注意して，
+  \begin{align*}
+    (A \bigtriangleup B) \bigtriangleup C 
+    & = (((A \bigtriangleup B)-C)) \cup (C- (A \bigtriangleup B)) \\
+    & = (((A-B) \cup (B-A)) \cap C^c) \\
+    & \hspace{1cm} \cup (C \cap (A \bigtriangleup B)^c) \\
+    & = (((A \cap B^c) \cup (B \cap A^c)) \cap C^c) \\
+    & \hspace{1cm} \cup ((A^c \cap B^c) \cup (A \cap B) \cap C) \\
+    & = (A \cap B^c \cap C^c ) \cup (B \cap A ^c \cap C^c) \\
+    & \hspace{1cm} \cup (A^c \cap B^c \cap C) \cup (A \cap B \cap C) \\
+    & = (A \cap B^c \cap C^c ) \cup (A^c \cap B \cap C^c) \\
+    & \hspace{1cm} \cup (A^c \cap B^c \cap C) \cup (A \cap B \cap C).
+  \end{align*}
+  従って，
+  \begin{align*}
+    A \bigtriangleup (B \bigtriangleup C) 
+    & = (B \bigtriangleup C) \bigtriangleup A \\
+    & = (B \cap C^c \cap A^c) \cup (B^c \cap C \cap A^c) \\
+    & \hspace{1cm} \cup (B^c \cap C^c \cap A) \cup (B \cap C \cap A) \\
+    & = (A^c \cap B \cap C^c) \cup (A^c \cap B^c \cap C) \\
+    & \hspace{1cm} \cup (A \cap B^c \cap C^c) \cup (A \cap B \cap C) \\
+    & = (A \cap B^c \cap C^c) \cup (A^c \cap B \cap C^c) \\
+    & \hspace{1cm} \cup (A^c \cap B^c \cap C) \cup (A \cap B \cap C) \\
+    & = (A \bigtriangleup B) \bigtriangleup C .
+  \end{align*}
+  最後に式\eqref{eq:symdifcapbunpai}を示す．
+  読者は集合$A,  B,  C$に対して$A \cap (B-C) = (A \cap B) - (A \cap C)$
+  が成り立つことを示せ．そうすれば，
+  \begin{align*}
+    A \cap (B \bigtriangleup C) & = A \cap ((B \cup C) - (B \cap C)) \\
+                                & = (A \cap (B \cup C) - (A \cap (B \cap C) ) \\
+                                & = ((A \cap B ) \cup (A \cap C)) - ((A \cap B) \cap (A \cap C)) \\
+                                & = (A \cap B) \bigtriangleup (A \cap C) .
+  \end{align*}
+\item[\refque{que:setfamilycupcap}] \mbox{} \\
+  わからなければ\ref{sec:sequent}を読み返せ．
+\item[\refque{que:demorganfamiry}] \mbox{} \\
+  述語論理におけるDe Morganの法則を用いればよい．
+\item[\refque{que:mappingfamirysubset}] \mbox{} \\
+  定理\ref{thm:mapcupcap}と同様にすればよい．
+\item[\refque{que:unioninteisectionfamiry}] 
+  \begin{align*}
+    \bigcup_{n=1}^{\infty} I_n = (-2,2) ,  \bigcap_{n=1}^{\infty} I_n = [-1,1] , \\
+    \bigcup_{n=1}^{\infty} J_n = (-1,\infty) ,  \bigcap_{n=1}^{\infty} J_n = [0,1) .
+  \end{align*}
+\item[\refque{que:limitsetmugenyugen}] \mbox{} \\
+  任意の$x$に対し，$x \in E_n$となる$n \in \mathbb{N}$が無限に多く存在することと，
+  $x \in E_n$となる$n \in \mathbb{N}$が存在し，さらに
+  それに最大のものがないことが同値であること，
+  そして$x \notin E_n$となる$n \in \mathbb{N}$が有限個であることと，
+  $x \notin E_n$となる$n \in \mathbb{N}$が存在しない，
+  もしくはあってもそれに最大のものが存在することが
+  同値であることを考えれば明らかであろう．
+\item[\refque{que:limitsupinfsubset}] \mbox{} \\
+  問\ref{que:limitsetmugenyugen}の結果からほとんど明らかだろう．
+\item[\refque{que:limitinfsupsetAB}] \mbox{} \\ 
+  式\eqref{eq:limitsupsetcup}に関しては，$x$を任意にとり，
+  $x \in A_n \cup B_n$となる$n \in \mathbb{N}$が無限に多く存在することと，
+  $x \in A_n$となる$n \in \mathbb{N}$か$x \in B_n$となる
+  $n \in \mathbb{N}$の少なくともどちらかは無限に多く存在すること
+  が同値であることを用いればよい．
+  式\eqref{eq:limitinfsetcap}に関しては，
+  $x$を任意にとり，
+  $x \notin A_n \cap B_n$となる$ n \in \mathbb{N}$が有限個であることと，
+  $x \notin A_n$となる$n \in \mathbb{N}$と$x \notin B_n$となる$n \in \mathbb{N}$
+  がともに有限個であることが同値であることを用いればよい．
+\item[\refque{que:limitsetzoudaigensyou}] \mbox{} \\
+  すべての$n \in \mathbb{N}$に対して$E_n \subset E_{n+1}$が成り立つ場合を考える．
+  \begin{align*}
+    \liminf_{n \to \infty} E_n 
+    & = \bigcap_{k=1}^{\infty} \bigcup_{n=k}^{\infty} E_n \\
+    & = \bigcup_{k=1}^{\infty} E_k \\
+    & = \bigcup_{n=1}^{\infty} E_n
+  \end{align*}
+  である．また，任意の$k \in \mathbb{N}$に対して
+  \begin{align*}
+    \bigcap_{j=1}^{\infty} \bigcup_{n=j}^{\infty} E_n 
+    \subset \bigcup_{n=k}^{\infty} E_n \subset \bigcup_{n=1}^{\infty} E_n
+  \end{align*}
+  が成り立つので，
+  \begin{align*}
+    \limsup_{n \to \infty} E_n \subset \bigcup_{n=1}^{\infty} E_n
+    = \liminf_{n \to \infty}E_n
+  \end{align*}
+  となる．問\ref{que:limitsupinfsubset}の結果も踏まえれば，
+  $\displaystyle \lim_{n \to \infty} E_n $が存在し，
+  \begin{align*}
+    \lim_{n \to \infty} E_n = \bigcup_{n=1}^{\infty} E_n
+  \end{align*}
+  となることがわかる．
+  すべての$n \in \mathbb{N}$に対して$E_{n+1} \subset E_n$となる場合も同様である．
+\item[\refque{que:limitsetcupcap}] \mbox{} \\
+  問\ref{que:limitinfsupsetAB}の結果からほとんど明らかである．
+\item[\refque{que:limitsetoddeven}] \mbox{} \\
+  正の偶数も正の奇数も無限に多く存在することを踏まえれば，
+  \begin{align*}
+    \limsup_{n \to \infty} E_n & = S \cup T , \\
+    \liminf_{n \to \infty} E_n & = S \cap T
+  \end{align*}
+  となることは容易にわかる．
+\item[\refque{que:sumunitele}] \mbox{} \\
+  有理数の切断により
+  $\alpha = ( A \mid B) ,  0 = (C \mid D),  \alpha + 0 = (E \mid F)$
+  と表す．
+  $e \in E$を任意にとると，$e= a+c$となる$a \in A ,  c \in C$がとれる．
+  $c <0$であるから$e= a+c<a$である．よって$e \in A$であり，
+  $E \subset A$が成り立つ．
+  次に，$a \in A$を任意にとると，
+  $A$には最大数が存在しないので，$a < u$となる$u \in A$がとれる．
+  $a-u <0$より$a-u \in C$である．
+  ゆえに$a= u + (a-u) \in E$より$A \subset E.$
+  従って$A= E$となり，$\alpha + 0 = \alpha$がいえる．
+\item[\refque{que:sqrtdef}] \mbox{} \\
+  $S$が上に有界な空でない集合であることを示せば$s= \sup S$の存在がわかる．
+  あとは$s^2<x$としても$s^2>x$としても矛盾が生じることを示せばよい．
+  前者は$s$が$S$の上界であることに，後者は$s$が$S$の上界として
+  最小のものであることに矛盾する．
+\item[\refque{que:suretuconvsa}] \mbox{} \\
+  定理\ref{thm:suretuconvwaseki}の前半と同様にできる．
+\item[\refque{que:suretuconvsyou}] \mbox{} \\
+  前半部分を示す．$\beta \neq 0$なので，
+  $\varepsilon _0 = \lvert \beta \rvert /2$とおくと，
+  $\varepsilon _0 >0$となる．
+  よって，数列$\{ b_n \}$が$\beta$に収束することから，
+  $N \in \mathbb{N}$が存在して，
+  $n \geq N$を満たす任意の$n \in \mathbb{N}$について
+  \begin{align*}
+    \lvert b_n - \beta \rvert < \varepsilon_0 = \frac{ \lvert \beta \rvert }{2}
+  \end{align*}
+  が成り立つ．これと$\big \lvert \lvert b_n \rvert - \lvert \beta \rvert \big \rvert 
+  \leq \lvert b_n - \beta \rvert $より，
+  \begin{align*}
+    - \frac{ \lvert \beta \rvert }{2} < \lvert b_n \rvert - \lvert \beta \rvert 
+    < \frac{ \lvert \beta \rvert }{2} 
+  \end{align*}
+  だから，左側の不等式をとって
+  \begin{align*}
+    \lvert b_n \rvert > \frac{ \lvert \beta \rvert }{2}
+  \end{align*}
+  を得る．
+
+  後半部分を示そう．$\varepsilon >0$を任意にとり，
+  \begin{align*}
+    \varepsilon _0 = \frac{ \lvert \beta \rvert ^2 }
+    {2( \lvert \alpha \rvert + \lvert \beta \rvert )} \varepsilon
+  \end{align*}
+  とおく．$\beta \neq 0$だから$\varepsilon _0 >0$である．
+  さて，数列$\{ a_n \} ,  \{ b_n \}$はそれぞれ$\alpha ,  \beta$に収束するので
+  $N_1 ,  N_2 \in \mathbb{N}$が存在して，
+  $n \geq N_1$となる任意の$n \in \mathbb{N}$に対して
+  $\lvert a_n - \alpha \rvert < \varepsilon _0$が，
+  $n \geq N_2$となる任意の$n \in \mathbb{N}$に対して
+  $ \lvert b_n - \beta \rvert < \varepsilon_0$がそれぞれ成り立つ．
+  さらに，前半部分により，$N_3 \in \mathbb{N}$が存在して，
+  $n \geq N_3$となる任意の$n \in \mathbb{N}$に対して
+  $\lvert b_n \rvert > \lvert \beta \rvert /2$となる．
+  そこで，$N = \max \Set{ N_1 ,  N_2 ,  N_3 }$とおくと，
+  $n \geq N$を満たす任意の$n \in \mathbb{N}$に対して
+  \begin{align*}
+    \left \lvert \frac{a_n}{b_n} - \frac{ \alpha }{\beta} \right \rvert 
+    & = \left \lvert \frac{ a_n \beta - \alpha b_n}{b_n \beta} \right \rvert \\
+    & = \left \lvert \frac{ a_n \beta + \alpha \beta - \alpha \beta - \alpha b_n}
+    {b_n \beta} \right \rvert \\
+    & = \left \lvert \frac{ (a_n - \alpha ) \beta - \alpha ( b_n - \beta ) }{b_n \beta }
+    \right \rvert \\
+    & \leq \frac{ \lvert a_n - \alpha \rvert \lvert \beta \rvert + \lvert \alpha \rvert
+    \lvert b_n - \beta \rvert }{\lvert b_n \rvert \lvert \beta \rvert } \\
+    & < \frac{ \varepsilon _0 \lvert \beta \rvert + \lvert \alpha \rvert \varepsilon _0}
+    { \displaystyle \frac{ \lvert \beta \rvert }{2} \cdot \lvert \beta \rvert } \\
+    & = \frac{ 2( \lvert \alpha \rvert + \lvert \beta \rvert )}{\lvert \beta \rvert ^2}
+    \varepsilon _0 \\
+    & = \varepsilon .
+  \end{align*}
+  従って，数列$\left \{ \displaystyle \frac{a_n}{b_n} \right \}$は
+  $\displaystyle \frac{\alpha }{\beta}$に収束する．
+\item[\refque{que:gausskigou}] \mbox{} \\
+  $x=0$の場合は$n=0$とおけば$n \leq x < n+1$となる．
+  $x>0$の場合を考える．集合$A$を
+  \begin{align*}
+    A = \Set{ n \in \mathbb{N} \mid x < n }
+  \end{align*}
+  と定めると，実数のArchimedes性から$A$は空でない$\mathbb{N}$の部分集合である．
+  従って，$m= \min A$がとれる．$m$の最小性から，$n=m-1$とおくと$n \notin A$であり，
+  $n \leq x <n+1$を満たす．
+
+  $x<0$の場合は$-x>0$であり，$m-1 \leq -x <m$となる整数$m$が存在する．
+  $m-1=x$であれば$n=1-m$とおけば$n=x<n+1$より$n \leq x <n+1$が成り立つ．
+  $m-1 \neq x$であれば$-m < x < 1-m$であるから$n=-m$とおけば
+  $n \leq x < n+1$が成り立つ．
+
+  あとは一意性を示すだけである．$n ,  m \in \mathbb{Z}$を
+  $n \leq x < n+1 ,  m \leq x < m+1$が成り立つよう任意にとる．
+  $n<m$と仮定すると，$n,  m$は整数であるから$n+1 \leq m$となり，
+  $x<n+1 \leq m$となり，$m \leq x$に矛盾する．
+  $m<n$と仮定しても同様に矛盾するので$n=m$である．
+\item[\refque{que:bekisyusoku}] \mbox{} \\
+  式\eqref{eq:n1syusoku}を示す．
+  $\mathbb{R}$のArchimedes性により，任意の$\varepsilon > 0$に対して
+  $N \varepsilon >1$となる$N \in \mathbb{N}$が存在する．
+  このとき$1/N < \varepsilon$である．
+  よって，$n \geq N$となる任意の$n \in \mathbb{N}$に対して
+  \begin{align*}
+    \left \lvert \frac{1}{n} - 0 \right \rvert = 
+    \frac{1}{n} \leq \frac{1}{N} < \varepsilon
+  \end{align*}
+  であるから$\displaystyle \lim_{n \to \infty} \frac{1}{n} =0$である．
+
+  次に式\eqref{eq:r1syusoku}を示す．$0<r<1$より$ 1< 1/r$
+  であるから$1/r = 1+h$とおけば$h>0$．
+  よって，二項定理から
+  \begin{align*}
+    0<  r^n & = \frac{1}{(1+h)^n} \\
+            & = \frac{1}{ 1+ nh + \displaystyle \frac{n(n-1)}{2}h^2 + \cdots + h^n} \\
+            & < \frac{1}{nh}
+  \end{align*}
+  となる．
+  $\displaystyle \lim_{n \to \infty} \frac{1}{nh}=0$であるから，
+  はさみうちの原理により$\displaystyle \lim_{n \to \infty} r^n = 0$となる．
+
+
+
+
+\item[\refque{que:finitecardAB}] \mbox{} \\
+  $\lvert A \rvert = n ,  \lvert B \rvert = m$とおき，
+  定理\ref{thm:yugeninjsurj}と定理\ref{thm:cardinalwelldef}
+  を利用せよ．なお，$n,  m$が0となるような場合には
+  空写像の性質を思い出す必要がある．
+
+
+\item[\refque{que:dedekindiniffini}] \mbox{} \\
+  補題\ref{lemma:subsetfini}の証明を見れば，
+  有限集合$A$に対し，集合$B$が$B \subsetneq A$を満たすのであれば
+  $B$は有限集合であり，かつ$\lvert B \rvert < \lvert A \rvert$
+  となることは容易にわかる．
+\item[\refque{que:houjogenri}] \mbox{} \\
+  $n$に関する帰納法による．1個の有限集合に対しては明らか．
+  いま，$n$個の有限集合に対しては
+  主張が正しいとして，$n+1$個の有限集合
+  $A_1, A_2, \ldots , A_n , A_{n+1}$について考えると，
+  \begin{align*}
+    \bigcup_{i=1}^{n+1} A_i = \left( \bigcup_{i=1}^{n} A_i \right) \cup A_{n+1}
+  \end{align*}
+  であるから$A_1, A_2, \ldots A_n , A_{n+1}$の和集合も有限集合であって，
+
+  \begin{align*}
+    \left \lvert \bigcup_{i=1}^{n+1} A_i \right \rvert 
+    & =\left \lvert \left( \bigcup_{i=1}^{n} A_i \right) \cup A_{n+1} 
+      \right \rvert \\
+      \allowdisplaybreaks[4]
+    & = \left \lvert \bigcup_{i=1}^{n} A_i \right \rvert 
+      + \lvert A_{n+1} \rvert - 
+      \left \lvert \left( \bigcup_{i=1}^{n} A_i \right) \cap A_{n+1} \right \rvert \\
+    & = \sum_{j=1}^{n} (-1)^{j-1} \sum_{1 \leq k_1 < \cdots < k_j \leq n }
+      \lvert A_{k_1} \cap \cdots \cap A_{k_j} \rvert  \\
+    &  \hspace{1.5cm} + (-1)^{1-1} \lvert A_{n+1} \rvert 
+      + \left \lvert \bigcup_{i=1}^{n} ( A_i \cap A_{n+1} ) \right \rvert \\
+    & = \sum_{j=1}^{n} (-1)^{j-1} \sum_{1 \leq k_1 < \cdots < k_j \leq n }
+      \lvert A_{k_1} \cap \cdots \cap A_{k_j} \rvert  \\
+    &  \hspace{0.2cm} + (-1)^{1-1} \lvert A_{n+1} \rvert \\
+    &  \hspace{0.4cm} \sum_{j=1}^{n} (-1)^{j-1} \\
+    &  \hspace{0.6cm}  \sum_{1 \leq k_1 < \cdots < k_j \leq n} 
+      \lvert (A_{k_1} \cap A_{n+1} ) \cap \cdots \cap (A_{k_j} \cap A_{n+1}) \rvert \\ 
+    & = \sum_{j=1}^{n} (-1)^{j-1} \sum_{1 \leq k_1 < \cdots < k_j \leq n }
+      \lvert A_{k_1} \cap \cdots \cap A_{k_j} \rvert  \\
+    &  \hspace{0.3cm} + (-1)^{1-1} \lvert A_{n+1} \rvert \\
+    &  \hspace{0.6cm} + \sum_{j=1}^{n} (-1)^{j-1} \\
+    &  \hspace{0.9cm}  \sum_{1 \leq k_1 < \cdots < k_j \leq n} 
+      \lvert (A_{k_1} \cap \cdots \cap A_{k_j} ) \cap A_{n+1} \rvert \\
+      & = \sum_{j=1}^{n+1}(-1)^{j-1} 
+      \sum_{1 \leq k_1 < \cdots < k_j \leq n+1} 
+      \lvert A_{k_1} \cap \cdots \cap A_{k_j}   \rvert .
+  \end{align*}
+
+\item[\refque{que:casansubcasan}] \mbox{} \\
+  可算集合$A$に対し，$A$の無限部分集合$B$を考える．
+  $\lvert A \rvert = \aleph _0$であるから
+  全単射$f: A \longrightarrow \mathbb{N}$がとれる．
+  $b \in B$に対し，$f(b)$以下であるような
+  自然数の個数は有限で，しかも一意に定まる．
+  この個数を$g(b)$として
+  写像$g: B \longrightarrow \mathbb{N}$を定めると，
+  $g$は全単射である．従って$\lvert B \rvert = \aleph _0$となる．
+
+
+\item[\refque{que:AB2casan}] \mbox{} \\
+  $\lvert A \rvert = \lvert B \rvert = \aleph _0$だから，
+  2つの全単射$f: A \longrightarrow \mathbb{N} , 
+  g: B \longrightarrow \mathbb{N}$がとれる．
+  そこで，写像$h: A \times B \longrightarrow \mathbb{N}$を
+  \begin{align*}
+    h(a,b) & = \frac{1}{2} ( f(a) + g(b) -1)( f(a) + g(b) -2) + g(b) \\
+           & \quad ( (a,b) \in A \times B )
+  \end{align*}
+  と定義すると，$h$は全単射である．
+  よって，$\lvert A \times B \rvert = \aleph _0 .$
+
+\item[\refque{que:casan2tyoku}] \mbox{} \\
+  まずは$n \in \mathbb{N}$に対して
+  写像$F : \mathbb{N} \times \Set{ 1,2, \ldots , n} \longrightarrow \mathbb{N}$を
+  \begin{align*}
+    F ( i, j ) = n(i-1) + j \quad ( ( i,j) \in \mathbb{N} \times \Set{ 1,2, \ldots , n})
+  \end{align*}
+  と定めたとき，$F$が全単射であることを示せ．
+  単射性に関しては，
+  $(i,j) \in \mathbb{N} \times \Set{1,2,\ldots , n}$に対して
+  $F(i,j)$を$n$で割った余りに着目せよ．
+  全射性に関しては数学的帰納法を用いよ．
+
+  さて，$\lvert A \rvert = \aleph _ 0$より全単射$f: A \longrightarrow \mathbb{N}$
+  がとれて，$\lvert B \rvert = n$とおくと
+  全単射$g: B \longrightarrow \Set{ 1,2, \ldots , n}$がとれるから，
+  写像$h: A \times B \longrightarrow \mathbb{N}$を
+  \begin{align*}
+    h(a,b) = n ( f(a)-1) + g(b) \quad ( (a,b) \in A \times B)
+  \end{align*}
+  と定めると，$h$は全単射である．
+  従って$\lvert A \times B \rvert = \aleph _0 .$
+
+\item[\refque{que:soejikasan}] \mbox{} \\
+  各$A_{\lambda}$がすべて空であるならばその和集合も空であり，高々可算集合である．
+  各$A_{\lambda}$のうち空でないものが少なくとも1つあるとき，
+  そのような$\lambda$全体の集合を
+  $\varLambda '$とすると，$\varLambda '$は空でない高々可算集合であり，
+  $(A_{\lambda})_{\lambda \in \varLambda}$の和集合と$(A_{\lambda})_{\lambda \in \varLambda '}$
+  の和集合は等しい．従って，各$A_{\lambda}$がすべて空でない場合を考えればよい．
+
+  $\varLambda$は空でない高々可算集合であるから，$\varLambda \times \mathbb{N}$
+  は可算集合である．従って，全単射$f: \mathbb{N} \longrightarrow \varLambda \times \mathbb{N}$
+  が存在する．さて，各$\lambda \in \varLambda$に対し，$A_{\lambda}$は高々可算集合だから，
+  単射$g_{\lambda} : A_{\lambda} \longrightarrow \mathbb{N}$が存在する．$A_{\lambda}$
+  は空でないから，全射$h_{\lambda} : \mathbb{N} \longrightarrow A_{\lambda}$が存在する．
+  そこで，写像$\varphi : \varLambda \times \mathbb{N} \longrightarrow 
+  \bigcup_{\lambda \in \varLambda } A_{\lambda}$を
+  \begin{align*}
+    \varphi ( \lambda , n ) = h_{\lambda} (n) \quad
+    ( ( \lambda , n) \in \varLambda \times \mathbb{N})
+  \end{align*}
+  と定義すると，$\varphi$は全射である．
+  よって，合成写像$\varphi \circ f: \mathbb{N} \longrightarrow 
+  \bigcup_{\lambda \in \varLambda} A_{\lambda}$
+  は全射である．$\bigcup_{\lambda \in \varLambda} A_{\lambda}$は空でないから，
+  $\bigcup_{\lambda \in \varLambda} A_{\lambda}$から$\mathbb{N}$への単射が存在する．
+  ゆえに$\bigcup_{\lambda \in \varLambda} A_{\lambda}$は高々可算集合である．
+
+\item[\refque{que:mugencasan}] \mbox{} \\
+  $M$は無限集合であるから，定理\ref{thm:casansubchoice}により
+  $M$の部分集合$B$で可算集合であるものがとれる．
+  $A$が高々可算集合なので，$A \cup B$は可算集合である．
+  従って，全単射$f: A \cup B \longrightarrow B$
+  が存在する．
+  そこで，写像$g: M \cup A \longrightarrow M$を
+  \begin{align*}
+    g(x) = \left \{
+      \begin{aligned}
+        f(x) \quad & ( x \in A \cup B \text{のとき} ) , \\
+        x \qquad & ( \text{それ以外のとき} )
+      \end{aligned}
+      \right.
+  \end{align*}
+  と定めると，$g$は全単射である．
+  従って，$\lvert M \cup A \rvert = \lvert M \rvert$となる．
+
+\item[\refque{que:nyugenkasan}] \mbox{} \\
+  \begin{enumerate}
+    \item 非負の整数$n$に対し，
+      $\mathbb{N}$の部分集合で濃度が$n$であるような
+  ものの全体の集合を$A_n$とおくと，各$A_n$はすべて有限集合で，
+  \begin{align*}
+    \mathscr{S}_1 = \bigcup_{n=0} ^ { \infty} A_n
+  \end{align*}
+  が成り立つ．このことと問\ref{que:soejikasan}の結果により，
+  $\mathscr{S}_1$が高々可算集合であることがわかる．
+  $\mathscr{S}_1$は明らかに無限集合だから，
+  $\lvert \mathscr{S}_1 \rvert = \aleph _0$となる．
+
+
+\item $\mathscr{S}_1 \cup \mathscr{S} = \mathfrak{P}
+  ( \mathbb{N} )$であり，
+  定理\ref{thm:bekinoudo}から$\lvert \mathbb{N} \rvert < 
+  \lvert \mathfrak{P} ( \mathbb{N} ) \rvert$
+  である．
+  $\mathscr{S}_1$が可算集合であることも踏まえると，
+  $\mathscr{S}$が無限集合でなければならないことが分かる．
+  ゆえに問\ref{que:mugencasan}の結果から
+  $\lvert \mathscr{S} \rvert = \lvert \mathscr{S}_1 
+  \cup \mathscr{S} \rvert = \lvert \mathfrak{P}
+  ( \mathbb{N} ) \rvert$を得る．
+
+\item 無限小数展開の存在と一意性から，
+  写像$f: \mathscr{S} \longrightarrow (0,1]$を
+  \begin{align*}
+    f(N) = \sum_{n=1}^{\infty} \frac{\chi_N ( n) }{2^n} \quad ( N \in \mathscr{S} )
+  \end{align*}
+  と定めることができ，$f$は全単射である．
+  ここで，$\chi_N : \mathbb{N} \longrightarrow \Set{0,1}$は
+  $\mathbb{N}$における$N \in \mathscr{S}$の指示関数である．
+  これにより，
+  $\lvert \mathscr{S} \rvert = \left \lvert (0,1] \right \rvert $であることがわかる．
+  $\lvert \mathscr{S} \rvert = \lvert \mathfrak{P}(\mathbb{N} ) \rvert$と
+  $\left \lvert (0,1] \right \rvert = \aleph$により
+  $\lvert \mathfrak{P}(\mathbb{N})\rvert = \aleph$を得る．
+  \end{enumerate}
+
+\item[\refque{que:heiheikaikai}] \mbox{} \\
+  写像$f: [a,b] \longrightarrow [c,d] $を
+  \begin{align*}
+    f(x) = \frac{d-c}{b-a} ( x-a) +c \quad ( x \in [a,b] )
+  \end{align*}
+  と定めると，$f$は全単射である．
+  $f$の始集合と終集合を開区間にとりかえれば，
+  開区間$(a,b)$から開区間$(c,d)$への全単射もつくれる．
+
+\item[\refque{que:heikaizen}] \mbox{} \\
+  写像$h: [0,1] \longrightarrow (0,1) $を
+  \begin{align*}
+    h(x) = \left \{
+      \begin{aligned}
+        \frac{2x+1}{4} \quad & \left ( x = \frac{1}{2} \pm 
+        \left ( \frac{1}{2} \right) ^n \, ( n \in \mathbb{N} ) \text{のとき} \right) , \\
+        x \qquad & ( \text{それ以外のとき} )
+      \end{aligned}
+      \right.
+  \end{align*}
+  と定義すると，$h$は全単射である．
+
+\item[\refque{que:mugenhankai}] \mbox{} \\
+  写像$h: (0, \infty) \longrightarrow (0, 1]$を
+  \begin{align*}
+    h(x) = \left \{
+      \begin{aligned}
+        x \qquad & \left( x= \frac{1}{n} \, ( n \in \mathbb{N} ) \text{のとき} ) \right) , \\
+        \frac{x}{x+1} \quad & ( \text{それ以外のとき} )
+      \end{aligned}
+      \right.
+  \end{align*}
+  と定めると，$h$は全単射である．
+
+\item[\refque{que:R2Rnoudo}] \mbox{} \\
+  \begin{enumerate}
+    \item $x \in \mathbb{R}$に対して$(x,x) \in \mathbb{R}^2$を対応させる写像を考えると，
+      これは明らかに単射である．
+    \item 写像$g_1 : \mathbb{R} \longrightarrow (0,1)$を
+      \begin{align*}
+        g_1(x) = \frac{1}{2} (f(x) + 1 ) = \frac{1+ \lvert x \rvert +x}{2(1+ \lvert x \rvert)}
+        \quad ( x \in \mathbb{R} )
+      \end{align*}
+      と定めると，$g_1$は全単射である．そこで，写像$g: \mathbb{R}^2 \longrightarrow D$を
+      \begin{align*}
+        g(x,y) 
+        = \left( \frac{1+ \lvert x \rvert + x } {2(1+ \lvert x \rvert ) } , 
+        \frac{1+ \lvert y \rvert +y }{2(1+ \lvert y \rvert )} \right)
+        \quad ( (x,y) \in \mathbb{R}^2 )
+      \end{align*}
+      と定めると，$g$は$\mathbb{R}^2$から$D$への全単射である．
+    \item $x, y \in D$を10進展開して
+      \begin{align*}
+        x & = 0. x_1 x_2 x_3 \cdots \\
+        y & = 0. y_1 y_2 y_3 \cdots 
+      \end{align*}
+      と表す．無限小数展開の存在と一意性により，
+      写像$h: D \longrightarrow \mathbb{R}$を
+      \begin{align*}
+        h(x,y) = 0.x_1 y_1 x_2 y_2 x_3 y_3 \cdots \quad ( (x,y) \in D ) 
+      \end{align*}
+      と定めることができ，$h$は単射である．
+     \item (1)より$\lvert \mathbb{R} \rvert \leq                                                       
+      \left \lvert \mathbb{R}^2 \right \rvert$である．
+      $(2),(3)$より$\left \lvert \mathbb{R}^2 \right \rvert = \lvert D \rvert 
+      \leq \lvert \mathbb{R} \rvert$だから$\left \lvert \mathbb{R}^2 \right \rvert 
+      \leq \lvert \mathbb{R} \rvert $となる．
+      従って，Bernsteinの定理より，
+      $\left \lvert \mathbb{R} ^2 \right \rvert = \lvert \mathbb{R} \rvert$となる．
+  \end{enumerate}
+
+\item[\refque{que:algnum}] \mbox{} \\
+  与えられた代数方程式\eqref{eq:daisuuhouteisiki}に対し，
+  $h= \lvert a_n \rvert + \lvert a_{n-1} \rvert + \cdots + \lvert a_0 \rvert + n$
+  とおき，これを代数方程式\eqref{eq:daisuuhouteisiki}の高さと呼ぶことにする．
+  さて，高さ$m$の代数方程式は有限個である．代数学の基本定理により，
+  次数$m$の代数方程式の複素数解の個数は高々$m$個である．
+  従って，高さ$m$の代数方程式の解となっている代数的数は有限個である．
+  ゆえに，高さ$m$の代数方程式の解となっている代数的数全体の集合を
+  $A_m$とすると，各$A_m$はすべて有限集合である．
+  よって，$\overline{\mathbb{Q}} = \bigcup_{m=2}^{\infty} A_m$は
+  高々可算集合である．$\mathbb{Q} \subset \overline{\mathbb{Q}}$だから
+  明らかに$\overline{\mathbb{Q}}$は無限集合なので，
+  結局$\overline{\mathbb{Q}}$は可算集合であることがわかる．
+
+
+
+\item[\refque{que:quohuhen}] \mbox{} \\
+  $\tilde{f}(A) = \tilde{f}(B)$を満たす$A,B \in X/{\sim}$を任意にとり，
+  $A,B$を$x,y \in X$を用いて$A= [x] , B=[y]$と表す．
+  $\tilde{f} (A) = f(x) , \tilde{f} (B) = f(y)$だから，$\tilde{f} (A) = \tilde{f}(B)$
+  より$f(x) = f(y)$となる．よって$x \sim y$となるから$[x]= [y]$となる．
+  従って$A=B$が成り立つから，$\tilde{f}$は単射である．
+
+
+
+\item[\refque{que:groupdouti}] \mbox{} \\
+  反射律は$G$が恒等写像を元にもつこと，
+  対称律は$G$の元すべてに対してその元の逆写像も
+  $G$の元にもっていること，推移律は$G$の元同士の合成写像もまた
+  $G$の元になっていることからそれぞれわかる．
+
+\item[\refque{que:cauchyretu}] \mbox{} \\
+  反射律は明らか．対称律は絶対値の対称性からいえる．
+  推移律に関しては，三角不等式を用いればよい．
+
+\item[\refque{que:kyokusai}] \mbox{} \\
+  $S$に最大元$a$が存在する場合を考える．
+  $x \in S$を任意にとると，
+  $a$は$S$の最大元であるから$x \leq a$が成り立つ．
+  従って，$a<x$となるような$x \in S$は存在しない．
+  ゆえに$a$は$S$の極大元である．
+  また，$a$でない$S$の任意の元$a'$に対し，つねに
+  $a' < a$となることから，$a'$は$S$の極大元とはなりえない．
+  ゆえに，$a$のみが$S$の極大元である．
+  $S$に最小元が存在する場合も同様である．
+  
+
+\item[\refque{que:NZQRdoukei}] \mbox{} \\
+  $\lvert \mathbb{N} \rvert = \lvert \mathbb{Z} \rvert 
+  = \lvert \mathbb{Q} \rvert < \lvert \mathbb{R} \rvert$
+  であるから，$\mathbb{R}$は他のいずれとも順序同型でない．
+  また，$\mathbb{N}$には最小元が存在するが，
+  $\mathbb{Z}$と$\mathbb{Q}$には最小元は存在しないため，
+  $\mathbb{N}$は$\mathbb{Z}, \mathbb{Q}$のいずれとも順序同型でない．
+  $\mathbb{Z}$と$\mathbb{Q}$が順序同型であるとし，
+  順序同型写像$f: \mathbb{Z} \longrightarrow \mathbb{Q}$をとる．
+  $0<1$であるから$f(0) < f(1)$でなければならない．
+  $c= (f(0) + f(1))/2$とおくと$f(0) < c < f(1)$となり，
+  $f^{-1}$も順序を保つから$0<f^{-1}(c)< 1$とならなくてはならない．
+  しかし，このような整数$f^{-1}(c)$は存在しないので矛盾である．
+  ゆえに，$\mathbb{Z}$と$\mathbb{Q}$は順序同型でない．
+
+  また，$\mathbb{Z}$上に順序$\leq$を，$x , y \in \mathbb{Z}$に対して
+  $\lvert x \rvert \leq \lvert y \rvert $ならば$x \leq y$とし，
+  $\lvert x \rvert = \lvert y \rvert$の場合には，$x$が正である場合には
+  $x \leq y$とし，それ以外の場合には$y \leq x$として定義する．
+  $0 \leq 1 \leq -1 \leq 2 \leq -2 \leq \cdots $のようになり，
+  この順序を入れた$\mathbb{Z}$は$\mathbb{N}$と順序同型となる．
+
+
+\item[\refque{que:Rkaikukanjunjo}] \mbox{} \\
+  $\mathbb{R}$上の任意の開区間$(a,b)$に対し，
+  写像$f: (a,b)  \longrightarrow \mathbb{R}$を
+  \begin{align*}
+    f(x) = \frac{1}{a-x} + \frac{1}{b-x} \quad ( x \in (a,b) )
+  \end{align*}
+  と定めると，$f$は順序同型写像である．
+
+\item[\refque{que:doukeigyaku}] \mbox{} \\
+  たとえば，集合$\set{a_1,a_2,a_3} ,
+  \set{b_1,b_2,b_3}$
+  上の順序$\leq, \leq'$をそれぞれ
+  \begin{align*}
+    \leq & = \set{ (a_1,a_2) , (a_1,a_3)} \\
+    \leq' & = \set{ (b_1,b_2) , (b_1,b_3) , (b_2,b_3)}
+  \end{align*}
+  と定めれば，$f$は順序を保つが$f$の逆写像
+  $f^{-1}$は順序を保たない．
+
+
+
+\item[\refque{que:Nseiretu}] \mbox{} \\
+  $N$を$\mathbb{N}$の空でない部分集合とする．
+  任意の自然数$n$に対し，
+  $N$の元で$n$以下のものが存在すれば
+  $N$には必ず最小元が存在することを帰納法によって示す．
+  $1 \in N$であれば明らかに1が$N$の最小元である．
+  $N$の元で$n$以下ものが存在するならば
+  $N$には最小元が存在すると仮定して，
+  $N$の元で$n+1$以下のものが存在するならば
+  $N$には最小元が存在することを示す．
+  $N$の元で$n$以下のものが存在する場合，
+  帰納法の仮定によって$N$には最小元が存在する．
+  $N$の元で$n$以下のものが存在しない場合，
+  任意の$m \in N$に対して$n+1 \leq m$が成り立つため，
+  $n+1$が$N$の最小元である．
+  
+  さて，$N$は空でないから，$m \in N$が存在する．
+  このとき$m+1 \in \mathbb{N}$であり，
+  $N$は$m+1$以下の元をもつ．
+  ゆえに$N$は最小元をもつ．
+
+
+\item[\refque{que:prozensya}] \mbox{} \\
+  $\lambda \in \varLambda$を任意にとり，
+  $x \in A_{\lambda}$を任意に1つとって固定しておく．
+  選択公理により，$f \in \prod_{\lambda \in \varLambda} A_{\lambda}$
+  が1つとれる．
+  そこで，
+  写像$g: \varLambda \longrightarrow \bigcup_{\lambda \in \varLambda} A_{\lambda}$を
+  \begin{align*}
+    g ({\mu} )= \left \{
+      \begin{aligned}
+         f_{\mu} \quad & ( \mu \neq \lambda \text{のとき} ) , \\
+        x \quad \, & (\mu = \lambda \text{のとき}) 
+      \end{aligned}
+      \right.
+  \end{align*}
+  と定めると，$g \in \prod_{\lambda \in \varLambda} A_{\lambda}$
+  であって$p_{\lambda} (g) = x$となる．
+  ゆえに$p_{\lambda}$は全射である．
+
+\item[\refque{que:dedeinf}] \mbox{} \\
+  無限集合$A$に対し，可算選択公理から$A$の部分集合$B$で
+  可算集合であるものがとれる．$A$が可算集合であれば，
+  全単射$f : \mathbb{N} \longrightarrow A$
+  が存在する．また，$2 \mathbb{N} 
+  = \Set{ 2n \mid n \in \mathbb{N} }$
+  は可算集合なので，$\lvert \mathbb{N} \rvert 
+  = \lvert 2 \mathbb{N} \rvert$である．そこで，
+  写像$g: f(2 \mathbb{N}) \longrightarrow A$を
+  $g(f(2n)) = f(n) \ (n \in \mathbb{N})$
+  と定めれば，$g$は全単射である．
+  従って，$\lvert f(2 \mathbb{N} ) \rvert = \lvert A \rvert$
+  となり，$f(2 \mathbb{N})$は$A$の真部分集合だから
+  $A$はDedekind無限集合である．
+  $A$が可算集合でない場合には，
+  $A-B$は無限集合である．
+  実際，$A-B$が有限集合であるとすると，
+  $(A- B) \cup B = A$が可算集合となる．
+  ゆえに，
+  問\ref{que:mugencasan}の結果から
+  $\lvert A \rvert = \lvert (A-B)  \cup B \rvert 
+  = \rvert A-B \rvert$となり，$A-B$は$A$の真部分集合だから
+  $A$はDedekind無限集合である．
+
+  
+
+\item[\refque{que:chap4_hikaku}] \mbox{} \\
+  与えられた集合$A,B$に対し，
+  整列可能定理より，$(A, {\leq_A}), (B, {\leq_B})$
+  が整列集合になるような順序$\leq_A, \leq_B$が存在する．
+  さらに，$A$と$B$が
+  順序同型であるか，$A$が$B$の切片と順序同型であるか，
+  あるいは$B$が$A$の切片と順序同型であるかの
+  いずれか1つだけが必ず成り立つ．
+  このとき，$\lvert A \rvert =
+  \lvert B \rvert , \lvert A \rvert < \lvert B \rvert , 
+  \lvert A \rvert > \lvert B \rvert$
+  がそれぞれ対応して成り立つ．
+
+\item[\refque{que:chap4_tukey}] \mbox{} \\
+  Zornの補題からTukeyの補題を導くことを考える．
+  包含関係によって順序を入れた
+  有限性を満たす空でない集合族$\mathscr{F}$について，
+  その全順序部分集合$\mathscr{B}$を任意にとり，
+  $A = \bigcup \mathscr{B}$とおく．
+  $A$の有限部分集合$B = \Set{ b_1, b_2, \ldots, b_n}$
+  を任意にとると，各$b_i$に対して
+  $b_i \in C_i$となるような$C_i \in \mathscr{B}$
+  が存在する．
+  このとき，$B \subset \bigcup_{i=1}^{n} C_i$となる．
+  $\mathscr{B}$は全順序集合であるから，
+  $C= \max \Set{ C_i \mid i= 1, 2, \ldots , n}$
+  がとれて，この$C$は$B \subset C \in \mathscr{F}$
+  を満たし，$\mathscr{F}$が有限性を満たすことから
+  $B \in \mathscr{F}$となることがわかる．
+  さらに$\mathscr{F}$の有限性により
+  $A \in \mathscr{F}$となり，
+  $A$が$\mathscr{B}$の上界であることがわかる．
+  ゆえに$\mathscr{F}$は順序集合として帰納的であって，
+  Zornの補題により極大元をもつ．
+
+  次に，Tukeyの補題からZornの補題を導く．
+  帰納的な順序集合$(X, \leq)$に対し，
+  $X$の部分集合で全順序集合であるものの全体の
+  集合を$\mathscr{X}$とおき，$\mathscr{X}$に
+  包含関係によって順序を入れる．
+  $\varnothing \in \mathscr{X}$であるから$\mathscr{X}$
+  は空でない．
+  さて，$A \in \mathscr{X}$を任意にとると，
+  $A$の任意の有限部分集合は全順序集合であるから，
+  それらはすべて$\mathscr{X}$の元である．
+  逆に，任意の集合$A$に対し，
+  その有限部分集合がすべて$\mathscr{X}$の元であるとすると，
+  任意の$a, b \in A$に対して$\Set{ a, b } \in \mathscr{X}$
+  であるから，集合$\Set{ a,b}$は全順序集合であって，
+  $a \leq b$か$b \leq a$のいずれかは必ず成り立つ．
+  ゆえに$A$も全順序集合であって$A \in \mathscr{X}$
+  となり，$\mathscr{X}$は有限性を満たすことがわかる．
+  従って，Tukeyの補題から$\mathscr{X}$の
+  極大元$X_0$がとれる．$X_0$は全順序集合であるから
+  その上界$x_0$が存在する．
+  この$x_0$が$X$の極大元であることを示そう．
+  $x_0 < w$となる$w \in X$が存在したとすると，
+  $X_0$は集合$X_0 \cup \Set{ w }$の真部分集合である．
+  $X_0$は全順序集合で，$x_0 < w$が成り立つことから，
+  推移律によってすべての$x \in X_0$に対して
+  $x \leq w$が成り立つ．
+  ゆえに$X_0 \cup \Set{w}$も全順序集合であって，
+  $X_0$が$\mathscr{X}$の極大元であることに矛盾する．
+  従って，$x_0$は$X$の極大元である．
+
+\item[\refque{que:senkeikitei}] \mbox{} \\
+  $V$の部分集合のうち，1次独立であるものの全体の集合を
+  $\mathscr{B}$とし，$\mathscr{B}$に包含関係によって順序を入れる．
+  $0$でない$v \in V$を1つとり，集合$\set{ v}$を考えると，
+  これは1次独立であるから$\mathscr{B}$は空でなく，
+  さらに$\mathscr{B}$は明らかに有限性を満たす．
+  従ってTukeyの補題から，$\mathscr{B}$
+  の極大元$B$が存在する．
+  $B$が$V$の生成系であることを示そう．
+  $B$の有限個の元の線型結合として表せない元$b \in V$が
+  存在したとすると，$b \notin B$で，
+  かつ集合$B \cup \Set{ b}$は1次独立である．
+  これは，$B$が$\mathscr{B}$の極大元であることに矛盾する．
+  従って$B$は$V$の1次独立な生成系，
+  すなわち$V$の基底である．
+
+
+
+
+
+
+\end{description}

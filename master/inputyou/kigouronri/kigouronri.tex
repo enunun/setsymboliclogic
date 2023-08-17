@@ -1,0 +1,2091 @@
+\chapter{記号論理入門}
+\label{chp:sequent}
+%
+%%%%%%%===========イントロダクション============%%%%%%%%%%%
+
+数学理論は論理の上に成り立っている．
+このことは疑いようのない事実であろう．
+基礎となる公理を出発点とし，
+演繹的推論を適用して証明を積み重ねていく．
+これが最も一般的な数学的議論のフォーマットである．
+
+しかし，この「論理」そのものが
+考察対象となり，そして
+重要な成果が挙げられ始めたのは案外最近で，
+20世紀あたりからである．有名どころでいえば，
+\index[nidx]{Godel@G\"{o}del（ゲーデル）}G\"{o}delの不完全性定理が挙げられる．
+もちろん，他にも重要で興味深い話題はたくさんある．
+
+本書ではそのあたりの面白くて興味深い話題は取り扱わないが，
+そこに至るまでの道筋のほんの小さな一歩を踏みしめてみよう．
+
+なお，本書が集合論の入門書であることを考慮し，
+syntaxとsemanticsという2つの立場の区別や，
+オブジェクトレベルとメタレベルの区別，それから
+基本的な用語の厳密な定義はあまり重視していない．
+そのため，数理論理学の視点から見ると不満のある
+議論が多く含まれていることに留意されたい．
+
+%
+%%%%%%%%%================イントロダクション終わり=====================%%%%%%%%%%%%%%%%%
+%
+%
+%
+ \section{命題論理と述語論理}
+ \label{sec:ronri}
+ %
+ \paragraph{命題と条件}
+  正しいか正しくないかが明確に定まる主張（statement）や式（expression）
+  のことを\index[widx]{めいだい@命題 \, proposition}
+  \emph{命題}（proposition）といい，
+  ある命題について，その命題が正しいことをその命題は %
+  \emph{真}（true）である，
+  その命題が正しくないことをその命題は %
+  \emph{偽}（false）であるという
+  \footnote{「命題$A$が成り立つ」といえば，
+  それは命題$A$が真であることを意味することが多い．}
+  ．
+  
+  命題は，$A,  B$や$p,  q$などといったアルファベットで表すことが多い．
+
+  \begin{ex}
+    「6は偶数である」や「1=1」は真な命題であり，
+    「$3<2$」や「10は素数である」は偽な命題である．
+    しかし，「7」や「偶数である」，「$x+y=0$」などといった
+    ものは命題でない．
+  \end{ex}
+  
+  最後の例「$x+y=0$」は，そのままでは命題とはならないが，
+  この$x,  y$に具体的な値を代入すると命題になる．
+  たとえば，$x=1,  y=2$とすると「$1+2=0$」という偽な命題になるが，
+  $x=-1,  y=1$とすると「$-1+1=0$」という真な命題となる．
+  このように，変数や文字を含んだ式で，
+  その変数に値を代入したときに命題になるものを
+  その変数に関する
+  \index[widx]{じょうけん@条件 \, condition}
+  \emph{条件}（condition）もしくは
+  その変数に関する
+  \index[widx]{めいだいかんすう@命題関数 \, propositional function|see{条件}} %
+  \emph{命題関数}（propositional function）と呼ぶ
+  \footnote{
+    ただし，文字を含んでいないもの，
+    すなわち命題はあらゆる変数に関する条件であると
+  約束する．}
+  ．
+  
+  変数$x$に関する条件は，よく$F(x)$などと表される．
+  2変数$x,  y$に関する条件ならば，$F(x, y)$などと表されることが多い．
+  $F(x)$が「$x$は偶数である」という条件を表すのであれば，
+  $F( \ )$はちょうど「...は偶数である」という部分に相当する．
+  そういうわけで，変数に関する条件を
+  その変数に関する
+  \index[widx]{じゅつご@述語 \, prodicate|see{条件}} %
+  \emph{述語}（prodicate）と呼ぶことも多い．
+  $x$の条件$F(x)$について，$x$に別の変数，もしくは定数$a$を当てはめた
+  ものは$F(a)$と表される．
+  実数$x$に対し，
+  $F(x)$が「$x>1$」を表すのだとすれば，$F(0)$は「$0>1$」を表すのである．
+
+  \begin{ex}
+    「$x$は偶数である」や「$x^2=1$」は1変数$x$に関する条件である．
+    また，「$A$は正方行列である」や「$A$は正則である」
+    は1つの行列$A$に関する条件である．
+    さらに，「$x,  y$の少なくとも一方は正である」や「$x,  y$はともに整数である」
+    は2変数$x,  y$に関する条件である．
+  \end{ex}
+
+  上の例のように，「変数」と書いたのはあくまで象徴的な意味合いであって，
+  本当の意味での「数」でなくてもかまわない．
+  行列に関する条件や，関数に関する条件なども考えられる．
+  ここで言うところの「変数」とは，とりあえずいまのところは
+  単なる「モノ」程度の認識でよい．
+  これを強調するため，この「モノ」のことを
+  \index[widx]{たいしょう@対象 \, object}
+  \emph{対象}（object）やら
+  \index[widx]{こう@項 \, term}
+  \emph{項}（term）と呼ぶことがある．
+  「対象」および「項」に関してはもう少しきちんと考えなくてはならないのだが，
+  本書が集合論の入門書であることを考慮し，このあたりの用語はあまり意識せずに使うことにする．
+
+  
+
+  \paragraph{命題結合記号}
+  ここからは，与えられた命題（もしくは条件）から
+  別の命題（条件）を作り出すことを考えてみよう．
+  
+  命題（条件）$A$に対し，「$A$でない」という命題（条件）を
+  $A$の
+  \index[widx]{めいだい@命題 \, proposition!のひてい@---の否定 \, negation of ---}
+  否定（negation）といい，
+  \begin{equation}
+   \lnot A
+    \label{eq:negation}
+  \end{equation}
+    と表す
+  \footnote{高校の教科書では，命題$A$の否定を$\overline{A}$と表すのが一般的であるが，
+  本書では用いない．}．
+  命題（条件）$A$に対し，$\lnot A$は，$A$が真である場合に偽となり，
+  $A$が偽である場合に真となる．
+  
+  \begin{ex}
+    「$1=0$」は偽な命題であり，その否定「$\lnot (1=0)$」は真な命題である．
+    これを通常「$1 \neq 0$」と略記している．
+
+    $x$を整数を表す変数として，
+    $x$に関する条件「$x$は偶数である」
+    の否定「$\lnot ( x \text{は偶数である})$」は
+    「$x$は奇数である」と同じ意味である．
+    「$\lnot ( x \text{は偶数である})$」は$x$が奇数である場合に真となり，
+    $x$が偶数である場合に偽となる．
+  \end{ex}
+
+  2つの命題（条件）$A,  B$に対し，「$A$かつ$B$」という命題（条件）を
+  $A$と$B$の
+  \index[widx]{めいだい@命題 \, proposition!のれんげん@---の連言 \, conjunction of ---}
+  連言（conjunction）といい，
+  \begin{align}
+   A \land B 
+    \label{eq:conjunction}
+  \end{align}
+  と表す．
+  命題（条件）$A,  B$に対し，
+  $A \land B$は$A,  B$がともに真であるとき，
+  またそのときにのみ真となり，
+  他の場合は偽となる．
+
+  \begin{ex}
+    2つの命題「$1=1$」と「$2=2$」はともに真である．
+    従って，命題「$1=1 \land 2=2$」は真となる．
+     命題「$1=2$」は偽である．よって命題「$1=2 \land 2=2$」は偽である．
+
+     また，「$x=1 \land y=2$」は2変数$x,  y$に関する条件である．
+     これを「$(x,y)=(1,2)$」や「$ x = 1,  y=2$」などと略記することが多い．
+  \end{ex}
+
+  2つの命題（条件）$A,  B$に対し，「$A$または$B$」という命題（条件）を
+  $A$と$B$の
+  \index[widx]{めいだい@命題 \, proposition!のせんげん@---の選言 \, disjunction of ---}%
+  選言（disjunction）といい，
+  \begin{align}
+    A \lor B
+    \label{eq:disjunction}
+  \end{align}
+  と表す．
+  命題（条件）$A,  B$に対し，
+  $A$と$B$のどちらか一方でも真であれば，$A \lor B$は真となる．
+  $A \lor B$が偽になるのは$A$と$B$がともに偽である場合に限るということにする．
+  これは，直感には反することである．
+  たとえば，「パンまたはライスが選べます」と言われたら，
+  「パン」か「ライス」のどちらか一方のみが選べると解釈するのが普通である．
+  しかし\.数\.学\.に\.お\.い\.て\.は，
+  「パン」と「ライス」の両方を選んでもいいのである．
+  こういうふうに約束するのは，
+  単にその方が数学の議論を展開しやすいからであって，
+  数学独自のローカルルール（それでも数学全体におおよそ通用するが）であることに気をつけよう．
+  まさか現実で「パンとライス両方で」などと頼む人はおるまい．
+
+  \begin{ex}
+    命題「$1=2 \lor 2=2$」は真である．命題「$2=2$」が真であるからである．
+    また，命題「$1=2 \lor 2=3$」は偽である．
+    命題「$1=2$」と「$2=3$」がともに偽であるからである．
+    そして，命題「$1=1$」と「$3<4$」がともに真であるから，
+    命題「$1=1 \lor 3<4$」は真となる．
+
+    「$x=1 \lor x=3$」は1変数$x$に関する条件である．
+    これを通常「$x = 1, 3$」と略記して書くことが多い．
+  \end{ex}
+
+  命題（条件）$A,  B$に対し，「$A$ならば$B$」，
+  すなわち「\.も\.し$A$が真\.だ\.と\.す\.ると
+  $B$も\.必\.ず真になる」という命題（条件）を
+  $A$の$B$による\index[widx]{めいだい@命題 \, proposition!のがんい@---の含意 \, implication}%
+  含意（implication）といい，
+  \begin{align}
+    A \to B
+    \label{eq:implication}
+  \end{align}
+  と表す．
+  高校の教科書では，「$\Longrightarrow$」という記号を用いて
+  $A \Longrightarrow B$と表すことが多いが
+  \footnote{実は，高校の教科書では命題$A,B$に対して（本書で言うところの）
+  $A \to B$という命題（に相当するもの）は議論されていない．}
+  ，
+  記号「$\Longrightarrow$」は違う意味で使いたいのでここでは「$\to$」を用いる．
+  命題（条件）$A,  B$に対し，$A \to B$の真偽には注意が必要である．
+  結論から言って，命題（条件）$A,  B$に対し，$A \to B$は，
+  $A$が真であり，かつ$B$が偽であるとき，またそのときにのみ偽となり，
+  残りの場合にはすべて真となる．このことに関しては，
+  \ref{sec:sequent}で$A \to B$と$\lnot A \lor B$が同値であることを
+  示すことによって納得することにしよう．
+
+  \begin{ex}
+    命題「$1=2 \to 2=1$」は真な命題である．また，命題「$2=2 \to 1=4$」は偽である．
+  \end{ex}
+
+  命題（条件）$A,  B$に対し，命題（条件）$(A \to B) \land ( B \to A) $を
+  $A$と$B$の\index[widx]{めいだい@命題 \, proposition!のどうち@---の同値 \, equivalence}%
+  同値（equivalence）命題といい，
+  \begin{align}
+    A \rightleftarrows B
+    \label{eq:equivalence}
+  \end{align}
+  と表す．
+  この記号も高校の教科書では「$\Longleftrightarrow$」が使われることが多いが，
+  本書では用いない．
+  命題（条件）$A,  B$に対し，$A \rightleftarrows B$は
+  $A$と$B$の真偽が一致した場合にのみ真となる．
+  
+  以上で使った記号$\land ,  \lor ,  \to ,  \rightleftarrows$
+  は，2つの命題（条件）を1つの命題（条件）として「くっつける」役割を果たしている．
+  これらの記号を\index[widx]{めいだい@命題 \, proposition!
+  けつごうきごう@---結合記号 \, proposional connectiove}
+  \emph{命題結合記号}（propositional connective）という．
+  
+  $( A \to B) \land ( B \to A) $のように，
+  論理記号を複数使って複雑な命題を作ることがある．
+  このとき，無用な混乱を避けるため，
+  どの命題結合記号がどの命題を結合しているのかを明らかにしなくてはならない．
+  カッコを用いるのが普通である．
+  \begin{ex}
+    命題$A,  B,  C$に対し，
+    $A \lor B \land C$といった書き方は許されない．
+    $A \lor ( B \land C)$か$(A \lor B ) \land C$と書き表す．
+    そして，これら2つの命題は一般には異なる意味を持つ．
+    気になる人は$A,  B,  C$の真偽を適当に定めてみると良い．
+
+    誤解のない範囲ではカッコは省略することが許される．
+    たとえば，$A \land ( B \land C)$と$(A \land B)\land C$は
+    どちらの意味に解釈されてもかまわないので，$A \land B \land C$と略記する．
+    ただし，カッコの省略はあくまで「誤解のない範囲で」である．
+    $A \to B \to C$などと書くのは誤解を招くので許されない．
+    $( A \to B ) \to C$か$A \to ( B \to C)$と書かねばならない．
+  \end{ex}
+  
+  命題結合記号に優先順位を設ければ，カッコの数を大幅に減らすことができる．
+  そこで，命題結合記号の結合の強さを
+  $\lnot$が最強，$\land,  \lor$が次，$\to ,  \rightleftarrows$が最も弱い
+  と約束しよう．
+  \begin{ex}
+    $\lnot A \land B$は$\lnot( A \land B)$ではなく$(\lnot A ) \land B$
+    と解釈する．
+    また，$\lnot A \to B \lor C$は$(\lnot A \to B ) \lor C$
+    などではなく$(\lnot A) \to ( B \lor C)$と解釈する．
+  \end{ex}
+
+  \paragraph{限定記号}
+  $x$の条件$F(x)$に対し，「すべての$x$について$F(x)$である」という命題を
+  \begin{align}
+    \forall x F(x)
+    \label{eq:forall}
+  \end{align}
+  と表す．
+  記号$\forall$は\index[widx]{ぜんしょうきごう@全称記号 \, universal quantifier}
+  \emph{全称記号}（universal quantifier）と呼ばれており，
+  「For \underline{a}ll $x$, $F(x)$.」の「A」をひっくり返したものであると覚えておけばよい．
+  $F(x)$は変数$x$に関する条件であるが，$\forall x F(x)$は
+  1つの命題であることに注意してほしい．
+
+  $x$の条件$F(x)$に対し，$\forall x F(x)$の形の命題を
+  \index[widx]{めいだい@命題 \, proposition!ぜんしょう@全称--- \, universal ---}
+  \emph{全称命題}（universal proposition）という．
+  \begin{ex}
+    命題「$\forall x ( x \geq 0 )$」は$x$が実数を表す変数である場合には偽であるが，
+    $x$が自然数を表す変数である場合には真である．
+  
+    $y$に関する条件$「\forall x ( y \leq x^2)$」は，
+    $x$が実数を表すのであれば「$ y \leq 0$」と同じ意味である．
+  \end{ex}
+  2番目の例について，$x$がとりうる範囲が決まれば，
+  この命題の真偽は$y$によってのみ決まることに注意してほしい．
+
+  $\forall x F(x)$の表し方には人によってさまざまで，
+  「どんな$x$についても$F(x)$である」とか「任意の$x$に対して$F(x)$である」
+  なども$\forall x F(x) $と同じ意味である．
+
+  $x$の条件$F(x)$について，「$F(x)$を満たす$x$が存在する」という命題を
+  \begin{align}
+    \exists x F(x)
+    \label{eq:exists}
+  \end{align}
+  と表す．
+  記号$\exists$は\index[widx]{そんざいきごう@存在記号 \, existential quantifier}
+  \emph{存在記号}（existential quantifier）
+  と呼ばれており，「There \underline{e}xists a $x$ such that $F(x)$.」
+  の「E」をひっくり返したものであると覚えるのがよいだろう．
+  
+  $x$の条件$F(x)$に対し，$\exists x F(x)$の形の命題を
+  \index[widx]{めいだい@命題 \, proposition!そんざい@存在--- 
+  \quad existential ---}
+  \emph{存在命題}（existential proposition）という．
+  \begin{ex}
+    命題「$\exists x ( x^2 = -1)$」は$x$が実数を表す変数の場合には偽であり，
+    $x$が複素数を表す変数の場合には真である．
+  \end{ex}
+
+  $\exists x F(x)$にも色々言い方がある．
+  「ある$x$について$F(x)$である」だとか「$x$をうまくとれば$F(x)$とできる」
+  や「$x$が存在して$F(x)$となる」などだろうか．
+  このうち，「$x$が存在して$F(x)$となる」は今後よく使うだろう．
+
+  全称記号と存在記号を組み合わせる場合には注意が必要である．
+  \begin{ex}
+    $x,  y$を自然数を表す変数とすると，
+    命題「$\forall x ( \exists y ( x \leq y ))$」は真である．
+    任意にとった自然数$x$に対して$y=x+1$とおけば，$y$も自然数であり，
+    さらに$x \leq y$が成り立つからである．
+
+    しかし，$x,  y$を自然数を表す変数であるとして，
+    全称記号と存在記号の順番を入れ替えた
+    命題「$\exists y ( \forall x ( x \leq y))$」は偽である．
+    どのように$y$をとろうとも「任意の$x$に対して$x \leq y$」となるようには
+    できないからである．
+
+    ただし，順番さえ守れば「$\forall x \exists y ( x \leq y) $」や
+    「$\exists y \forall x ( x \leq y )$」など
+    とカッコを省略してしまうのは許されるであろう．
+  \end{ex}
+  
+
+  $\forall$と$\exists$の順番は入れ替えてはいけないが，
+  $\forall$同士や$\exists$同士なら話は別である．
+  2変数$x,  y$に関する条件$F(x, y)$に対し，
+  2つの全称命題「$\forall x \forall y F(x, y)$」と
+  「$\forall y \forall x F(x, y)$」，
+  および2つ存在命題「$\exists x \exists y F(x, y)$」と
+  「$\exists y \exists x F(x, y)$」は同じ意味である．
+  従って，これらを「$\forall x, y F(x, y)$」や
+  「$\exists x, y F(x, y)$」と略記しても誤解は生じないだろう
+  \footnote{全称記号同士の順序の交換はともかく，
+  存在記号同士の順序の交換は直感的には納得しがたいが，
+このことは\ref{sec:sequent}で考察しよう．}．
+  
+  全称記号$\forall$と存在記号$\exists$とを総称して
+  \index[widx]{げんていきごう@限定記号 \, quantifier}
+  \emph{限定記号}（quantifier）と呼ぶ．
+  また，限定記号$\forall,  \exists$を用いる体系を
+  \index[widx]{じゅつご@述語 \, prodicate!ろんり@---論理 \, --- logic}
+  \emph{述語論理}（predicate logic）と呼ぶ
+  \footnote{より正確には，本書で展開する述語論理は一階述語論理と呼ばれている．}
+  ．
+  これに対して命題結合記号$\lnot ,  \land ,  \lor ,  \to$
+  を用いる体系を\index[widx]{めいだい@命題 \, proposition!ろんり@---論理 \, propositional logic}
+  \emph{命題論理}（propositional logic）という．
+
+  もっとも，$\forall ,  \exists$だけを切り離し，
+  他の論理記号と区別して研究してもあまり意味はないので，
+  述語論理においては結局のところ他の論理記号をすべて取り扱うことになる．
+  従って，述語論理は命題論理を含んだ体系であると考えるのが普通である．
+
+  命題結合記号同士には結合の優先順位を定めたが，
+  限定記号に関しては，限定記号はどの命題結合記号よりも結合が強い，
+  あるいは$\lnot$と結合の強さが同じであると約束しておく．
+  直感的にも納得がいくであろう．
+
+  
+ \paragraph{矛盾記号}
+  命題$A$の否定$\lnot A$とは，「$A$が間違いである」という意味である．
+  では，$A$が間違いであるということをどうやって示せばよいかといえば，
+  $A$を仮定すると「矛盾する」ということを導くのが一般的であろう．
+  この「矛盾」というのを
+  \begin{align}
+    \curlywedge
+    \label{eq:mujun}
+  \end{align}
+  と表す．これは1つの「間違った命題」もしくは「偽な命題」
+  とでも思っておけばよい．
+
+  以下，本書で展開する命題論理と述語論理においては，
+  矛盾記号$\curlywedge$も取り扱うことにする．
+
+  さて，変数$x$の条件$F(x)$について，命題$\forall x F(x)$が
+  偽である，すなわち$\forall x F(x)$を仮定すると矛盾する
+  ことを示すには，$\lnot F(a)$となる$a$が存在する，
+  すなわち命題$\exists x \lnot F(x)$が真であることを示せばよい．
+  これを示すには，$\lnot F (a)$となるような$a$を具体的に用意してやるのが
+  手っ取り早い．
+  このような$a$のことを
+  全称命題$\forall x F(x)$の\index[widx]{はんれい@反例 \, counter-example}
+  \emph{反例}（counter-example）
+  という．
+
+  \begin{ex}
+    $x$を実数を表す変数であるとして，
+    命題「$\forall x ( x \leq 0)$」は偽である．
+    反例として，たとえば$x=1$がとれる．
+  \end{ex}
+
+  %%%%%%%%%%%%%%%==================演習問題=====================%%%%%%%%%%%%%%%%
+  \begin{que} \label{chp:sequent.sec:ronri.que:singihantei}
+      次の命題の真偽を判定せよ．
+      ただし，全称命題が偽である場合には反例を挙げよ．
+        \begin{enumerate}
+          \item $\lnot ( 1=2 \to 2=2),$ % 偽 
+          \item $(1=2 \to 3=2) \lor ( 1=1 \land 1=3),$ % 真 
+          \item $x$は実数を表す変数であるとして$\forall x  \lnot ( x^2+x+1 \leq 0 ),$ % 真
+          \item $x,  y,  z$は自然数を表す変数だとして
+                $\forall x, y \exists z ( x + z =y),$ % 偽 反例 x=3 , y =2
+          \item $(2=0 \to 1=1) \to 2=3,$ % 偽
+          \item $2=0 \to ( 1=1 \to 2=3).$ % 真
+        \end{enumerate}
+  \end{que}
+  %%%%%%%%%%%=================演習問題終わり====================%%%%%%%%%%%%%
+  %
+  %
+ \section{変数の束縛}
+ \label{sec:hensuu}
+
+\paragraph{自由変数と束縛変数}
+ $x,  y,  z$を自然数を表す変数として，
+ $x,  y,  z$の条件$F(x,y,z)$を「$x+y=z$」としよう．
+ このとき，存在命題$\exists x F(x,y,z)$すなわち$\exists x ( x + y =z)$
+ は，内容としては「$y < z$」を意味していることになる
+ \footnote{本書では自然数は0を含まないとしているので$<$であるが，
+ 自然数は0を含めるという立場を取るならば$\leq$とするのが正しい．}．
+ ここで重要なのは，文中の$x$はその真偽に影響せず，
+ $\exists x F(x,y,z)$の真偽は$y,  z$によってのみ決定されることである．
+ 存在命題$\exists x F(x,y,z)$において，$y,  z$は値を代入することのできる
+ いわば「本当の変数」であるが，$x$は内容に関与しない「見かけ上の変数」である．
+
+ 命題（条件）において，限定記号$\forall ,  \exists$などとともに用いられている
+ 「見かけ上の変数」を\index[widx]{そくばくへんすう@束縛変数 \, bound variable}
+ \emph{束縛変数}（bound variable）といい，
+ 値を代入することができる「本当の変数」を
+ \index[widx]{じゆうへんすう@自由変数 \, free variable}
+ \emph{自由変数}（free variable）という．
+ プログラミングにおけるグローバル変数とローカル変数の関係と似ている．
+
+ 束縛変数は記号を別のものに変えても「内容」は変わらない．
+ $\exists x F(x,y,z)$と書こうが$\exists t F(t,y,z)$と書こうが同じことである．
+ ただし，$\exists t F(x, y,z)$と書いたら意味は変わってしまう．
+ 重要なのは記号間の対応であり，
+ その記号が何と書かれているかは「内容」には関わらないのである．
+
+ \begin{ex}
+   2変数関数$f(x,y)=xy^2$について，$f(x,y)$を$1 \leq x \leq 3$まで積分すると，
+   $y$の1変数関数が得られる．これを$g(y)$とおくと，
+   \begin{align*}
+     g(y) = \int_1^3 xy^2 \, dx = \left[ \frac{1}{2} x^2y^2 
+     \right]_{x=1}^{x=3} = 4y^2
+   \end{align*}
+   となる．積分変数を$t$に変えても
+   \begin{align*}
+     \int_{1}^3 t y^2 \, dt = \left[ \frac{1}{2} t^2 y^2
+     \right]_{t=1}^{t=3} = 4y^2 =g(y)
+   \end{align*}
+   と，得られる関数は変わらない．しかし，束縛変数と同じ記号を代入してしまうと
+   \begin{align*}
+     g(x) = \int_1^3 x x^2 dx = \left[ \frac{1}{4} x^4 
+     \right]_{x=1}^{x=3} = 20 \neq \int_1^3 t x^2 dt = 6x^2
+   \end{align*}
+   と，おかしな結果になる．
+ \end{ex}
+
+ どうしてこのようなおかしな結果が導かれたかといえば，
+ 積分変数として仮においていただけの$x$と，関数の独立変数としての$y$とを
+ ごっちゃにしてしまったからだ．
+
+ こうした不都合を回避するためには，「仮におく変数」と「真の変数」，
+ すなわち束縛変数と自由変数をきちんと区別し，記号を使い分ければよい．
+ もちろんどの記号が自由変数を表していて，どの記号が束縛変数を表しているかは
+ 文脈によってまちまちである．しかし，束縛変数の方は限定記号や積分記号のように
+ わかりやすい目印があるだろうから参考にしてほしい．
+
+ さて，束縛変数は「仮の変数」であり，「内容」には関わらないのであった．
+ 束縛変数はある特定の範囲でのみ「意味」を持ち，
+ その範囲から外では存在しないものとみなされる．
+ 従って，束縛変数がどこまで「意味」を持つのか，
+ すなわち束縛変数の作用範囲を明示しなければ誤解が生じてしまう．
+
+ \begin{ex}
+   \begin{align*}
+     \sum_{k=1}^{n} ( k^2 - k) & = \sum_{k=1}^{n} k^2 - \sum_{k=1}^{n} k \\
+     & = \frac{1}{6} n(n+1)(2n+1) - \frac{1}{2} n(n+1)
+   \end{align*}
+   であるが，
+   \begin{align*}
+     \sum_{k=1}^{n} k^2 - k = \frac{1}{6} n (n+1)(2n+1) - k 
+     \neq \sum_{k=1}^{n} ( k^2 -k)
+   \end{align*}
+   である．
+ \end{ex}
+ 
+ 察しろと言いたくなるような例ではあるものの，
+ 何らかの手段（普通はカッコ）を用いて束縛変数の作用範囲を
+ 明示してやらないと意図しない解釈がなされてしまうのである．
+ とはいえ，これは悪いことばかりではない．
+ 
+ \begin{ex}
+   $x$は実数を表す変数として，
+   命題$\forall x ( {x \leq 0} \lor {x > 0})$は真である．
+   しかし，命題$\forall x (x \leq 0 ) \lor \forall x (x >0) $
+   は偽である．
+ \end{ex}
+ 
+ 束縛変数が作用範囲の外では何の意味も持たないことを利用すれば，
+ このように表記を美しくしたり，使う記号の数を節約したりできるのである．
+
+ 
+ \paragraph{対象領域}
+ 変数を含んだ命題や条件を考えるとき，
+ 「$x$は自然数を表す変数だとして」のように，
+ 変数が動きうる範囲をあらかじめ指定しておくことがあった．
+
+ この「変数が動きうる領域」
+ のことをその変数の
+ \index[widx]{たいしょうりょういき@対象領域 \, domain}
+ \emph{対象領域}（domain）と呼ぶ．
+ 変数$x$の対象領域が集合$D$である場合を
+ 考えると，
+ 「$\forall x ( x \in D \to (\cdots x \cdots) )$」という形の命題（条件）は
+ 「$D$に属するすべての$x$に対して$\cdots x \cdots$」
+ という意味であるから，これを「$\forall x \in D ( \cdots x \cdots)$」
+ と略記する．同様に，
+ 「$\exists x \in D ( \cdots x \cdots )$」という形の命題（条件）は
+ 「$\exists x ( x \in D \land ( \cdots x \cdots ))$」
+ の略記であるということにしておく．
+ %
+ %
+ %%%%%%%%%%%%%%%===============演習問題===============%%%%%%%%%%%%
+ \begin{que} \label{chp:sequent.sec:hensuu.que:sokubakusingi}
+   次の命題の真偽を判定せよ．ただし，全称命題が偽である場合には反例を挙げ，
+   存在命題が真である場合には例を挙げよ．
+  \begin{enumerate}
+     \item $\forall x \in \mathbb{R} ( x \leq 2 \to x \leq 0),$ % 偽 反例x=1
+     \item $\forall x \in \mathbb{R} ( x \leq 2 ) % 真 全称命題ではない
+       \to \forall x \in \mathbb{R} ( x \leq 0),$ % 真
+     \item $\exists x \in \mathbb{R} ( x \leq 2 \land 2 < x),$ % 偽
+     \item $\exists x \in \mathbb{R} ( x \leq 2) 
+            \land \exists x \in \mathbb{R} ( 2 < x),$ % 真
+     \item $\exists x \in \mathbb{R} ( x \leq 2 \to 1=2),$ % 真 x = 3
+     \item $\exists x \in \mathbb{R} ( x \leq 2 ) \to 1=2 .$ % 偽
+   \end{enumerate}
+ \end{que}
+ %
+ %
+ %
+ \section{必要性と十分性}
+ \label{sec:hituyoujubun}
+ %
+ %
+
+ \paragraph{必要条件と十分条件}
+ 
+ $x$の条件$F(x),  G(x)$に対し，
+ 命題
+ \begin{align}
+   \forall x ( F(x) \to G(x))
+   \label{eq:FnarabaG}
+ \end{align}  
+ が真であるとき，
+ $F(x)$は$G(x)$であるための
+ \index[widx]{じょうけん@条件 \, condition!じゅうぶん@十分--- \, sufficient ---}
+ \emph{十分条件}（sufficient condition）であるといい，
+ $G(x)$は$F(x)$であるための
+ \index[widx]{じょうけん@条件 \, condition!ひつよう@必要--- \, necessary ---}
+ \emph{必要条件}（necessary condition）であるという．
+
+ \begin{ex} \label{chp:sequent.sec:hituyoujubun.ex:xleq}
+   命題$\forall x \in \mathbb{R} ( x \leq 1 \to x\leq 2)$
+   は真である．従って，実数$x$について，
+   $x \leq 1$であることは$x \leq 2$であるための
+   十分条件で，$x \leq 2$であることは$x \leq 1$であるための
+   必要条件である．
+ \end{ex}
+ なお，高校の教科書では，$x$の条件$F(x),  G(x)$に対し，
+ 命題$\forall x (F(x) \to G(x) )$を
+ \begin{align}
+   F(x) \Longrightarrow G(x)
+   \label{eq:narabakoukou}
+ \end{align}
+ と書き表すことがある．
+ 本書で用いる「$\Longrightarrow$」とは意味がまったく異なるので注意されたい．
+
+ 例\ref{chp:sequent.sec:hituyoujubun.ex:xleq}を眺めてみれば
+ 必要・十分のネーミングの意味がわかるはずだ．
+ $x \leq 1$が成り立つためには$x \leq 2$が成り立っていなければならない．
+ すなわち，$x \leq 1$となるためには$x \leq 2$であることが「必要」なのであり，
+ $x \leq 2$が成り立つためには$x \leq 1$が成り立っていればよい．
+ すなわち，$x \leq 2$となるためには$x \leq 1$であれば「十分」なのである．
+
+ 2つの$x$に関する条件$F(x),  G(x)$に対し，
+ 命題
+ \begin{align}
+   \forall x ( F(x) \rightleftarrows G(x))
+   \label{eq:FGdouti}
+ \end{align}
+ が真である，
+ すなわち命題
+ \begin{align}
+   \forall x( (F(x) \to G(x) ) \land ( F(x) \to G(x) ))
+   \label{eq:FGdouti2}
+ \end{align}
+ が真であるとき，$F(x)$は$G(x)$であるための
+ \index[widx]{じょうけん@条件 \, condition!ひつようじゅうぶん@必要十分--- 
+ \quad necessary and sufficient ---}
+ \emph{必要十分条件}（necessary and sufficient condition）であるという．
+
+ \begin{ex}
+   命題$\forall x \in \mathbb{R} ( x= 1 \lor x = -1 \rightleftarrows x^2 =1)$
+   は真である．従って，実数$x$について，
+   $x =1 \lor x=-1$であることは$x^2=1$であるための必要十分条件である．
+ \end{ex}
+
+ 高校の教科書では，2つの$x$に関する条件$F(x) , G(x)$について，
+ 命題$\forall x (F(x) \rightleftarrows G(x))$が真であることを
+ \begin{align}
+   F(x) \Longleftrightarrow G(x)
+   \label{eq:FGkoukoudouti}
+ \end{align}
+ と表すことがある．
+ 
+ 必要条件，十分条件は変数の数が増えても同様に定義される．
+ $x,y$に関する2つの条件$F(x,y),G(x,y)$に対し，
+ 命題
+ \begin{align}
+   \forall x,y ( F(x,y) \to G(x,y) )
+   \label{eq:FnarabaGxy}
+ \end{align}
+ が真であるとき，$F(x,y)$は$G(x,y)$であるための十分条件であるといい，
+ $G(x,y)$は$F(x,y)$であるための必要条件であるという．さらに，
+ $x,y$に関する2つの条件$F(x,y) , G(x,y)$に対し，
+ 命題
+ \begin{align}
+   \forall x,y ( F(x,y) \rightleftarrows G(x,y))
+   \label{eq:xyFGdouti}
+ \end{align}
+ が真であるとき，$F(x,y)$は$G(x,y)$であるための必要十分条件であるという．
+
+ 一般の場合も同様である．
+ $n$個の変数$x_1, x_2, \ldots , x_n$に関する2つの条件
+ $F(x_1, \ldots , x_n), G(x_1, \ldots , x_n)$について，
+ 命題
+ \begin{align}
+   \forall x_1, \ldots , x_n ( F(x_1, \ldots , x_n ) \to G(x_1, \ldots , x_n))
+   \label{eq:nFGnaraba}
+ \end{align}
+ が真であるとき，$F(x_1, \ldots , x_n)$は$G(x_1, \ldots , x_n)$
+ であるための十分条件であるといい，
+ $G(x_1, \ldots , x_n)$は$F(x_1, \ldots , x_n)$であるための必要条件であるという．
+ さらに，$n$個の変数$x_1, x_2, \ldots , x_n$に関する2つの条件
+ $F(x_1, \ldots , x_n), G(x_1, \ldots , x_n)$について，
+ 命題
+ \begin{align}
+   \forall x_1, \ldots , x_n ( F(x_1, \ldots , x_n ) \rightleftarrows G(x_1, \ldots , x_n))
+   \label{eq:nFGnarabadouti}
+ \end{align}
+ が真であるとき，$F(x_1, \ldots , x_n)$は$G(x_1, \ldots , x_n)$
+ であるための必要十分条件であるという．
+
+
+ \begin{que} \label{chp:sequent.sec:hituyoujubun.que:xhituyoujubun}
+   次の各主張が正しいかどうか判定せよ．
+   \begin{enumerate}
+     \item $x$に関する2つの条件$F(x), G(x)$について，
+       「$F(x)$は$G(x)$であるための必要十分条件である」ことがいえたとき，
+       「$G(x)$は$F(x)$であるための必要条件である」ことがいえる． % 正しい
+     \item $x$に関する2つの条件$F(x),G(x)$について，「$F(x)$であるための必要条件は$G(x)$である」
+       ことを示すには，「$F(x)$を満たすすべての$x$が$G(x)$を満たす」
+       ことを示せばよい． % 正しい
+     \item $x$に関する2つの条件$F(x),G(x)$に対し，
+       「$F(x)$は$G(x)$であるための十分条件ではない」ことを示すには，
+       「$F(x)$を満たすが$G(x)$は満たさないような$x$が存在すること」
+       を示せばよい． % 正しい
+   \end{enumerate}
+ \end{que}
+
+ \begin{que} \label{que:kigoukaranihongo}
+   次の記号列が表す主張を言葉で表現せよ．
+   ただし，「$\forall x >0(\cdots x \cdots )$」は
+   「$\forall x \in \mathbb{R}( x>0 \to (\cdots x \cdots ))$」
+   を略記したものであり，
+   「$\exists x>0 (\cdots x \cdots )$」は「$\exists x \in \mathbb{R}
+   ( x>0 \land ( \cdots x \cdots ))$」
+   の略記である．
+   \begin{enumerate}
+     \item $\exists x F(x) \land \forall x,y (F(x) \land F(y) \to x=y),$
+     \item $\forall \varepsilon >0 \exists \delta >0 \forall x \in I
+       ( 0< \lvert x- a \rvert < \delta \to \lvert f(x) - A \rvert < \varepsilon),$
+     \item $\forall y \in Y \exists x \in X (y=f(x)),$
+     \item $\forall x_1, x_2 \in X (f(x_1) = f(x_2) \to x_1 = x_2),$
+     \item $\forall a,b >0 \exists N \in \mathbb{N} ( Na > b).$
+   \end{enumerate}
+ \end{que}
+
+ \begin{que} \label{que:nihongokarakigou}
+   次の主張を論理記号を用いて表現せよ．
+   \begin{enumerate}
+     \item $x \in A$であれば必ず$x \in B$となる．
+     \item 任意の正の数$\varepsilon$に対して$N \in \mathbb{N}$が存在して，
+       $n, m \geq N$を満たす任意の$n,m \in \mathbb{N}$について
+       $\lvert a_n - a_m \rvert < \varepsilon$となる．
+     \item $x^2+y^2=1$を満たす任意の実数$x,y$に対し，
+       $x= \cos \theta $と$ y= \sin \theta$をともに満たす実数$\theta$で
+       $0 \leq \theta < 2 \pi$となるものが存在する．
+     \item 任意の$x \in S$に対して$x \leq M$を成り立たせるような
+       実数$M$のなかで最小のものが存在する． 
+   \end{enumerate}
+ \end{que}
+
+ 問\ref{que:kigoukaranihongo}や問\ref{que:nihongokarakigou}からもわかるように，
+ それほど複雑ではない文章であっても，それを論理記号で表現するととても複雑な
+ ものになってしまうことが多い．よって，数学の議論をする場合，
+ そこに論理記号が登場することはあまり多くはない．
+ ごく一部の場面を除き，
+ 論理記号を用いずに言葉だけを用いた議論で済ませたほうが圧倒的に楽だからである．
+
+ 
+
+ %
+ %
+ %
+ %
+ \section{シークエントを利用した自然演繹}
+ \label{sec:sequent}
+ %
+ 数学では，基礎となる公理を出発点とし，そこから演繹的に証明を重ねることによって
+ 数々の定理を導き出している．
+ この節では，数学において通常行われている演繹的推論について，
+ そこからいくつかの規則を抽出し，
+ 証明の形式化を試みる．
+ なお，この節は論理記号を手足のように使いこなして演繹を行うことを
+ 目標としており，これは初学者にとっては必須のものではない．
+ 難解だと感じた読者は，
+ 代わりに参考文献の\cite{kada}や\cite{utidatopo}にあるような真理値表
+ を用いた議論を学び，この節と続く\ref{sec:equal}を飛ばすことも考えられる．
+
+ \paragraph{シークエント}
+ 命題（条件）の有限列$A_1, A_2, \ldots , A_n$
+ および命題（条件）$B$について，
+ 「$A_1, A_2, \ldots , A_n$を仮定すると$B$を導くことができる」ことを
+ \begin{align}
+   A_1 , A_2, \ldots , A_n \Longrightarrow B
+   \label{eq:sequent}
+ \end{align}
+ と書き表し，$A_1, A_2 , \ldots ,A_n $を左辺（前提），
+ $B$を右辺（結論）とする
+ \index[widx]{しーくえんと@シークエント \, sequent}
+ \emph{シークエント}（sequent）という．
+ ただし，$n=0$の場合として，
+ \begin{align}
+   \qquad \Longrightarrow B
+   \label{eq:sequentempty}
+ \end{align}
+ という形式のシークエントも許し，「前提なしで$B$が成り立つ」
+ ということを表すものと約束する．
+
+ \begin{ex}
+   $a,  b,  c$を実数として，
+   \begin{align*}
+    a>0 , b^2-4ac \geq 0 \Longrightarrow 
+    \exists x \in \mathbb{R} ( ax^2 +bx+c=0)
+   \end{align*}  
+   は$a,  b,  c$に関する条件$a>0$と$b^2 - 4ac \geq 0$を前提とし，
+   条件$\exists x \in \mathbb{R} ( ax^2+bx+c=0)
+   $を結論とするシークエントである．
+   一方，
+   \begin{align*}
+     a>0 \land b^2 -4ac \geq 0 \to
+     \exists x \in \mathbb{R} ( ax^2 +bx +c =0)
+   \end{align*}
+   は$a,  b,  c$についての1つの条件である．
+ \end{ex}
+
+ シークエントの前提に現れる命題（条件）の有限列を
+ $\varGamma$や$\varDelta$といったギリシャ文字の大文字で表すことが多い．
+ ただし，列とはいってもその列に現れる命題（条件）の
+ 種類のみを考え，重複や順序は気にしないことにする．
+ また，命題（条件）の有限列$\varGamma,  \varDelta$について，
+ $\varGamma$に現れる命題（条件）は必ず$\varDelta$にも現れることを
+ $\varGamma \subset \varDelta$と表すことにする．
+
+ \begin{ex}
+   $A,  B,  C,  D$を命題（条件）として，$\varGamma$が$A,  C,  B$
+   という列を表し，$\varDelta$が$D,  B$という列を表すとき，
+   $\varGamma,  \varDelta$という列は
+   $A,  C,  B,  D,  B$ではなく$A,  B,  C,   D$
+   と扱ってよい．
+ \end{ex}
+
+ 命題（条件）$A$に対し，
+ \begin{align}
+   A \Longrightarrow A 
+   \label{eq:sisiki}
+ \end{align}
+ の形のシークエントを$A$についての（論理的）
+ \index[widx]{ししき@始式 \, initial sequent}
+ \emph{始式}（initial sequent）という．
+ 「$A$を仮定すれば$A$が導ける」という意味のシークエントである．
+
+ \paragraph{推論規則}
+ あるシークエントが与えられたとき，
+ そのシークエントから
+ 別のシークエントを導くためのルールのことを
+ \index[widx]{すいろんいきそく@推論規則 \, inference rule}
+ \emph{推論規則}（inference rule）という．
+ どのような推論規則を採用するかについてはたくさんの流儀がある．
+ ここでは，シークエント計算を用いた古典論理の自然演繹と呼ばれる体系の
+ 推論規則を見ていく．
+ 
+ 推論規則は，$A,  B,  C,  D,  E,  F$を命題（条件）として，
+  \begin{prooftree}
+        \AxiomC{$A \Longrightarrow B$}
+        \AxiomC{$C \Longrightarrow D$}
+     \LeftLabel{(規則名)}
+        \BinaryInfC{$E \Longrightarrow F$}
+  \end{prooftree}
+ という形式で記述される．
+ これは「もしシークエント$A \Longrightarrow B$と
+ $C \Longrightarrow D$がともに成り立つであれば，
+ シークエント$E \Longrightarrow F$が成り立つ」という意味である．
+ 上側にあるシークエントの数が変わっても同様に解釈してほしい． 
+
+ 本書では，以下に示すような推論規則を採用する．
+ \begin{oframed}
+  $A,  B,  C$は任意の命題（条件）
+  $\varGamma ,  \varDelta$は命題（条件）の任意の有限列（空列でもよい），
+  $F(a)$は自由変数$a$に関する任意の条件，$t$は任意の項とし，
+  $\curlywedge$は「矛盾」を表す命題とする．
+  変数条件として，
+  $\forall$導入においては自由変数$a$は$\varGamma,  \forall xF(x)$には現れず，
+  $\exists$除去においては自由変数$a$は$\varGamma,  \exists x F(x),  C$
+  には現れないものとする：
+
+  \begin{spacing}{2}
+        \AxiomC{$\varGamma \Longrightarrow B$}
+     \LeftLabel{前提の増加}
+     \RightLabel{(ただし$\varGamma \subset \varDelta$とする)}
+        \UnaryInfC{$\varDelta \Longrightarrow B$}
+   \DisplayProof
+    %
+        
+    %
+    \quad
+        \AxiomC{$\varGamma \Longrightarrow A $}
+        \AxiomC{$\varGamma \Longrightarrow B $}
+     \LeftLabel{$\land$導入}
+        \BinaryInfC{$\varGamma \Longrightarrow A \land B$}
+   \DisplayProof \\
+    %
+        \AxiomC{$\varGamma \Longrightarrow A \land B$}
+     \LeftLabel{$\land$除去(左)}
+        \UnaryInfC{$\varGamma \Longrightarrow A$}
+   \DisplayProof 
+    %
+    \quad
+        \AxiomC{$\varGamma \Longrightarrow A \land B $}
+     \LeftLabel{$\land$除去(右)}
+        \UnaryInfC{$\varGamma \Longrightarrow B$}
+   \DisplayProof
+    %
+        \AxiomC{$\varGamma \Longrightarrow A$}
+     \LeftLabel{$\lor$導入(左)}
+        \UnaryInfC{$\varGamma \Longrightarrow A \lor B$}
+   \DisplayProof
+    %
+    \quad
+        \AxiomC{$\varGamma \Longrightarrow B$}
+     \LeftLabel{$\lor$導入(右)}
+        \UnaryInfC{$\varGamma \Longrightarrow A \lor B$}
+   \DisplayProof
+    %
+        \AxiomC{$\varGamma \Longrightarrow A \lor B$}
+        \AxiomC{$A,  \varGamma \Longrightarrow C$}
+        \AxiomC{$B,  \varGamma \Longrightarrow C$}
+     \LeftLabel{$\lor$除去}
+        \TrinaryInfC{$\varGamma \Longrightarrow C$}
+   \DisplayProof
+    %
+        \AxiomC{$A,  \varGamma \Longrightarrow \curlywedge$}
+     \LeftLabel{$\lnot$導入}
+        \UnaryInfC{$\varGamma \Longrightarrow \lnot A$}
+   \DisplayProof
+    %
+    \quad
+        \AxiomC{$\varGamma \Longrightarrow A$}
+        \AxiomC{$\varGamma \Longrightarrow \lnot A$}
+     \LeftLabel{$\lnot$除去}
+        \BinaryInfC{$\varGamma \Longrightarrow \curlywedge$}
+   \DisplayProof
+    %
+        \AxiomC{$\varGamma \Longrightarrow \lnot \lnot A$}
+     \LeftLabel{2重否定の除去}
+        \UnaryInfC{$\varGamma \Longrightarrow A$}
+   \DisplayProof 
+    %
+        \AxiomC{$A ,  \varGamma \Longrightarrow B$}
+     \LeftLabel{$\to$導入}
+        \UnaryInfC{$\varGamma \Longrightarrow A \to B$}
+   \DisplayProof
+    %
+        \AxiomC{$\varGamma \Longrightarrow A$}
+        \AxiomC{$\varGamma \Longrightarrow A \to B$}
+     \LeftLabel{$\to$除去（modus ponens）}
+        \BinaryInfC{$\varGamma \Longrightarrow B$}
+   \DisplayProof
+    \\ 
+   %
+        \AxiomC{$\varGamma \Longrightarrow F(a)$}
+     \LeftLabel{$\forall$導入}
+        \UnaryInfC{$\varGamma \Longrightarrow \forall x F(x)$}
+   \DisplayProof
+    \quad 
+   %
+        \AxiomC{$\varGamma \Longrightarrow \forall x F(x)$}
+     \LeftLabel{$\forall$除去}
+        \UnaryInfC{$\varGamma \Longrightarrow F(t)$}
+   \DisplayProof
+    %
+        \AxiomC{$\varGamma \Longrightarrow F(t)$}
+     \LeftLabel{$\exists$導入}
+        \UnaryInfC{$\varGamma \Longrightarrow \exists x F(x)$}
+   \DisplayProof \\
+    %
+        \AxiomC{$\varGamma \Longrightarrow \exists x F(x) $}
+        \AxiomC{$F(a),  \varGamma \Longrightarrow C$}
+     \LeftLabel{$\exists$除去}
+        \BinaryInfC{$\varGamma \Longrightarrow C$}
+   \DisplayProof
+  \end{spacing}  
+ \end{oframed}
+ $\forall$導入と$\exists$除去には変数条件が課されている．
+ $\forall$導入の推論規則
+ \begin{prooftree}
+        \AxiomC{$\varGamma \Longrightarrow F(a)$}
+   \LeftLabel{$\forall$導入}
+        \UnaryInfC{$\varGamma \Longrightarrow \forall x F(x)$}
+ \end{prooftree}
+ に課された変数条件は「自由変数$a$は$\varGamma ,  \forall x F(x)$に現れないこと」
+ である．推論規則としての意味は「任意の自由変数$a$に対し，
+ $\varGamma$から$F(a)$が導けたのであれば，$\varGamma$から$\forall x F(x)$が導ける」
+ という意味であるから，$\varGamma$と$\forall x F(x)$に$a$が
+ 現れてはいけないというのはある意味で当然ともいえる．
+
+ $\forall$導入の推論規則は「$\varGamma$から$\forall x F(x)$を導きたいとき，
+ 代わりに自由変数$a$を任意にとり，その$a$に対して$\varGamma$から$F(a)$
+ を導いてよい」というように解釈することができる．
+ $\forall x F(x)$は「すべて（all）の$x$に対して$F(x)$」
+ という意味であり，
+ 「任意の（arbitrary）$a$に対して$F(a)$」という主張とは
+ ニュアンスが少し異なるように思われる．
+ 前者から後者を結論してよいという推論規則が$\forall$除去であり，
+ 後者から前者を結論してよいという推論規則が$\forall$導入である．
+
+ 変数$x$が無限に多くの値をとる場合，そのすべての$x$が$F(x)$
+ を満たすことを確認するのは有限回の手順では不可能である．
+ しかし，任意に1つとった自由変数$a$が$F(a)$を満たすことを示すのは
+ 有限回の手順でも可能である．
+ 両者を別物として考えてしまうと数学理論を構築することがとても困難になってしまう．
+ よく``数学においては「すべて」と「任意」は区別しない''
+ と言われるのにはこういう事情があるのである．
+
+ $\exists$除去の推論規則
+ \begin{prooftree}
+        \AxiomC{$\varGamma \Longrightarrow \exists x F(x)$}
+   \LeftLabel{$\exists$除去}
+        \AxiomC{$F(a) ,  \varGamma \Longrightarrow C$}
+        \BinaryInfC{$\varGamma \Longrightarrow C$}
+ \end{prooftree}
+ にも「自由変数$a$は$\varGamma ,  \exists x F(x),  C$には現れない」
+ という変数条件が課されている．
+ 推論規則の意味としては「$\varGamma$から$F(x)$を満たす$x$が存在することがわかったとする．
+ $F(x)$を満たす$x$を1つとり，仮に$a$という名前をつけたとして，
+ $a$がたとえどんなものであったとしても$F(a)$と$\varGamma$から
+ $C$が導けたとするならば，$\varGamma$だけから$C$を導ける」
+ という意味であるからこの変数条件にも納得がいくであろう．
+
+
+ \paragraph{シークエント計算}
+ 我々がいま導入した推論規則は，
+ 命題結合記号や限定記号の素朴的解釈を考えれば
+ ごく自然なものである．
+
+ ここからは，命題結合記号や限定記号の「意味」は忘れ，
+ これらの推論規則のみをもとにしてシークエントを導出し，
+ 演繹的推論を形式的な記号操作として実行することを考える．
+ 
+ 命題（条件）の有限列$\varGamma$と命題（条件）$A$について，
+ シークエント$\varGamma \Longrightarrow A$が
+ \index[widx]{どうしゅつかのう@（シークエントが）導出可能 \, derivable}
+ \emph{導出可能}（derivable）であるとは
+ \begin{enumerate}
+   \item $\varGamma \Longrightarrow A$が始式の形をしている．
+   \item すでに導出可能とわかっているいくつかのシークエントに対して
+         推論規則を適用することで$\varGamma \Longrightarrow A$が得られる．
+ \end{enumerate}
+ のいずれかが成り立つことをいう．
+ 推論規則においては始式については言及されなかったが，
+ 始式は必ず導出可能であることを認めるのである．
+ これは，始式を公理として採用したことに相当する．
+
+ 命題（条件）$A$について，シークエント
+ \begin{align*}
+   \Longrightarrow A
+ \end{align*}
+ が導出可能であることを，$A$は
+ \index[widx]{しょうめいかのう@（命題が）証明可能 \, provable}
+ \emph{証明可能}（provable）であるという．
+
+ また，2つの命題（条件）$A,  B$について，
+ 2つのシークエント$A \Longrightarrow B$と
+ $B \Longrightarrow A$がともに導出可能であるとき，
+ $A$と$B$は\index[widx]{どうちである@同値である \, equivalent}
+   \emph{同値}（equivalent）であるといい，
+ \begin{align}
+   A \equiv  B
+ \end{align}
+ と書き表す
+ \footnote{「$\Longleftrightarrow$」という記号が使いたくなるが，
+ 本書で言及しないもろもろの事情により，
+ 「$\Longleftrightarrow$」という記号はここでは用いない．
+ 「$\Longleftrightarrow$」という記号は日本語の「同値である」
+ の略記であると思っておけばよい．
+ }
+ ．
+
+ 本書では，命題結合記号「$\to$」とシークエントを構成する記号「$\Longrightarrow$」を
+ 異なる記号として導入した．
+ しかし，「意味」としてはそれほど変わるわけではない．
+ それを象徴するのが次の定理である．
+ 
+ \begin{thm}[演繹定理] \label{thm:toarrowequiv}
+   命題（条件）$A,  B$について，
+   シークエント$A \Longrightarrow B$
+   が導出可能であるための必要十分条件は，
+   命題（条件）$A \to B$が証明可能であることである．
+ \end{thm}
+ \begin{proof}（必要性）シークエント$A \Longrightarrow B$が導出可能であるとする．
+   このとき，
+   \begin{prooftree}
+                              \AxiomC{仮定}
+                              \noLine
+                              \UnaryInfC{$A \Longrightarrow B $}
+                         \LeftLabel{$\to$導入}
+                              \UnaryInfC{$\Longrightarrow A \to B$}
+   \end{prooftree}
+   よって，$A \to B$は証明可能である． \\
+   （十分性）$A \to B$が証明可能であると仮定する．
+   このとき，
+   \begin{prooftree}
+                              \AxiomC{仮定}
+                              \noLine
+                              \UnaryInfC{ $\Longrightarrow A \to B$}
+                              \UnaryInfC{$A \Longrightarrow A \to B$}
+           \AxiomC{始式}
+           \noLine
+           \UnaryInfC{$A \Longrightarrow A$}
+                          \LeftLabel{$\to$除去}
+                          \BinaryInfC{$A \Longrightarrow B$}
+   \end{prooftree}
+   従って，シークエント$A \Longrightarrow B$は導出可能である．
+ \end{proof}
+ 定理\ref{thm:toarrowequiv}の証明のように，
+ 「前提の増加」以外の推論規則については
+ 自分が何の推論規則を用いたかを書き記しておくのがお約束である．
+
+ また，定理\ref{thm:toarrowequiv}により，以下のことはすぐにわかる：
+
+ \begin{coro}
+   命題（条件）$A,  B$について，$A$と$B$が同値であるための必要十分条件は，
+   命題（条件）$A \rightleftarrows B$が証明可能であることである．
+ \end{coro}
+ 
+ 「矛盾からは何でも導ける」というのはよく一般に言われることであるが，
+ それを象徴するのが次の補題\ref{lemma:mujun}である．
+ \begin{lemma}[矛盾に関する推論法則] \label{lemma:mujun}
+    $\varGamma$を命題（条件）の有限列，$C$を任意の命題（条件）とする．
+    このとき，矛盾に関する推論法則
+    \begin{prooftree}
+      \AxiomC{$\varGamma \Longrightarrow \curlywedge$}
+      \UnaryInfC{$\varGamma \Longrightarrow C$}
+    \end{prooftree}
+    が成り立つ．
+ \end{lemma}
+ \begin{proof}
+   シークエント$\varGamma \Longrightarrow \curlywedge$が導出可能であると仮定して，
+   シークエント$\varGamma \Longrightarrow C$が導出可能であることを示せばよい．
+  \begin{prooftree}
+     \AxiomC{仮定}
+     \noLine
+     \UnaryInfC{$\varGamma \Longrightarrow \curlywedge$}
+     \UnaryInfC{$\lnot C,  \varGamma \Longrightarrow \curlywedge$}
+     \LeftLabel{$\lnot$導入}
+     \UnaryInfC{$\varGamma \Longrightarrow \lnot \lnot C$}
+     \RightLabel{2重否定の除去}
+     \UnaryInfC{$\varGamma \Longrightarrow C$}
+  \end{prooftree}
+   % \DisplayProof
+   従って，シークエント$\varGamma \Longrightarrow \curlywedge$が導出可能であれば，
+   シークエント$\varGamma \Longrightarrow C$も導出可能である．
+ \end{proof}
+ 今後，矛盾に関する推論法則も用いることにする．
+
+ 推論法則として有名なものをもう1つ導いておこう．
+ \begin{lemma}[cut規則]
+   $\varGamma, \varDelta$を任意の命題（条件）の有限列とし，
+   $A,B$を任意の命題（条件）とする．このとき，cut規則
+   \begin{prooftree}
+     \AxiomC{$\varGamma \Longrightarrow A$}
+     \AxiomC{$A, \varDelta \Longrightarrow B$}
+     \BinaryInfC{$\varGamma , \varDelta \Longrightarrow B$}
+   \end{prooftree}
+   が成り立つ．
+ \end{lemma}
+
+ \begin{proof}
+   2つのシークエント$\varGamma \Longrightarrow A$と
+   $A, \varDelta \Longrightarrow B$がともに導出可能であるとすると
+   \begin{prooftree}
+     \AxiomC{仮定}
+     \noLine
+     \UnaryInfC{$\varGamma \Longrightarrow A$}
+     \UnaryInfC{$\varGamma , \varDelta \Longrightarrow A$}
+     \AxiomC{仮定}
+     \noLine
+     \UnaryInfC{$A, \varDelta \Longrightarrow B$}
+     \RightLabel{$\to$導入}
+     \UnaryInfC{$\varDelta \Longrightarrow A \to B$}
+     \UnaryInfC{$\varGamma , \varDelta \Longrightarrow A \to B$}
+     \LeftLabel{$\to$除去}
+     \BinaryInfC{$\varGamma , \varDelta \Longrightarrow B$}
+   \end{prooftree}
+   よって，シークエント$\varGamma , \varDelta \Longrightarrow B$
+   は導出可能である．
+ \end{proof}
+
+ cut規則は三段論法とも呼ばれている．
+ 実際，$\varGamma$を1つの命題（条件）$P$であるとし，
+ $A, B$をそれぞれ命題（条件）$Q, R$におきかえ，$\varDelta$を空列とみなせば，
+ cut規則により
+ \begin{prooftree}
+   \AxiomC{$P \Longrightarrow Q$}
+   \AxiomC{$Q \Longrightarrow R$}
+   \BinaryInfC{$P \Longrightarrow R$}
+ \end{prooftree}
+ という推論ができることになる．
+ 今後はcut規則も推論法則として妥当なものとして利用していくことにする．
+
+ 命題（条件）の同値を表す記号$\equiv$は次の関係を満たす．
+ 証明はcut規則を用いれば容易であろう．
+ \begin{lemma}
+   命題（条件）$A,  B,  C$について，次の関係が成り立つ．
+   \begin{enumerate}[(1) ]
+     \item $A \equiv A$となる．
+     \item $A \equiv B$ならば$B \equiv A$となる．
+     \item $A \equiv B$かつ$B \equiv C$ならば，$A \equiv C$となる．
+   \end{enumerate}
+ \end{lemma}
+
+ 次の定理\ref{thm:haityuritu}は，古典論理を象徴する重要な定理である．
+
+ \index[widx]{はいちゅうりつ@排中律 \, law of excluded middle}
+ \begin{thm}[排中律] \label{thm:haityuritu}
+   任意の命題（条件）$A$について，$A \lor \lnot A$は証明可能である．
+ \end{thm}  
+ \begin{proof}
+   シークエント$\; \; \Longrightarrow A \lor \lnot A$を導出する． 
+   \vspace{0.3cm} \\
+   {\footnotesize
+  % \begin{prooftree}
+        \AxiomC{始式}
+        \noLine
+        \UnaryInfC{$A \Longrightarrow A$}
+     \RightLabel{$\lor$導入}
+        \UnaryInfC{$A \Longrightarrow A \lor \lnot A$}
+        \UnaryInfC{$A ,  \lnot ( A \lor \lnot A)
+                    \Longrightarrow A \lor \lnot A$}
+        \AxiomC{始式}
+        \noLine
+        \UnaryInfC{$\lnot ( A \lor \lnot A ) \Longrightarrow \lnot ( A \lor \lnot A)$}
+        \UnaryInfC{$A,  \lnot ( A \lor \lnot A ) 
+                    \Longrightarrow \lnot ( A \lor \lnot A )$}
+     \RightLabel{$\lnot$除去}
+     \kernHyps{2.5cm}
+        \BinaryInfC{$A , \lnot ( A \lor \lnot A ) 
+                     \Longrightarrow \curlywedge$}
+     \RightLabel{$\lnot$導入}
+        \UnaryInfC{$\lnot ( A \lor \lnot A ) \Longrightarrow \lnot A $}
+     \RightLabel{$\lor$導入}
+        \UnaryInfC{$\lnot ( A \lor \lnot A ) \Longrightarrow A \lor \lnot A $}
+        \AxiomC{始式}
+        \noLine
+        \UnaryInfC{$\lnot ( A \lor \lnot A ) 
+                    \Longrightarrow \lnot ( A \lor \lnot A )$}
+     \kernHyps{2cm}
+     \RightLabel{$\lnot$除去}
+     \insertBetweenHyps{\hskip -4.6cm}
+        \BinaryInfC{$\lnot ( A \lor \lnot A ) \Longrightarrow \curlywedge$}
+     \RightLabel{$\lnot$導入}
+        \UnaryInfC{$\Longrightarrow \lnot \lnot ( A \lor \lnot A )$}
+     \RightLabel{2重否定の除去}
+        \UnaryInfC{$\Longrightarrow A \lor \lnot A$}
+   %\end{prooftree}
+   \DisplayProof
+   } \vspace{0.3cm} \\ 
+   従って，$A \lor \lnot A$は証明可能である．
+ \end{proof}
+ 定理\ref{thm:haityuritu}の証明を言葉に翻訳してみよう．
+ \begin{oframed}
+   $\lnot ( A \lor \lnot A)$を仮定して矛盾を導く．
+   $A$であるとすると$A \lor \lnot A$となり，
+   $\lnot ( A \lor \lnot A)$に矛盾する．
+   従って$\lnot A$でなければならない．
+   しかしこの場合も$A \lor \lnot A$となり，
+   $\lnot ( A \lor \lnot A)$に矛盾する．
+   よって，$\lnot \lnot ( A \lor \lnot A )$
+   より$A \lor \lnot A$となる．
+ \end{oframed}
+ 
+ どの箇所でどの推論規則が使われているか確認してほしい．
+ 言葉での証明においては「仮定する」という文言が出てきたが，
+ シークエント計算においては始式を持ち出したことに相当する．
+ 
+ 定理\ref{thm:haityuritu}の証明では，証明したい命題$A \lor \lnot A$の
+ 否定$\lnot ( A \lor \lnot A )$を仮定し，矛盾を導くことによって
+ 証明を行った．
+ 一般に，命題（条件）$A$を証明する代わりに$A$の否定$\lnot A$を
+ 仮定し，そこから矛盾を導く証明法のことを
+ \index[widx]{はいりほう@背理法 \, reductio ad absurdum}
+ \emph{背理法}（reductio ad absurdum）という．
+ 背理法においては本質的に2重否定の除去が使われていることに注意せよ
+ \footnote{$A$を仮定して矛盾を導き，そこから$\lnot A$
+ を結論する証明法も背理法と呼ばれることがあるが，
+ この2つは厳密には区別して扱われるべき証明法である．}
+ ．
+ 
+ \begin{que} \label{que:haityurituouyou}
+   $\sqrt{2} ^{\sqrt{2}}$は明らかに実数である．
+   命題$A$を「$\sqrt{2}^{\sqrt{2}}$は有理数である」と定めたとき，
+   $A$に排中律を適用することで，
+   無理数$a,  b$で$a^b$が有理数になるものが存在することを示せ．
+ \end{que}
+
+ 問\ref{que:haityurituouyou}は排中律の応用としては有名なものであるが，
+ この主張を示すこと自体は排中律のような高級な道具を用いなくても容易である．
+ 実際，\index[nidx]{Napire@Napire（ネイピア）}Napire数$e$
+ と対数$\log 2$はともに無理数で，
+ $e^{\log 2 } = 2$は有理数である．
+
+ 定理\ref{thm:haityuritu}の証明では，推論規則の適用過程を図に書き表してある．
+ 一般に，シークエントへの推論規則の適用過程を表した図形を
+ \index[widx]{どうしゅつず@導出図 \, derivation diagram}
+ \emph{導出図}（derivation diagram）と呼ぶ．
+
+ 2重否定については少し補足をしておこう．
+ \begin{lemma} \label{lemma:nijuhitei} 
+   命題（条件）$A$について，
+   \begin{align}
+     \lnot \lnot A \equiv A
+     \label{eq:nijuhitei}
+   \end{align}
+   が成り立つ．
+ \end{lemma}
+ \begin{proof}
+   まずはシークエント$\lnot \lnot A \Longrightarrow A$を導出しよう．
+   \begin{prooftree}
+     \AxiomC{始式}
+     \noLine
+     \UnaryInfC{$\lnot \lnot A \Longrightarrow \lnot \lnot A$}
+    \LeftLabel{2重否定の除去}
+     \UnaryInfC{$\lnot \lnot A \Longrightarrow A$}
+   \end{prooftree}
+   従って，シークエント$\lnot \lnot A \Longrightarrow A$は導出可能である．
+
+   次に，シークエント$A \Longrightarrow \lnot \lnot A$を導出する．
+   \begin{prooftree}
+     \AxiomC{始式}
+     \noLine
+     \UnaryInfC{$A \Longrightarrow A$}
+     \UnaryInfC{$A ,  \lnot A \Longrightarrow A$}
+     \AxiomC{始式}
+     \noLine
+     \UnaryInfC{$\lnot A \Longrightarrow \lnot A$}
+     \UnaryInfC{$A ,  \lnot A \Longrightarrow \lnot A$}
+    \LeftLabel{$\lnot$除去}
+     \BinaryInfC{$A,  \lnot A \Longrightarrow \curlywedge$}
+    \LeftLabel{$\lnot$導入}
+     \UnaryInfC{$A \Longrightarrow \lnot \lnot A$}
+   \end{prooftree}
+   よって，シークエント$A \Longrightarrow \lnot \lnot A$も導出可能であり，
+   従って式\eqref{eq:nijuhitei}が成り立つ．
+ \end{proof}
+ 補題\ref{lemma:nijuhitei}の証明において，
+ シークエント$A \Longrightarrow \lnot \lnot A$は2重否定の除去の
+ 推論規則を使わずに導出できたことに留意されたい．
+
+ シークエントを導出する際，導出図を構成するのが基本となるが，
+ シークエントに番号を振って書き並べる方法もある．
+ 次の定理\ref{thm:ganilor}の証明で実例を見せることにする．
+ 
+ \begin{thm} \label{thm:ganilor}
+   命題（条件）$A,  B$に対し，
+   \begin{align}
+     A \to B \equiv \lnot A \lor B
+   \end{align}
+   が成り立つ．
+ \end{thm}
+ \begin{proof} 
+   まずは，シークエント$A \to B \Longrightarrow \lnot A \lor B$
+   を導出する．
+   \begin{enumerate}[1. ]
+     \item $A \to B \Longrightarrow A \to B $ \quad ［始式］ 
+     \item $\lnot ( \lnot A \lor B ) \Longrightarrow 
+            \lnot ( \lnot A \lor B ) $ \quad ［始式（背理法で示す）］
+     \item $A \Longrightarrow A$ \quad ［始式］
+     \item $A ,  A \to B \Longrightarrow B $ \quad ［$1.,3.$から$\to$除去による］
+     \item $A ,  A \to B \Longrightarrow \lnot A \lor B$ 
+            \quad ［4.から$\lor$導入による］
+     \item $A ,  A \to B ,  \lnot ( \lnot A \lor B ) 
+            \Longrightarrow \curlywedge $ \quad ［$2.,5.$から$\lnot$除去による］ 
+     \item $A \to B ,  \lnot ( \lnot A \lor B ) 
+            \Longrightarrow \lnot A $ \quad ［6.から$\lnot$導入による］ 
+     \item $A \to B ,  \lnot ( \lnot A \lor B ) 
+            \Longrightarrow \lnot A \lor B 
+            $ \quad ［7.から$\lor$導入による］ 
+     \item $A \to B ,  \lnot ( \lnot A \lor B ) 
+            \Longrightarrow \curlywedge $ \quad ［$2.,8.$から$\lnot$除去による］ 
+     \item $A \to B \Longrightarrow \lnot \lnot ( \lnot A \lor B ) 
+            $ \quad ［9.から$\lnot$導入による］ 
+     \item $ A \to B \Longrightarrow \lnot A \lor B $ \quad ［10.から2重否定の除去による］
+   \end{enumerate}
+   次に，シークエント$\lnot A \lor B \Longrightarrow A \to B$を導出する．
+   \begin{enumerate}[1. ]
+     \item $\lnot A \lor B \Longrightarrow \lnot A \lor B$ \quad ［始式］
+     \item $A \Longrightarrow A$ \quad ［始式］
+     \item $\lnot A \Longrightarrow \lnot A$ \quad ［始式］
+     \item $A,  \lnot A \Longrightarrow \curlywedge$ \quad ［$2., 3.$から$\lnot$除去による］
+     \item $A ,  \lnot A \Longrightarrow B$ \quad ［4.から矛盾による］
+     \item $B \Longrightarrow B$ \quad ［始式］
+     \item $A,  \lnot A \lor B \Longrightarrow B$ \quad ［$1., 5., 6.$から$\lor$除去による］
+     \item $\lnot A \lor B \Longrightarrow A \to B$ \quad ［7.から$\to$導入による］
+   \end{enumerate}
+   従って，$A \to B \equiv \lnot A \lor B$が成り立つ．
+   \end{proof}
+   定理\ref{thm:ganilor}の証明のように，表記を簡単にするためにも，
+   シークエントの導出において，前提の増加の適用は省略することにする．
+   
+   \index[widx]{De Morganのほうそく@De Morganの法則}
+   \index[nidx]{De Morgan@De Morgan（ド・モルガン）}
+   \begin{thm}[命題論理におけるDe Morganの法則] \label{thm:demorganmeidai}
+     命題（条件）$A,  B$について，
+     \begin{align}
+       \lnot ( A \lor B ) & \equiv \lnot A \land \lnot B,
+       \label{eq:demorgan1} \\
+       \lnot ( A \land B ) & \equiv \lnot A \lor \lnot B
+       \label{eq:demorgan2}
+     \end{align}
+     が成り立つ．
+   \end{thm}
+   \begin{proof}
+     式\eqref{eq:demorgan1}のみ示す．式\eqref{eq:demorgan2}も同様である．
+     \begin{enumerate}[1. ]
+       \item $\lnot ( A \lor B ) \Longrightarrow \lnot ( A \lor B ) $ \quad ［始式］
+       \item $ A \Longrightarrow A$ \quad ［始式］
+       \item $A \Longrightarrow A \lor B $ \quad ［2.から$\lor$導入による］
+       \item $A,  \lnot ( A \lor B ) \Longrightarrow \curlywedge$ 
+              \quad ［$1., 3.$から$\lnot$除去による］
+       \item $\lnot ( A \lor B ) \Longrightarrow \lnot A $ \quad ［4.から$\lnot$導入による］
+       \item $B \Longrightarrow B$ \quad ［始式］
+       \item $B \Longrightarrow A \lor B$ \quad ［6.から$\lor$導入による］
+       \item $B,  \lnot ( A \lor B ) \Longrightarrow \curlywedge$
+              \quad ［$1., 7.$から$\lnot$除去による］
+       \item $\lnot ( A \lor B ) \Longrightarrow \lnot B$ 
+              \quad ［8.から$\lnot$導入による］
+       \item $\lnot ( A \lor B ) \Longrightarrow \lnot A \land \lnot B$
+              \quad ［$5., 9.$から$\land$導入による］
+     \end{enumerate}
+     よって，シークエント$\lnot ( A \lor B ) \Longrightarrow \lnot A \land \lnot B$
+     は導出可能である．
+     \begin{enumerate}[1. ]
+       \item $\lnot A \land \lnot B \Longrightarrow \lnot A \land \lnot B$
+              \quad ［始式］
+       \item $A \lor B \Longrightarrow A \lor B $ \quad ［始式］
+       \item $A \Longrightarrow A$ \quad ［始式］
+       \item $\lnot A \land \lnot B \Longrightarrow \lnot A $ \quad ［1.から$\land$除去による］
+       \item $A,  \lnot A \land \lnot B \Longrightarrow \curlywedge$
+              \quad ［$3., 4.$から$\lnot$除去による］
+       \item $B \Longrightarrow B$ \quad ［始式］
+       \item $\lnot A \land \lnot B \Longrightarrow \lnot B$ \quad ［1.から$\land$除去による］
+       \item $B,  \lnot A \land B \Longrightarrow \curlywedge$ \quad ［$6., 7.$から$\lnot$除去による］
+       \item $A \lor B , \lnot A \land \lnot B \Longrightarrow \curlywedge$
+              \quad ［$2., 5., 8.$から$\lor$除去による］
+       \item $\lnot A \land \lnot B \Longrightarrow \lnot ( A \lor B )$
+              \quad ［9.から$\lnot$導入による］
+     \end{enumerate}
+     よって，シークエント$\lnot A \land \lnot B \Longrightarrow \lnot ( A \lor B )$
+     は導出可能である．
+
+     以上より，$\lnot ( A \lor B ) \equiv \lnot A \land \lnot B$となる．
+   \end{proof}
+
+   述語論理についても，命題論理におけるDe Morganの法則
+   と類似した関係が成り立つ．
+   \index[widx]{De Morganのほうそく@De Morganの法則}
+   \index[nidx]{De Morgan@De Morgan（ド・モルガン）}
+   \begin{thm}[述語論理におけるDe Morganの法則] \label{thm:demorganjutugo}
+     任意の述語$F$について
+     \begin{align}
+       \lnot \forall x F(x) & \equiv \exists x \lnot F(x),
+       \label{eq:demorgan3} \\
+       \lnot \exists x F(x) & \equiv \forall x \lnot F(x)
+       \label{eq:demorgan4}
+     \end{align}
+     が成り立つ．
+   \end{thm}
+   \begin{proof}
+     式\eqref{eq:demorgan3}の導出をする．
+     まず$\lnot \forall x F(x) \Longrightarrow \exists x \lnot F(x)$を導く．
+     \begin{enumerate}[1. ]
+       \item $\lnot \forall x F(x) \Longrightarrow \lnot \forall x F(x)$
+              \quad ［始式］
+       \item $\lnot \exists x \lnot F(x) \Longrightarrow \lnot \exists x \lnot F(x) $
+              \quad ［始式（背理法で示す）］
+       \item $\lnot F(a) \Longrightarrow \lnot F(a)$ \quad ［始式（$a$は新たな自由変数）］
+       \item $\lnot F(a) \Longrightarrow \exists x \lnot F(x)$ 
+              \quad ［3.から$\exists$導入による］
+       \item $\lnot \exists x \lnot F(x) ,  \lnot F(a) 
+              \Longrightarrow \curlywedge$ \quad ［$2., 4.$から$\lnot$除去による］
+       \item $\lnot \exists x \lnot F(x) \Longrightarrow \lnot \lnot F(a)$
+              \quad ［5.から$\lnot$導入による］
+       \item $\lnot \exists x \lnot F(x) \Longrightarrow F(a)$
+              \quad ［6.から2重否定の除去による］
+       \item $\lnot \exists x \lnot F(x) \Longrightarrow \forall x F(x)$
+              \quad ［7.から$\forall$導入による］
+       \item $\lnot \exists x \lnot F(x) ,  \lnot \forall x F(x) 
+              \Longrightarrow \curlywedge$ \quad ［$1., 8.$から$\lnot$除去による］
+       \item $\lnot \forall x F(x) \Longrightarrow \lnot \lnot \exists x \lnot F(x)$
+              \quad ［9.から$\lnot$導入による］
+       \item $\lnot \forall x F(x) \Longrightarrow \exists x \lnot F(x)$
+              \quad ［10.から2重否定の除去による］
+     \end{enumerate}
+     \begin{oframed}
+       言葉への翻訳：
+       $\lnot \forall x F(x) $という仮定のもと，$\exists x \lnot F(x)$を導くことを考える．
+       $\lnot \exists x \lnot F(x)$だとして矛盾を導くことにする．
+       自由変数$a$を任意にとって$F(a)$が成り立つことを示したいのだが，
+       これも$\lnot F(a)$を仮定して矛盾を導くことにする．
+       
+       さて，$\lnot F(a)$より$\exists \lnot x F(x)$であるが，
+       これは$\lnot \exists x \lnot F(x)$に矛盾する．
+       従って$\lnot \lnot F(a)$すなわち$F(a)$である．
+       自由変数$a$は任意だったので$\forall x F(x)$となり，
+       これは$\lnot \forall x F(x)$に矛盾する．
+       以上より，$\lnot \lnot \exists x \lnot F(x) $すなわち$\exists x \lnot F(x)$となる．
+     \end{oframed}
+
+     次に，$\exists x \lnot F(x) \Longrightarrow \lnot \forall x F(x) $を導く．
+     \begin{enumerate}[1. ]
+       \item $\exists x \lnot F(x) \Longrightarrow \exists x \lnot F(x)$
+              \quad ［始式］
+       \item $\forall x F(x) \Longrightarrow \forall x F(x) $
+              \quad ［始式］
+       \item $\lnot F(a) \Longrightarrow \lnot F(a) $ \quad ［始式（$a$は新たな自由変数）］
+       \item $\forall x F(x) \Longrightarrow F(a)$ \quad ［2.から$\forall$除去による］
+       \item $\forall x F(x) ,  \lnot F(a) \Longrightarrow \curlywedge$
+              \quad ［$3., 4.$から$\lnot$除去による］
+       \item $\exists x \lnot F(x) ,  \forall x F(x) \Longrightarrow \curlywedge$
+              \quad ［$1., 5.$から$\exists$除去による］
+       \item $\exists x \lnot F(x) \Longrightarrow \lnot \forall F(x)$
+              \quad ［6.から$\lnot$除去による］
+     \end{enumerate}
+     \begin{oframed}
+       言葉への翻訳：$\exists x \lnot F(x)$という仮定のもと，$\lnot \forall x F(x)$
+       を導くことを考える．$\forall x F(x)$を仮定して矛盾を導くことにする．
+
+       $\exists x \lnot F(x)$だから，$\lnot F(a)$となる自由変数$a$が存在する．
+       しかし，$\forall x F(x)$だから，$F(a)$とならなくてはならず矛盾する．
+       これは$a$のとり方に依存しないので，$\lnot \forall x F(x)$が導かれる．
+     \end{oframed}
+     従って，$\lnot \forall x F(x) \equiv \exists x \lnot F(x)$が成り立つ．
+     式\eqref{eq:demorgan4}も同様である．
+   \end{proof}
+   $\land$と$\lor$の組み合わせについて考えよう．
+   \index[widx]{ぶんぱいりつ@分配律 \, distributive law}
+   \begin{thm}[命題論理における分配律] \label{thm:bunpaimeidai}
+     命題（条件）$A,  B,  C$に対し，
+     \begin{align}
+       A \land ( B \lor C ) & \equiv (A \land B ) \lor (A \land C) ,
+       \label{eq:bunpailand} \\
+       A \lor ( B \land C) & \equiv (A \lor B) \land ( A \lor C )
+       \label{eq:bunpailor}
+     \end{align}
+     が成り立つ．
+   \end{thm}
+   \begin{proof}
+     式\eqref{eq:bunpailand}を示す．式\eqref{eq:bunpailor}も同様に示せる．
+     まずはシークエント
+     $A \land (B \lor C) \Longrightarrow (A \land B) \lor (A \land C)$
+     を導出しよう．
+     \begin{enumerate}[1. ]
+       \item $A \land ( B \lor C ) \Longrightarrow A \land ( B \lor C) $
+              \quad ［始式］
+       \item $A \land ( B \lor C ) \Longrightarrow A$ \quad ［1.から$\land$除去による］
+       \item $A \land ( B \lor C) \Longrightarrow B \lor C $ \quad ［1.から$\land$除去による］
+       \item $B \Longrightarrow B$ \quad ［始式］
+       \item $B,  A \land ( B \lor C ) \Longrightarrow A \land B$ 
+              \quad ［$2., 4.$から$\land$導入による］
+       \item $B,  A \land ( B \lor C) \Longrightarrow ( A \land B) \lor ( A \land C)$
+              \quad ［5.から$\lor$導入による］
+       \item $C \Longrightarrow C$ \quad ［始式］
+       \item $C,  A \land ( B \lor C ) \Longrightarrow A \land C$
+              \quad ［$2., 7.$から$\land$導入による］
+       \item $C,  A \land ( B \lor C ) \Longrightarrow ( A \land B ) \lor (A \land C)$
+              \quad ［8.から$\lor$導入による］
+       \item $A \land ( B \lor C) \Longrightarrow (A \land B) \lor (A \land C)$
+              \quad ［$3., 6., 9.$から$\lor$除去による］
+     \end{enumerate} 
+     次に，シークエント$( A \land B ) \lor ( A \land C) \Longrightarrow A \land ( B \lor C)$
+     を導出する．
+     \begin{enumerate}[1. ]
+       \item $(A \land B) \lor ( A \land C) \Longrightarrow (A \land B) \lor (A \land C)$
+              \quad ［始式］
+       \item $A \land B \Longrightarrow A \land B$ \quad ［始式］
+       \item $A \land B \Longrightarrow A $ \quad ［2. から$\land$除去による］
+       \item $A \land B \Longrightarrow B$ \quad ［2.から$\land$除去による］
+       \item $A \land B \Longrightarrow B \lor C$ \quad ［4.から$\lor$導入による］
+       \item $A \land B \Longrightarrow A \land ( B \lor C)$
+              \quad ［$3., 5.$から$\land$導入による］
+       \item $A \land C \Longrightarrow A \land C$ \quad ［始式］
+       \item $A \land C \Longrightarrow A$ \quad ［7.から$\land$除去による］
+       \item $A \land C \Longrightarrow C$ \quad ［7.から$\land$除去による］
+       \item $A \land C \Longrightarrow B \lor C$ \quad ［9.から$\lor$導入による］
+       \item $A \land C \Longrightarrow A \land ( B \lor C )$
+              \quad ［$8., 10.$から$\land$導入による］
+       \item $(A \land B) \lor ( A \land C) \Longrightarrow A \land (B \lor C)$
+              \quad ［$1., 6., 11.$から$\lor$除去による］
+     \end{enumerate}
+     従って，$A \land (B \lor C) \equiv (A \land B) \lor (A \land C)$
+     が成り立つ．
+   \end{proof}
+   \begin{que} \label{que:meidaiketugouritu}
+     命題（条件）$A,  B,  C$について
+     \begin{align}
+       A \land A & \equiv A ,
+       \label{eq:bekiland} \\
+       A \lor A & \equiv A,
+       \label{eq:bekilor} \\
+       A \land B & \equiv B \land A,
+       \label{eq:landkoukan} \\
+       A \lor B & \equiv B \lor A ,
+       \label{eq:lorkoukan} \\
+       A \land ( B \land C) & \equiv (A \land B ) \land C ,
+       \label{eq:landketugouritu} \\
+       A \lor ( B \lor C) & \equiv ( A \lor B ) \lor C
+       \label{eq:lorketugouritu}
+     \end{align}
+     が成り立つことを示せ．
+     このことから，$A \land B \land C$や$A \lor B \lor C$
+     などと書くことが許されることがわかる．
+   \end{que}
+   定理\ref{thm:ganilor}と定理\ref{thm:demorganmeidai}，
+   定理\ref{thm:demorganjutugo}により，
+   次の定理\ref{thm:ganisingi}が導かれる．
+   \begin{thm} \label{thm:ganisingi}
+     命題（条件）$A,  B$，および述語$F,  G$について，
+     \begin{align}
+       \lnot ( A \to B ) & \equiv A \land \lnot B,
+       \label{eq:ganisingi} \\
+       \lnot \forall x ( F(x) \to G(x) ) 
+       & \equiv \exists x ( F(x) \land \lnot G(x) )
+       \label{eq:ganisingijutugo}
+     \end{align}
+     が成り立つ．
+   \end{thm}
+   \begin{proof}
+     \begin{align*}
+       \lnot ( A \to B ) & \equiv \lnot ( \lnot A \lor B) \\
+       & \equiv \lnot \lnot A \land \lnot B \\
+       & \equiv A \land \lnot B .
+     \end{align*}
+     これで式\eqref{eq:ganisingi}が導かれた．
+     \begin{align*}
+       \lnot \forall x ( F(x) \to G(x) ) 
+       & \equiv \exists x \lnot ( F(x) \to G(x) ) \\
+       & \equiv \exists x ( F(x) \land \lnot G(x) ).
+     \end{align*}
+     よって，式\eqref{eq:ganisingijutugo}も導かれた．
+   \end{proof}
+   定理\ref{thm:ganisingi}の証明では証明済みの定理を用いたが，
+   推論規則を利用して
+   シークエントを導出することによっても（少し長くはなるが）証明できる．
+
+   また，定理\ref{thm:ganisingi}の証明では，
+   以下に挙げる定理\ref{thm:tikanteiri}を暗に用いている．
+   証明はしないがその主張だけは提示しておく．
+   \index[widx]{ちかんていり@置換定理}
+   \begin{thm}[置換定理] \label{thm:tikanteiri}
+     $\mathscr{F}(X)$を命題変数$X$を含む論理式とする．
+     このとき，命題$A,B$について，$A \equiv B$ならば
+     $\mathscr{F}(A) \equiv \mathscr{F}(B)$
+     となる．
+     また，$\mathscr{F}(P)$を述語変数$P$を含む論理式とする．
+     述語$F,G$に対し，$\forall x (F(x) \rightleftarrows G(x))$
+     が証明可能であるならば$\mathscr{F}(F) \equiv \mathscr{F}(G)$
+     が成り立つ．
+   \end{thm}
+   ここで，「命題（述語）変数$X$を含む論理式」というのは，
+   とりあえず命題（述語）$X$の真偽によってその真偽が決定される命題
+   とでも思っておけばよい．たとえば，
+   $A \land B$は命題$A,B$を含む論理式であり，
+   $\forall x (F(x) \lor G(x))$は述語$F,G$を含む論理式である．
+
+   定理\ref{thm:ganisingi}の証明では，
+   $A \to B \equiv \lnot A \lor B$を根拠に
+   $\lnot ( A \to B) \equiv \lnot ( \lnot A \lor B)$を導き，
+   $\lnot \lnot A \equiv A$を根拠に$\lnot \lnot A \land \lnot B \equiv A \land \lnot B$
+   を導いた．また，任意の自由変数$a$に対して
+   \begin{align*}
+     \lnot ( F(a) \to G(a) ) \equiv F(a) \land \lnot G(a) 
+   \end{align*}
+   が成り立つ，すなわち
+   \begin{align*}
+     \forall x ( \lnot ( F(x) \to G(x) ) \rightleftarrows F(x) \land \lnot G(x) )
+   \end{align*}
+   が証明可能であることを根拠に
+   \begin{align*}
+     \exists x \lnot ( F(x) \to G(x) ) \equiv \exists x ( F(x) \land \lnot G(x) )
+   \end{align*}
+   を導いたが，ここに定理\ref{thm:tikanteiri}が使われている．
+
+   \begin{que} \label{que:Dnarabanot}
+     空でない集合$D$と$D$の元
+     $x$に関する条件$F(x)$に対し，次式が成り立つことを示せ．
+     \begin{align}
+       \lnot \forall x \in D ( F(x) ) & \equiv \exists x \in D ( \lnot F(x) ) ,
+       \label{eq:Dnotall} \\
+       \lnot \exists x \in D (F(x) ) & \equiv \forall x \in D ( \lnot F(x) ).
+       \label{eq:Dnotexists} 
+     \end{align}
+   \end{que}
+
+
+
+   命題（条件）$A ,  B$について，
+   $A \to B$の形をした命題（条件）について考える．
+   命題（条件）$B \to A$を$A \to B$の
+   \index[widx]{めいだい@命題 \, proposition!のぎゃく@---の逆 \, converse ---}
+   \emph{逆}（converse）といい，
+   命題（条件）$\lnot A \to \lnot B$を$A \to B$の
+   \index[widx]{めいだい@命題 \, proposition!のうら@---の裏 \, inverse ---}
+   \emph{裏}（inverse）という．
+   また，命題（条件）$\lnot B \to  \lnot A$を
+   $A \to B $の
+   \index[widx]{めいだい@命題 \, proposition!のたいぐう@---の対偶 \, contraposition}
+   \emph{対偶}（contraposition）と呼ぶ．
+   \begin{thm} \label{thm:taiguu}
+     命題（条件）$A,  B$について，
+     \begin{align}
+       A \to B & \equiv \lnot B \to \lnot A 
+       \label{eq:taiguudouti} 
+     \end{align}
+     が成り立つ．
+   \end{thm}
+   
+   \begin{proof}
+     式\eqref{eq:taiguudouti}を示す．
+     シークエント$A \to B \Longrightarrow \lnot B \to \lnot A$
+     を導出する．
+     \begin{enumerate}[1. ]
+       \item $A \to B \Longrightarrow A \to B$ \quad ［始式］
+       \item $\lnot B \Longrightarrow \lnot B$ \quad ［始式］
+       \item $A \Longrightarrow A $ \quad ［始式］
+       \item $A,  A \to B \Longrightarrow B$ \quad ［$1., 3.$から$\to$除去による］
+       \item $A,  A \to B ,  \lnot B \Longrightarrow \curlywedge$
+              \quad ［$2., 4.$から$\lnot$除去による］
+       \item $A \to B ,  \lnot B \Longrightarrow \lnot A$ \quad ［5.から$\lnot$導入による］
+       \item $A \to B \Longrightarrow \lnot B \to \lnot A$ \quad ［6.から$\to$導入による］
+     \end{enumerate}
+     次に，シークエント$\lnot B \to \lnot A \Longrightarrow A \to B$
+     を導出する．
+     \begin{enumerate}[1. ]
+       \item $\lnot B \to \lnot A \Longrightarrow \lnot B \to \lnot A$
+              \quad ［始式］
+       \item $A \Longrightarrow A $ \quad ［始式］
+       \item $\lnot B \Longrightarrow \lnot B$ \quad ［始式］
+       \item $\lnot B ,  \lnot B \to \lnot A \Longrightarrow \lnot A$
+              \quad ［$1., 3.$から$\to$除去による］
+       \item $A,  \lnot B ,  \lnot B \to \lnot A \Longrightarrow \curlywedge$
+              \quad ［$2., 4.$から$\lnot$除去による］
+       \item $A ,  \lnot B \to \lnot A \Longrightarrow \lnot \lnot B $
+              \quad ［5.から$\lnot$導入による］
+       \item $A ,  \lnot B \to \lnot A \Longrightarrow B $
+              \quad ［6.から2重否定の除去による］
+       \item $\lnot B \to \lnot A \Longrightarrow A \to B$
+              \quad ［7.から$\to$導入による］
+     \end{enumerate}
+     従って，式\eqref{eq:taiguudouti}は成り立つ．
+   \end{proof}
+   \begin{que} \label{que:tototo}
+     命題（条件）$A,  B,  C$について，
+     \begin{align}
+       A \to ( B \to C) \equiv A \land B \to C
+       \label{eq:tototo}
+     \end{align}
+     が成り立つことを示せ．
+   \end{que}
+
+   \begin{que} \label{que:Peirce}
+     命題（条件）$A,  B$について，シークエント
+     \begin{align}
+       (A \to B) \to A \Longrightarrow A
+       \label{eq:Peircelaw}
+     \end{align}
+     を導出せよ．
+     これを
+     \index[widx]{Peirceのほうそく@Peirceの法則}
+     \index[nidx]{Peirce@Peirce（パース）}
+     \textbf{Peirceの法則}という．
+   \end{que}
+
+   \begin{thm} \label{thm:genteito}
+     述語$F$と$x$を含まない命題（条件）$A$に対し，次式が成り立つ．
+     \begin{align}
+       \forall x ( F(x) \to A ) & \equiv \exists x F(x) \to A, 
+       \label{eq:foralltoA} \\
+       \exists x ( F(x) \to A ) & \equiv \forall x F(x) \to A.
+       \label{eq:existstoA}
+     \end{align}
+   \end{thm}
+   \begin{proof}
+     式\eqref{eq:foralltoA}を示す．
+     シークエント$\forall x (F(x) \to A)
+     \Longrightarrow \exists x F(x) \to A$を導出する．
+     \begin{enumerate}[1. ]
+       \item $\forall x (F(x) \to A ) \Longrightarrow 
+         \forall x (F(x) \to A)$ \quad ［始式］
+       \item $\exists x F(x) \Longrightarrow \exists x F(x)$
+         \quad ［始式］
+       \item $F(a) \Longrightarrow F(a) $ \quad ［始式
+         （$a$は新たな自由変数）］
+       \item $\forall x (F(x) \to A) \Longrightarrow F(a) \to A$
+         \quad ［1.から$\forall$除去による］
+       \item $\forall x (F(x) \to A) , F(a) \Longrightarrow A$
+         \quad ［$3.,4.$から$\to$除去による］
+       \item $\forall x (F(x) \to A) , \exists x F(x) 
+         \Longrightarrow A$
+         \quad ［$2.,5.$から$\exists$除去による］
+       \item $\forall x (F(x) \to A) \Longrightarrow 
+         \exists x F(x) \to A$
+         \quad ［6.から$\to$導入による］
+     \end{enumerate}
+     次に，シークエント$\exists x F(x) \to A \Longrightarrow 
+     \forall x (F(x) \to A )$を導出する．
+     \begin{enumerate}[1. ]
+       \item $\exists x F(x) \to A \Longrightarrow 
+         \exists x F(x) \to A$ \quad ［始式］
+       \item $F(a) \Longrightarrow F(a)$ \quad ［始式］
+       \item $F(a) \Longrightarrow \exists x F(x)$
+         \quad ［2.から$\exists$導入による］
+       \item $F(a) , \exists x F(x) \to A 
+         \Longrightarrow A$
+         \quad ［$1.,3.$から$\to$除去による］
+       \item $\exists x F(x) \to A \Longrightarrow 
+         F(a) \to A$ \quad ［$4.$から$\to$導入による］
+       \item $\exists x F(x) \to A \Longrightarrow 
+         \forall x (F(x) \to A)$
+         \quad ［5.から$\forall$導入による］
+     \end{enumerate}
+     以上で式\eqref{eq:foralltoA}は示された．
+
+
+
+     次に，式\eqref{eq:existstoA}
+     を示す．
+     シークエント$\exists x (F(x) \to A ) \Longrightarrow \forall x F(x) \to A$
+     を導出しよう．
+     \begin{enumerate}[1. ]
+       \item $\exists x (F(x) \to A ) \Longrightarrow \exists x (F(x) \to A)$
+              \quad ［始式］
+       \item $\forall x F(x) \Longrightarrow \forall x F(x)$ \quad ［始式］
+       \item $F(a) \to A \Longrightarrow F(a) \to A $ \quad ［始式（$a$は新たな自由変数）］
+       \item $\forall x F(x) \Longrightarrow F(a)$ \quad ［2.から$\forall$除去による］
+       \item $\forall x F(x) ,  F(a) \to A \Longrightarrow A$
+              \quad ［$3., 4.$から$\to$除去による］
+       \item $\exists x (F(x) \to A) ,  \forall x F(x) \Longrightarrow A$
+              \quad ［$1., 5.$から$\exists$除去による］
+       \item $\exists x (F(x) \to A) \Longrightarrow \forall x F(x) \to A$
+              \quad ［6.から$\to$導入による］
+     \end{enumerate}
+     次に，シークエント$\forall x F(x) \to A \Longrightarrow \exists x (F(x) \to A)$
+     を導出する．
+     \begin{enumerate}[1. ]
+       \item $\forall x F(x) \to A \Longrightarrow \forall x F(x) \to A $
+              \quad ［始式］
+       \item $\lnot \exists x (F(x) \to A) \Longrightarrow \lnot \exists x (F(x) \to A)$
+              \quad ［始式（背理法で示す）］
+       \item $\lnot F(a) \Longrightarrow \lnot F(a)$ \quad ［始式（$a$は新たな自由変数）］
+       \item $F(a) \Longrightarrow F(a)$ \quad ［始式］
+       \item $\lnot F(a) ,  F(a) \Longrightarrow \curlywedge$
+              \quad ［$3., 4.$から$\lnot$除去による］
+       \item $\lnot F(a) ,  F(a) \Longrightarrow A$ \quad ［5.から矛盾による］
+       \item $\lnot F(a) \Longrightarrow F(a) \to A$ \quad ［6.から$\to$導入による］
+       \item $\lnot F(a) \Longrightarrow \exists x (F(x) \to A)$
+              \quad ［7.から$\exists$導入による］
+       \item $\lnot F(a) ,  \lnot \exists x (F(x) \to A) \Longrightarrow \curlywedge$
+              \quad ［$2., 8.$から$\lnot$除去による］
+       \item $\lnot \exists x (F(x) \to A) \Longrightarrow \lnot \lnot F(a)$
+              \quad ［9.から$\lnot$導入による］
+       \item $\lnot \exists x (F(x) \to A) \Longrightarrow F(a)$ 
+              \quad ［10.から2重否定の除去による］
+       \item $\lnot \exists x (F(x) \to A) \Longrightarrow \forall x F(x) $
+              \quad ［11.から$\forall$導入による］
+       \item $\forall x F(x) \to A ,  \lnot \exists x (F(x) \to A) \Longrightarrow A$
+              \quad ［$1., 12.$から$\to$除去による］
+       \item $F(a) ,  \forall x F(x) \to A ,  \lnot \exists x (F(x) \to A)
+              \Longrightarrow A $ \quad ［13.から前提の増加による］
+       \item $\forall x F(x) \to A ,  \lnot \exists x(F(x) \to A)
+              \Longrightarrow F(a) \to A$ \quad ［14.から$\to$導入による］
+       \item $\forall x F(x) \to A ,  \lnot \exists x(F(x) \to A)
+              \Longrightarrow \exists x(F(x) \to A)$ \quad ［15.から$\exists$導入による］
+       \item $\forall x F(x) \to A ,  \lnot \exists x (F(x) \to A)
+              \Longrightarrow \curlywedge$ \quad ［$2., 16.$から$\lnot$除去による］
+       \item $\forall x F(x) \to A \Longrightarrow \lnot \lnot \exists x (F(x) \to A)$
+              \quad ［17.から$\lnot$導入による］
+       \item $\forall x F(x) \to A \Longrightarrow \exists x (F(x) \to A) $
+              \quad ［18.から2重否定の除去による］
+     \end{enumerate}
+     以上で式\eqref{eq:existstoA}は示された．
+   \end{proof}
+   \begin{que} \label{que:togentei}
+     述語$F$と$x$を含まない命題（条件）$A$に対し
+     \begin{align}
+       \forall x (A \to F(x) ) & \equiv A \to \forall x F(x) ,
+       \label{eq:Atoforall} \\
+       \exists x (A \to F(x) ) & \equiv A \to \exists x F(x)
+       \label{eq:Atoexists}
+     \end{align}
+     が成り立つことを示せ．
+   \end{que}
+   最後に限定記号と$\land,  \lor$の組み合わせについて言及しておこう．
+   証明は容易だろうから省略する．
+   \begin{thm} \label{thm:genteilandor}
+     述語$F,  G$に対して
+     \begin{align}
+       \forall x (F(x) \land G(x)) & \equiv \forall x F(x) \land \forall x G(x),
+       \label{eq:forallland} \\
+       \exists x (F(x) \lor G(x)) & \equiv \exists xF(x) \lor \exists xG(x)
+       \label{eq:existslor}
+     \end{align}
+     が成り立つ．また，述語$F,G$に対し，シークエント
+     \begin{align}
+       \forall x F(x) \lor \forall x G(x) 
+       & \Longrightarrow \forall x (F(x) \lor G(x))
+       \label{eq:forallor} \\
+       \exists x (F(x) \land G(x)) & \Longrightarrow
+       \exists x F(x) \land \exists x G(x)
+       \label{eq:existsand}
+     \end{align}
+     は導出可能である．
+   \end{thm}
+   \begin{que} \label{que:genteilandor}
+     述語$F,  G$と$x$を含まない命題（条件）$A$について
+     \begin{align}
+       \forall x (F(x) \lor A) & \equiv \forall x F(x) \lor A,
+       \label{eq:foralllorA} \\
+       \exists x (F(x) \land A) & \equiv \exists x F(x) \land A
+       \label{eq:existslandA}
+     \end{align}
+     が成り立つことを示せ．
+   \end{que}
+   \begin{que} \label{que:genteikoukan}
+     2変数の述語$F$に対し，
+     \begin{align}
+       \forall x \forall y F(x,y) & \equiv \forall y \forall x F(x,y),
+       \label{eq:forallkoukan} \\
+       \exists x \exists y F(x,y) & \equiv \exists y \exists x F(x,y)
+       \label{eq:existskoukan}
+     \end{align}
+     が成り立つことを示せ．
+   \end{que}
+   \begin{que} \label{que:circdouti}
+     $n$個の命題（条件）$P_1,  P_2,  \ldots ,  P_n$について，
+     シークエント
+     \begin{align*}
+       P_1 \Longrightarrow P_2 , \  P_2 \Longrightarrow P_3  , \  
+       \ldots  ,\   P_{n-1} \Longrightarrow P_n  ,\   P_n \Longrightarrow P_1
+     \end{align*}
+   \end{que}
+   がすべて導出可能であるとする．このとき，
+   $P_1,  P_2,  \ldots ,  P_n$はすべて同値であることを示せ．
+     %
+     
+   問\ref{que:circdouti}の結果は，複数の命題がすべて同値であることを示すときに
+   その手順を簡略化する強力な手段となる．
+   たとえば，3つの命題$A,  B,  C$がすべて同値であることを示すのには，
+   3つのシークエント
+   \begin{align*}
+     A \Longrightarrow B  ,\   B \Longrightarrow C  ,\   C \Longrightarrow A
+   \end{align*}
+   を導くだけでよいのである．  
+   %
+     %
+ \section{等号について}
+ \label{sec:equal}
+   %
+   %
+   %
+   %
+   何か2つのものが等しいというとき，我々は「$=$」という記号を使ってきた．
+   この「$=$」という記号は，
+   数や関数，行列や図形などの様々な対象に対して使われる．
+   個々の分野においては，
+   議論の対象になるものに応じて「$=$」の使い方が決定される．
+   たとえば，数$a,  b$に対して$a = b$が成り立つことと，
+   図形$S,  T$に対して
+   $S=T$が成り立つことの定義は異なるものである．
+   しかしながら，同じ記号を使うだけあって，この「$=$」が示す「意味」
+   はほとんど同じものである．
+   この節では，「$=$」という記号を一段上の視点から眺めてみよう．
+
+   \paragraph{等号公理}
+   基礎となる公理をもとに等号について議論しよう．
+   本書で採用する公理は次の2つである．
+   
+   \index[widx]{とうごう@等号 \, equal sign}
+   \begin{axiom}[等号公理]
+     等号「$=$」は2つの項の関係を表す記号であって，
+     \begin{description}
+       \index[widx]{はんしゃりつ@反射律 \, reflexive law}
+       \item[反射律] 任意の項$s$に対して$s =s$は証明可能である．
+       \index[widx]{ちかんほうそく@置換法則}
+       \item[置換法則] 任意の述語$F$と任意の項$s,  t$に対して，
+             シークエント
+             $s=t \Longrightarrow F(s) \to F(t) $
+             は導出可能である．
+         \end{description}
+     を満たすものであるとする．
+   \end{axiom}
+
+   今導入した等号公理が妥当であるかどうかは，
+   この公理から導かれる定理を考察するより他はない．
+   \index[widx]{だいにゅうげんり@代入原理}
+   \begin{thm}[代入原理] \label{thm:dainyugenri}
+     任意の関数記号$f$と任意の項$a,  b$に対して，シークエント
+     \begin{align}
+       a=b \Longrightarrow  f(a)=f(b)
+       \label{eq:dainyu}
+     \end{align}
+     は導出可能である．
+   \end{thm}
+   \begin{proof}
+     任意の項$a$に対し，$f(a)=f(x)$を$x$に関する述語と考え，
+     これを$F(x)$とおくと，シークエント
+     \begin{align*}
+       a = b \Longrightarrow f(a)=f(a) \to f(a)=f(b)
+     \end{align*}
+     は
+     \begin{align*}
+       a=b \Longrightarrow F(a) \to F(b)
+     \end{align*}
+     と書き換えられ，置換法則の特別な場合と考えられることに注意する．
+     \begin{enumerate}[1. ]
+       \item $a=b \Longrightarrow f(a)=f(a) \to f(a) = f(b)$ \quad ［置換法則］
+       \item $\qquad \Longrightarrow f(a)=f(a)$ \quad ［反射律］
+       \item $a=b \Longrightarrow f(a) = f(b) $ \quad ［$1., 2.$から$\to$除去による］
+     \end{enumerate}
+     従って，シークエント$a=b \Longrightarrow f(a) = f(b)$
+     は導出可能である．
+   \end{proof}
+   定理\ref{thm:dainyugenri}において，「関数記号」という用語が出てきたが，
+   これはとりあえず「項に依存して別の項をつくる記号」
+   とでも思っておけばよい．
+
+   等号「$=$」は次の2つの性質を満たす．
+   証明は演習問題としよう．
+   \begin{thm} \label{thm:taisyousuii}
+     任意の項$a,  b,  c$に対して，次の2つのシークエント
+     \begin{align}
+       a = b & \Longrightarrow b = a ,
+       \label{eq:taisyouritu} \\
+       a =b \land b=c & \Longrightarrow a =c
+       \label{eq:suiiritu}
+     \end{align}
+     はともに導出可能である．
+     \end{thm}
+     式\eqref{eq:taisyouritu}を
+     \index[widx]{たいしょうりつ@対象律 \, symmetric law}
+     \emph{対称律}（symmetric law），
+     式\eqref{eq:suiiritu}を
+     \index[widx]{すいいりつ@推移律 \, transitive law}
+     \emph{推移律}（transitive law）という．
+     \begin{que} \label{que:taisyousuii}
+       定理\ref{thm:taisyousuii}を証明せよ．
+     \end{que}
+
+     対称律を用いると，次の定理\ref{thm:equivtaisyou}が成り立つことがわかる．
+     \begin{thm} \label{thm:equivtaisyou}
+       任意の述語$F$，および任意の項$s,  t$に対し，シークエント
+       \begin{align}
+         s = t \Longrightarrow F(s) \rightleftarrows F(t)
+         \label{eq:equivtaisyou}
+       \end{align}
+       は導出可能である．
+     \end{thm}
+
+    \paragraph{唯一存在記号}
+     等号を用いると，述語$F$に対して「$F(x)$となる$x$がただ1つ存在する」
+     という命題を表現することができる．
+     たとえば，
+     \begin{align}
+       \exists x ( F(x) \land \forall y (F(y) \to y=x))
+       \label{eq:tadahitotu}
+     \end{align}
+     という命題が「$F(x)$をとなる$x$がただ1つ存在する」という命題を表すことになる．
+     この命題を
+     \begin{align}
+       \exists ! x F(x)
+       \label{eq:existsbikkuri}
+     \end{align}
+     と表すことがある\footnote{現代ではあまり使われない記号である．}．
+
+     項$s,  t$に対し，条件$\lnot(s=t)$を$s \neq t$と略記する．
+     記号$\neq$を用いると，述語$F$に対し，
+     「$F(x)$となる$x$は少なくとも2つ存在する」
+     という命題が
+     \begin{align}
+       \exists x, y ((F(x) \land F(y) ) \land x \neq y)
+       \label{eq:2tusonzai}
+     \end{align}
+     と表現できる．
+     \begin{que} \label{que:2tusonzaihitei}
+       述語$F$に対し，
+       \begin{align*}
+         \lnot \exists x,y ((F(x) \land F(y)) \land x \neq y)
+         \equiv \forall x,y (F(x) \land F(y)  \to x=y)
+       \end{align*}
+       が成り立つことを示せ．
+     \end{que}
+     \begin{que} \label{que:tadahitotuexists}
+       述語$F$に対し，シークエント
+       \begin{align}
+         \exists ! x F(x)
+         \Longrightarrow \exists x F(x),
+         \label{eq:existsunique} \\
+         \exists ! x F(x)
+         \Longrightarrow \exists x \forall y ( F(y) \to y=x ),
+         \label{eq:existstenceunique} \\
+         \exists x \forall y (F(y) \to y=x ) \Longrightarrow 
+         \forall x, y (F(x) \land F(y) \to x=y),
+         \label{eq:uniquetakadaka} \\
+         \exists x F(x) \land \forall x,y (F(x) \land F(y) \to x=y) 
+         \Longrightarrow \exists ! x F(x),
+         \label{eq:takadakaunique} \\
+         \lnot \exists x F(x) \Longrightarrow \exists x \forall y (F(y) \to y=x)
+         \label{eq:lnottakadaka}
+       \end{align}
+       を導出せよ．ただし，$\exists ! x F(x)$は$\exists x (F(x) \land \forall y (F(y) \to y=x))$
+       の略記であるとする．
+     \end{que}
+
+     問\ref{que:tadahitotuexists}により，
+     \begin{align}
+       \exists ! x F(x) \equiv \exists x F(x) \land \forall x, y (F(x)\land F(y) \to x=y),
+       \label{eq:uniquedouti} \\
+       \exists x \forall y (F(y) \to y=x) \equiv \forall x, y (F(x) \land F(y) \to x=y)
+       \label{eq:takadakadouti}
+     \end{align}
+     が成り立つことがわかる（式\eqref{eq:takadakadouti}に関しては
+     排中律を思い出せ）．
+     式\eqref{eq:uniquedouti}は「$F(x)$となる$x$がただ1つ存在する」
+     という命題の別の表記を与えており，
+     式\eqref{eq:takadakadouti}は「$F(x)$となる$x$はたかだか1つである」
+     という命題の2つの表記法を与えている．

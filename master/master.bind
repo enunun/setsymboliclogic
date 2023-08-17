@@ -1,0 +1,382 @@
+\begin{theindex}
+
+  \item 1対1対応 \, one-to-one correspondence\quad\hfill 
+		\see{全単射}{104}
+
+  \indexspace
+
+  \item Archimedes性\quad\hfill 141
+
+  \indexspace
+
+  \item Bernsteinの定理\quad\hfill 179
+  \item Bolzano--Weierstrassの定理\quad\hfill 144
+
+  \indexspace
+
+  \item Cantorの対関数 \, Cantor's pairing function\quad\hfill 168
+  \item Cantorの定理\quad\hfill 174
+  \item Cauchy列 \, Cauchy sequence\quad\hfill 145
+
+  \indexspace
+
+  \item De Morganの法則\quad\hfill 58, 59, 90
+  \item Dedekindの公理\quad\hfill 131
+  \item Dedekind無限 \, Dedekind-infinite\quad\hfill 160, 209
+  \item Dedekind有限 \, Dedekind-finite\quad\hfill 160
+
+  \indexspace
+
+  \item Euclid幾何学\quad\hfill 6
+    \subitem 非---\quad\hfill 6
+  \item Euler図 \, Euler digram\quad\hfill 92
+
+  \indexspace
+
+  \item ill-defined\quad\hfill 17
+
+  \indexspace
+
+  \item Peirceの法則\quad\hfill 66
+  \item $p$進展開 \, $p$-adic expansion\quad\hfill 151
+
+  \indexspace
+
+  \item Russellのパラドックス\quad\hfill 174, 175
+
+  \indexspace
+
+  \item Tukeyの補題\quad\hfill 217
+
+  \indexspace
+
+  \item Venn図 \, Venn diagram\quad\hfill 93
+
+  \indexspace
+
+  \item Weierstrassの公理\quad\hfill 133
+  \item well-defined\quad\hfill 17
+
+  \indexspace
+
+  \item Zornの補題\quad\hfill 209
+
+  \indexspace
+
+  \item 埋め込み \, embedding\quad\hfill 24, 124
+
+  \indexspace
+
+  \item エルランゲン・プログラム\quad\hfill 7
+
+  \indexspace
+
+  \item 外延的記法 \, extension notation\quad\hfill 80
+  \item 開区間 \, open interval\quad\hfill 84
+  \item 下界 \, lower bound\quad\hfill 132, 192
+  \item 下限 \, infimum\quad\hfill 132, 192
+  \item 可算集合 \, countable set\quad\hfill 166
+    \subitem 高々--- \quad at most ---\quad\hfill 166
+    \subitem 非--- \, un---\quad\hfill 167
+  \item 可算濃度 \, countable cardinal number\quad\hfill 166
+  \item 可算無限集合 \, countably infinite set\quad\hfill 
+		\see{可算集合}{166}
+    \subitem 高々--- at most ---\quad\hfill 166
+    \subitem 非--- \quad un---\quad\hfill 167
+  \item 可算無限濃度 \, countably infinite cardinal number \quad\hfill 
+		\see{可算濃度}{166}
+  \item 完備性 \, completeness\quad\hfill 145
+
+  \indexspace
+
+  \item 帰納的 \, recursive\quad\hfill 209
+  \item 基本列 \, fundamental sequence\quad\hfill 
+		\see{Cauchy列}{145}
+  \item 共通部分 \, intersection\quad\hfill 87, 112, 115
+  \item 極小元 \, minimal element\quad\hfill 192
+  \item 極大元 \, maximal element\quad\hfill 192
+
+  \indexspace
+
+  \item 空間 \, space\quad\hfill 21
+  \item 区間縮小法 \, nested interval property\quad\hfill 142
+
+  \indexspace
+
+  \item 系 \, corollary\quad\hfill 11
+  \item 形式主義 \, formalism\quad\hfill 10
+  \item 元 \, element\quad\hfill 78
+  \item 限定記号 \, quantifier\quad\hfill 36
+
+  \indexspace
+
+  \item 項 \, term\quad\hfill 29
+  \item 構造 \, structure\quad\hfill \see{数学的構造}{21}
+    \subitem ---主義 \, structuralism\quad\hfill 24
+  \item 公理 \, axiom\quad\hfill 9
+    \subitem ---主義 \, axiomatism\quad\hfill 9
+    \subitem ---的集合論 \, ---atic set theory\quad\hfill 77
+    \subitem ---論 \, axiomatics\quad\hfill 9
+    \subitem ---系のモデル \, model\quad\hfill 6
+
+  \indexspace
+
+  \item 最小元 \, minimum element\quad\hfill 192
+  \item 最小値 \, minimum value\quad\hfill 132
+  \item 最大元 \, maximum element\quad\hfill 192
+  \item 最大値 \, maximum value\quad\hfill 132
+  \item 三角不等式 \, triangle inequality\quad\hfill 134
+
+  \indexspace
+
+  \item シークエント \, sequent\quad\hfill 45
+  \item 指示関数 \, indicator function\quad\hfill 175
+  \item 始式 \, initial sequent\quad\hfill 47
+  \item 自然な射影 \, natural projection\quad\hfill 186
+  \item 実数 \, real number\quad\hfill 124
+    \subitem ---の切断 \, cut of ---s\quad\hfill 130
+    \subitem ---の連続性 \, cuntinuty of ---\quad\hfill 131
+    \subitem ---の積\quad\hfill 129
+    \subitem ---の和 \, sum of ---s\quad\hfill 127
+    \subitem 正の--- \, positive ---\quad\hfill 129
+    \subitem 負の--- \, negative\quad\hfill 129
+  \item 射影 \, projection\quad\hfill 206
+  \item 写像 \, mapping\quad\hfill 98
+    \subitem 逆--- \, inverse ---\quad\hfill 110
+    \subitem 空--- \, empty ---\quad\hfill 107
+    \subitem 合成--- \, composite ---\quad\hfill 107
+    \subitem 準同型--- \, homomorphism\quad\hfill 23
+    \subitem 商--- \, quotient ---\quad\hfill 186
+    \subitem 包含--- \, inclusion ---\quad\hfill 106
+    \subitem 恒等--- \, identity ---\quad\hfill 106
+  \item 集合 \, set\quad\hfill 78
+    \subitem  下極限--- \, inferior limit ---\quad\hfill 117
+    \subitem 空--- \, empty set\quad\hfill 85
+    \subitem 差--- \, difference ---\quad\hfill 90
+    \subitem 始集合 \, initial ---\quad\hfill 98
+    \subitem 集合系 \, system of sets\quad\hfill 111
+    \subitem ---族 \, famiry of sets\quad\hfill 114
+    \subitem ---列 \, sequence of ---\quad\hfill 115
+    \subitem 終--- \, target ---\quad\hfill 99
+    \subitem 上極限--- \, superior limit ---\quad\hfill 117
+    \subitem 商--- \, quotient ---\quad\hfill 185
+    \subitem 真部分--- \, proper subset\quad\hfill 79
+    \subitem 整列--- \, well-ordered ---\quad\hfill 195
+    \subitem 全体--- \, universal ---\quad\hfill 90
+    \subitem 台--- \, underlying ---\quad\hfill 21
+    \subitem 直積--- \, direct product\quad\hfill 97, 204
+    \subitem 部分--- \, subset\quad\hfill 79
+    \subitem 部分---系 \, system of subsets\quad\hfill 113
+    \subitem 部分---族 \, family of subsets\quad\hfill 116
+    \subitem べき--- \, power ---\quad\hfill 112
+    \subitem 補--- \, complementaly ---\quad\hfill 90
+    \subitem 無限--- \, infinite ---\quad\hfill 154
+    \subitem 有限--- \, finite ---\quad\hfill 154
+    \subitem 和--- \, union\quad\hfill 86, 112, 115
+    \subitem 極限--- \, limit ---\quad\hfill 119
+  \item 収束 \, convergence\quad\hfill 135
+  \item 自由変数 \, free variable\quad\hfill 38
+  \item 述語 \, prodicate\quad\hfill \see{条件}{29}
+    \subitem ---論理 \, --- logic\quad\hfill 36
+  \item 順序 \, order\quad\hfill 191
+    \subitem ---集合 \, ---ed set\quad\hfill 191
+    \subitem 整列--- \, well-order\quad\hfill 195
+    \subitem 全--- \, total ---\quad\hfill 191
+    \subitem 半--- \, partial ---\quad\hfill 191
+  \item 順序対 \, orderd pair\quad\hfill 95
+  \item 順序同型 \, order isomorphic\quad\hfill 194
+    \subitem  ---写像 \, order isomorphism\quad\hfill 194
+  \item 順序を保つ \, order-preserving\quad\hfill 193
+  \item 上界 \, upper bound\quad\hfill 131, 192
+  \item 条件 \, condition\quad\hfill 28
+    \subitem 十分--- \, sufficient ---\quad\hfill 41
+    \subitem 必要--- \, necessary ---\quad\hfill 41
+    \subitem 必要十分--- \quad necessary and sufficient ---\quad\hfill 
+		42
+  \item 上限 \, supremum\quad\hfill 132, 192
+  \item 証明 \, proof\quad\hfill 10
+  \item （命題が）証明可能 \, provable\quad\hfill 50
+
+  \indexspace
+
+  \item 推移律 \, transitive law\quad\hfill 73, 183, 190
+  \item 推論規則 \, inference rule\quad\hfill 47
+  \item 数学的帰納法 \, mathematical induction\quad\hfill 197
+  \item 数学的構造 \, mathmatical structure\quad\hfill 21
+  \item 数列 \, sequence of numbers\quad\hfill 134
+
+  \indexspace
+
+  \item （写像の）制限 \, restriction\quad\hfill 104
+  \item 成分 \, component\quad\hfill 206
+  \item 整列可能定理\quad\hfill 213
+  \item 切片 \, initial segment\quad\hfill 198
+  \item 全射 \, surjection\quad\hfill 104
+    \subitem 自然な--- \, natural ---\quad\hfill 186
+  \item 全順序 \, total order
+    \subitem  ---集合 \, totally ordered set\quad\hfill 191
+  \item 全称記号 \, universal quantifier\quad\hfill 34
+  \item 選択関数 \, choice function\quad\hfill 206, 207
+  \item 選択公理 \, axiom of choice\quad\hfill 206
+    \subitem 可算--- \, axiom of countable choice\quad\hfill 206
+  \item 全単射 \, bijection\quad\hfill 104
+
+  \indexspace
+
+  \item 像 \, image\quad\hfill 99, 101
+    \subitem 逆--- \, inverse ---\quad\hfill 101
+  \item 属する \, belong to\quad\hfill 78
+  \item 束縛変数 \, bound variable\quad\hfill 38
+  \item 素朴集合論 \, naive set theory\quad\hfill 77
+  \item 存在記号 \, existential quantifier\quad\hfill 34
+
+  \indexspace
+
+  \item 対角線論法 \, diagonal argument\quad\hfill 174
+  \item 対象 \, object\quad\hfill 29
+  \item 対称差 \, symmetric difference\quad\hfill 113
+  \item 対称律 \, symmetric law\quad\hfill 183
+    \subitem  反--- \, anti-symmetric law\quad\hfill 190
+  \item 対象律 \, symmetric law\quad\hfill 73
+  \item 対象領域 \, domain\quad\hfill 40
+  \item 代数的数 \, algebraic number\quad\hfill 182
+  \item 代入原理\quad\hfill 71
+  \item 代表元 \, representative element\quad\hfill 184
+  \item （集合が）互いに素 \, disjoint\quad\hfill 87
+  \item 単射 \, injection\quad\hfill 104
+  \item 単調 \, monotone\quad\hfill 140
+    \subitem ---減少 \, --- decreasing\quad\hfill 140
+    \subitem ---増加 \, --- increasing\quad\hfill 140
+  \item （区間の）端点 \, endpoints\quad\hfill 84
+
+  \indexspace
+
+  \item 置換定理\quad\hfill 64
+  \item 置換法則\quad\hfill 71
+  \item 超越数 \, transcendental number\quad\hfill 182
+  \item 超限帰納法 \, transfinite induction\quad\hfill 196
+  \item 直積因子 \, direct factor\quad\hfill 205
+  \item （集合論的）直和 \, direct sum\quad\hfill 87, 112
+
+  \indexspace
+
+  \item 対 \, pair\quad\hfill \see{順序対}{95}
+
+  \indexspace
+
+  \item 定義 \, definition\quad\hfill 11
+    \subitem 帰納的--- \quad recursive ---\quad\hfill 14, 198
+    \subitem 再帰的---\quad\hfill \see{帰納的定義}{14}
+  \item 定義関数 \, defining function\quad\hfill 
+		\see{指示関数}{175}
+  \item 定理 \, theorem\quad\hfill 11
+
+  \indexspace
+
+  \item 同型 \, isomorphic\quad\hfill 20
+  \item 等号 \, equal sign\quad\hfill 71
+  \item （シークエントが）導出可能 \, derivable\quad\hfill 
+		50
+  \item 導出図 \, derivation diagram\quad\hfill 55
+  \item 同値関係 \, equivalence relation\quad\hfill 184
+  \item 同値である \, equivalent\quad\hfill 51
+  \item 同値類 \, equivalence class\quad\hfill 184
+  \item 特性関数 \, characteristic function\quad\hfill 
+		\see{指示関数}{175}
+  \item 独立性 \, independence\quad\hfill 10
+
+  \indexspace
+
+  \item 内包的記法 \, intension notation\quad\hfill 82
+
+  \indexspace
+
+  \item 二項関係 \, binary relation\quad\hfill 183
+
+  \indexspace
+
+  \item 濃度 \, cardinal number\quad\hfill 154, 166
+
+  \indexspace
+
+  \item 排中律 \, law of excluded middle\quad\hfill 54
+  \item 背理法 \, reductio ad absurdum\quad\hfill 55
+  \item はさみうちの原理 \, squeeze theorem\quad\hfill 138
+  \item 半開区間 \, half-open interval\quad\hfill 84
+  \item 反射律 \, reflexive law\quad\hfill 71, 183, 190
+  \item 半順序
+    \subitem  ---集合 \, partially ordered set, poset\quad\hfill 191
+  \item 範疇性 \, categoricity\quad\hfill 20
+  \item 反例 \, counter-example\quad\hfill 37
+
+  \indexspace
+
+  \item 非交和 \, disjoint union\quad\hfill \see{直和}{87}
+  \item 標準射影 \, canonical projection\quad\hfill 186
+
+  \indexspace
+
+  \item 含む \, contain\quad\hfill 79
+  \item 部分列 \, subsequence\quad\hfill 144
+  \item 分配律 \, distributive law\quad\hfill 61
+
+  \indexspace
+
+  \item 閉区間 \, closed interval\quad\hfill 84
+
+  \indexspace
+
+  \item 包含関係 \, inclusion relation\quad\hfill 80
+  \item 包除原理 \, inclusion-exclusion principle\quad\hfill 162
+  \item 補題 \, lemma\quad\hfill 11
+
+  \indexspace
+
+  \item 交わらない \, disjoint\quad\hfill \see{互いに素}{87}
+
+  \indexspace
+
+  \item 無限区間 \, infinite interval\quad\hfill 85
+  \item 無定義術語 \, undefined term\quad\hfill 9
+  \item 無矛盾性 \, consistency\quad\hfill 10
+  \item 無理数 \, irrational number\quad\hfill 124
+
+  \indexspace
+
+  \item 命題 \, proposition\quad\hfill 28
+    \subitem ---結合記号 \, proposional connectiove\quad\hfill 32
+    \subitem 全称--- \, universal ---\quad\hfill 34
+    \subitem 存在--- \quad existential ---\quad\hfill 34
+    \subitem ---の裏 \, inverse ---\quad\hfill 65
+    \subitem ---の含意 \, implication\quad\hfill 31
+    \subitem ---の逆 \, converse ---\quad\hfill 65
+    \subitem ---の選言 \, disjunction of ---\quad\hfill 31
+    \subitem ---の対偶 \, contraposition\quad\hfill 65
+    \subitem ---の同値 \, equivalence\quad\hfill 32
+    \subitem ---の否定 \, negation of ---\quad\hfill 29
+    \subitem ---の連言 \, conjunction of ---\quad\hfill 30
+    \subitem ---論理 \, propositional logic\quad\hfill 36
+  \item 命題関数 \, propositional function\quad\hfill 
+		\see{条件}{28}
+
+  \indexspace
+
+  \item 有界 \, bounded\quad\hfill 132, 140
+    \subitem 上に--- \, --- above\quad\hfill 131, 140
+    \subitem 下に--- \, --- below\quad\hfill 132, 140
+  \item 有限区間 \, finite interval\quad\hfill 84
+  \item 有限性 \, finite character\quad\hfill 217
+  \item 有理数 \, raional number\quad\hfill 124
+  \item 有理数 \, rational number
+    \subitem ---の切断 \, cut of ---s\quad\hfill 122
+    \subitem ---の稠密性 \, density of the ---s\quad\hfill 126
+
+  \indexspace
+
+  \item 要素 \, element\quad\hfill \see{元}{78}
+
+  \indexspace
+
+  \item 連続体濃度 \, cardinal number of countinuum\quad\hfill 173
+
+\end{theindex}

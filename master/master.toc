@@ -1,0 +1,103 @@
+\contentsline {chapter}{はじめに}{i}
+\contentsline {chapter}{\numberline {第0章}現代数学への展望}{1}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}0.1}幾何学の歴史と公理論}{2}
+\contentsline {paragraph}{幾何学の起源}{2}
+\contentsline {paragraph}{古代ギリシャの数学}{2}
+\contentsline {paragraph}{Euclidの原論}{3}
+\contentsline {paragraph}{非Euclid幾何学の登場}{6}
+\contentsline {paragraph}{公理論と形式主義}{8}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}0.2}定義の手法とそのwell-defined性}{13}
+\contentsline {paragraph}{定義の手法}{13}
+\contentsline {paragraph}{well-defined性}{16}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}0.3}数学的構造}{18}
+\contentsline {chapter}{\numberline {第1章}記号論理入門}{27}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}1.1}命題論理と述語論理}{28}
+\contentsline {paragraph}{命題と条件}{28}
+\contentsline {paragraph}{命題結合記号}{29}
+\contentsline {paragraph}{限定記号}{33}
+\contentsline {paragraph}{矛盾記号}{36}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}1.2}変数の束縛}{37}
+\contentsline {paragraph}{自由変数と束縛変数}{37}
+\contentsline {paragraph}{対象領域}{40}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}1.3}必要性と十分性}{41}
+\contentsline {paragraph}{必要条件と十分条件}{41}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}1.4}シークエントを利用した自然演繹}{45}
+\contentsline {paragraph}{シークエント}{45}
+\contentsline {paragraph}{推論規則}{47}
+\contentsline {paragraph}{シークエント計算}{50}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}1.5}等号について}{71}
+\contentsline {paragraph}{等号公理}{71}
+\contentsline {paragraph}{唯一存在記号}{73}
+\contentsline {chapter}{\numberline {第2章}集合と写像}{77}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}2.1}集合とその記法}{78}
+\contentsline {paragraph}{集合}{78}
+\contentsline {paragraph}{外延的記法と内包的記法}{80}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}2.2}集合の演算}{85}
+\contentsline {paragraph}{和集合と共通部分}{85}
+\contentsline {paragraph}{差集合}{89}
+\contentsline {paragraph}{全体集合と補集合}{90}
+\contentsline {paragraph}{Venn図とEuler図}{92}
+\contentsline {paragraph}{順序対と直積集合}{95}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}2.3}写像}{98}
+\contentsline {paragraph}{写像}{98}
+\contentsline {paragraph}{像と逆像}{101}
+\contentsline {paragraph}{写像の制限}{104}
+\contentsline {paragraph}{単射・全射}{104}
+\contentsline {paragraph}{包含写像と恒等写像}{106}
+\contentsline {paragraph}{空写像}{106}
+\contentsline {paragraph}{合成写像}{107}
+\contentsline {paragraph}{逆写像}{109}
+\contentsline {paragraph}{写像全体の集合}{111}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}2.4}集合系と集合族}{111}
+\contentsline {paragraph}{集合系}{111}
+\contentsline {paragraph}{べき集合と部分集合系}{112}
+\contentsline {paragraph}{集合族}{114}
+\contentsline {paragraph}{極限集合}{117}
+\contentsline {chapter}{\numberline {第3章}実数の連続性と極限}{121}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}3.1}\textrm {Dedekind}切断による実数の構成}{122}
+\contentsline {paragraph}{有理数の切断}{122}
+\contentsline {paragraph}{埋め込み}{124}
+\contentsline {paragraph}{実数の大小}{124}
+\contentsline {paragraph}{実数の演算}{127}
+\contentsline {paragraph}{実数の切断}{130}
+\contentsline {paragraph}{上限・下限}{131}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}3.2}数列の極限と実数の連続性}{134}
+\contentsline {paragraph}{数列の収束}{134}
+\contentsline {paragraph}{有界な数列}{140}
+\contentsline {paragraph}{単調増加・単調減少}{140}
+\contentsline {paragraph}{Archimedes性と区間縮小法}{141}
+\contentsline {paragraph}{部分列}{144}
+\contentsline {paragraph}{Cauchy列}{145}
+\contentsline {paragraph}{実数の連続性の特徴づけ}{147}
+\contentsline {paragraph}{無限小数展開}{149}
+\contentsline {chapter}{\numberline {第4章}集合の濃度と選択公理}{153}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}4.1}有限集合の濃度}{154}
+\contentsline {paragraph}{有限集合と無限集合}{154}
+\contentsline {paragraph}{集合の演算と濃度}{158}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}4.2}無限集合の濃度}{165}
+\contentsline {paragraph}{濃度の大小}{166}
+\contentsline {paragraph}{可算集合}{166}
+\contentsline {paragraph}{数の集合の濃度}{171}
+\contentsline {paragraph}{対角線論法}{173}
+\contentsline {paragraph}{Russellのパラドックス}{174}
+\contentsline {paragraph}{指示関数}{175}
+\contentsline {paragraph}{Bernsteinの定理}{176}
+\contentsline {paragraph}{代数的数と超越数}{182}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}4.3}二項関係と順序集合}{183}
+\contentsline {paragraph}{二項関係}{183}
+\contentsline {paragraph}{同値関係と商集合}{183}
+\contentsline {paragraph}{順序構造}{190}
+\contentsline {paragraph}{上限・下限と極大元・極小元}{192}
+\contentsline {paragraph}{順序同型}{193}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}4.4}整列集合}{195}
+\contentsline {paragraph}{整列集合}{195}
+\contentsline {paragraph}{整列集合の切片}{198}
+\contentsline {paragraph}{整列集合の比較定理}{200}
+\contentsline {section}{\numberline {{\S }{\tmspace +\thinmuskip {.1667em}}4.5}選択公理}{204}
+\contentsline {paragraph}{集合族の直積}{204}
+\contentsline {paragraph}{選択公理}{205}
+\contentsline {paragraph}{Zornの補題}{209}
+\contentsline {paragraph}{整列可能定理}{213}
+\contentsline {paragraph}{Tukeyの補題}{216}
+\contentsline {chapter}{演習問題解答例}{219}
+\contentsline {chapter}{参考文献}{247}
